@@ -1,0 +1,78 @@
+export EDITOR=nvim
+
+alias grep='grep --color'
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
+
+alias t='tail -f'
+
+# Command line head / tail shortcuts
+# alias -g H='| head'
+# alias -g T='| tail'
+# alias -g G='| grep'
+# alias -g L="| less"
+# alias -g M="| most"
+# alias -g LL="2>&1 | less"
+# alias -g CA="2>&1 | cat -A"
+# alias -g NE="2> /dev/null"
+# alias -g NUL="> /dev/null 2>&1"
+# alias -g P="2>&1| pygmentize -l pytb"
+
+alias dud='du -d 1 -h'
+alias duf='du -sh *'
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+
+alias h='history'
+alias hgrep="fc -El 0 | grep"
+alias help='man'
+alias p='ps -f'
+alias sortnr='sort -n -r'
+alias unexport='unset'
+
+
+###### My Aliases ######
+alias cnc='cd && clear'
+alias please='sudo'
+alias free='free -h'
+# alias popcorn-time='/home/jacob/Applications/Popcorn\ Time/Popcorn-Time'
+alias ports='sudo lsof -i -P -n | grep LISTEN'
+
+alias ls='lsd --group-dirs first'
+alias lr='lsd -R'
+alias ll='lsd -l'
+alias lt='lsd --tree'
+alias llt='lsd -l --tree'
+alias lsdd='lsd -d1'
+alias la='lsd -A'
+alias lla='lsd -Al'
+alias zshrc='vim ~/.zshrc'
+alias zsha='vim ~/.aliasrc'
+alias source-z='source ~/.zshrc'
+alias disable-display='xrandr --output LVDS-1 --off'
+# alias update='aptf update && aptf upgrade'
+# alias clean='please apt autoremove && please apt autoclean'
+alias jmp='jump'
+alias c='clear'
+
+alias bat='bat --pager=never'
+# alias aptf='apt-fast'
+alias pdf='evince'
+# alias ecode='io.elementary.code'
+alias protonvpn='please protonvpn'
+alias pvpnc='protonvpn c'
+alias pvpnd='protonvpn d'
+alias adb='/home/jacob/Tools/platform-tools/adb'
+# alias nautilus='nautilus . </dev/null &>/dev/null &'
+alias firefox='firefox  < /dev/null &>/dev/null'
+# alias clion.='clion . < /dev/null &>/dev/null &'
+# alias idea.='idea . < /dev/null &>/dev/null &'
+# alias kitematic='please kitematic &>/dev/null &!'
+alias vim='gvim'
+
+# alias gogh-themes='bash -c  "$(wget -qO- https://git.io/vQgMr)"'
+alias dotbare="$HOME/Utils/dotbare/dotbare"
+
+alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+export DOTBARE_DIR="$HOME/dotfiles"
+export DOTBARE_TREE="$HOME"
+
