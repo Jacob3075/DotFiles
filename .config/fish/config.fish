@@ -99,3 +99,5 @@ function su
    command su --shell=/usr/bin/fish $argv
 end
 
+starship init fish | source
+

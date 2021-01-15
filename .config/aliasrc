@@ -76,3 +76,7 @@ alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 export DOTBARE_DIR="$HOME/dotfiles"
 export DOTBARE_TREE="$HOME"
 
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'
+
