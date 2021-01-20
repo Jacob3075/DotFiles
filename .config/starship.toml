@@ -39,7 +39,7 @@ behind = "[⇣${count}]{orange} "
 threshold = 0
 
 [memory_usage]
-disabled = false
+disabled = true
 format= " $symbol [${ram}( | ${swap})]($style) "
 threshold = 70
 symbol = ""
