@@ -56,7 +56,7 @@ myKeys =
     -- Xmonad
         [ ("M-C-r", spawn "xmonad --recompile")      -- Recompiles xmonad
         , ("M-S-r", spawn "xmonad --restart")        -- Restarts xmonad
-        , ("M-S-<Delete>", io exitSuccess)                  -- Quits xmonad
+        , ("M-C-q", io exitSuccess)                  -- Quits xmonad
 
     -- Open my preferred terminal
         , ("M-<Return>", spawn myTerminal)
@@ -64,6 +64,7 @@ myKeys =
     -- Run Prompt
         -- , ("M-S-<Return>", shellPrompt dtXPConfig)   -- Shell Prompt
         , ("M-S-<Return>", spawn "rofi -show drun -theme ~/.config/rofi/slate.rasi -lines 8")   -- Shell Prompt
+        , ("M-s", spawn "rofi -show window -theme ~/.config/rofi/slate.rasi -lines 8")   -- Shell Prompt
         
     -- Windows
         , ("M-q", kill1)                           -- Kill the currently focused client
@@ -119,6 +120,7 @@ myKeys =
         , ("M-<R>", nextWS)
         , ("M-<L>", prevWS)
         , ("M-M1-<R>", moveTo Next EmptyWS)
+        , ("M-d", moveTo Next EmptyWS)
         , ("M-M1-<L>", moveTo Prev EmptyWS)
         , ("M-S-<R>", shiftToNext >> nextWS)       -- Shifts focused window to next ws
         , ("M-S-<L>", shiftToPrev >> prevWS)  -- Shifts focused window to prev ws
@@ -128,20 +130,10 @@ myKeys =
         , ("M-C-c", namedScratchpadAction myScratchPads "mocp")
 
     --- My Applications (Super+Alt+Key)
-        , ("M-M1-a", spawn (myTerminal ++ " -e ncpamixer"))
-        , ("M-M1-b", spawn "surf www.youtube.com/c/DistroTube/")
-        , ("M-M1-e", spawn (myTerminal ++ " -e neomutt"))
-        , ("M-M1-f", spawn (myTerminal ++ " -e sh ./.config/vifm/scripts/vifmrun"))
-        , ("M-M1-i", spawn (myTerminal ++ " -e irssi"))
-        , ("M-M1-j", spawn (myTerminal ++ " -e joplin"))
-        , ("M-M1-l", spawn (myTerminal ++ " -e lynx -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss gopher://distro.tube"))
-        , ("M-M1-m", spawn (myTerminal ++ " -e mocp"))
-        , ("M-M1-n", spawn (myTerminal ++ " -e newsboat"))
-        , ("M-M1-p", spawn (myTerminal ++ " -e pianobar"))
-        , ("M-M1-r", spawn (myTerminal ++ " -e rtv"))
-        , ("M-M1-t", spawn (myTerminal ++ " -e toot curses"))
-        , ("M-M1-w", spawn (myTerminal ++ " -e wopr report.xml"))
-        , ("M-M1-y", spawn (myTerminal ++ " -e youtube-viewer"))
+        , ("M-p", spawn "arandr")
+        , ("M-e", spawn "thunar")
+        , ("M-w", spawn "vivaldi-stable")
+        , ("M-S-w",spawn "vivaldi-stable --incognito" )
 
     -- Multimedia Keys
         , ("<XF86AudioPlay>", spawn "cmus toggle")
@@ -157,14 +149,6 @@ myKeys =
         , ("<XF86Eject>", spawn "toggleeject")
         , ("<Print>", spawn "scrotd 0")
         ]
-        -- Appending search engine prompts to keybindings list.
-        -- Look at "search engines" section of this config for values for "k".
-        ++ [("M-s " ++ k, S.promptSearch dtXPConfig' f) | (k,f) <- searchList ]
-        ++ [("M-S-s " ++ k, S.selectSearch f) | (k,f) <- searchList ]
-        -- Appending some extra xprompts to keybindings list.
-        -- Look at "xprompt settings" section this of config for values for "k".
-        ++ [("M-p " ++ k, f dtXPConfig') | (k,f) <- promptList ]
-        ++ [("M-p " ++ k, f dtXPConfig' g) | (k,f,g) <- promptList' ]
         -- The following lines are needed for named scratchpads.
           where nonNSP          = WSIs (return (\ws -> W.tag ws /= "nsp"))
                 nonEmptyNonNSP  = WSIs (return (\ws -> isJust (W.stack ws) && W.tag ws /= "nsp"))

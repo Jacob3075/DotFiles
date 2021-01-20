@@ -54,14 +54,13 @@ import XMonad.Util.SpawnOnce
 ------------------------------------------------------------------------
 myStartupHook :: X ()
 myStartupHook = do
-          spawnOnce "nitrogen --restore &"
+          spawnOnce "variety"
           spawnOnce "picom --experimental-backends --config ~/.config/picom/picom1.conf &"
-          spawnOnce "nm-applet &"
-          spawnOnce "volumeicon &"
-          spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 --tint 0x292d3e --height 22 &"
-          spawnOnce "/usr/bin/emacs --daemon &"
-          -- spawnOnce "kak -d -s mysession &"
-          setWMName "LG3D"
+          spawnOnce "alacritty"
+          -- spawnOnce "nm-applet &"
+          -- spawnOnce "volumeicon &"
+          -- spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 --tint 0x292d3e --height 22 &"
+          -- setWMName "LG3D"
 
 ------------------------------------------------------------------------
 -- WORKSPACES
