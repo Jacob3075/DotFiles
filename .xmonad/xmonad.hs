@@ -1,19 +1,3 @@
--- Xmonad is a dynamically tiling X11 window manager that is written and
--- configured in Haskell. Official documentation: https://xmonad.org
-
--- This is the xmonad configuration of Derek Taylor (DistroTube)
--- My YouTube: http://www.youtube.com/c/DistroTube
--- My GitLab:  http://www.gitlab.com/dwt1/
-
--- This config was getting massively long, so I have made this a modular
--- config that sources multiple config files. Look under the imports for
--- "Custom" modules. Those are my config files and they can be found in:
--- ~/.xmonad/lib/Custom
-
--- Keep in mind, that my configs are purposely bloated with examples of
--- what you can do with xmonad. It is written more as a study guide rather
--- than a config that you should download and use.
-
 ------------------------------------------------------------------------
 -- IMPORTS
 ------------------------------------------------------------------------
@@ -57,9 +41,9 @@ myStartupHook = do
           spawnOnce "variety"
           spawnOnce "picom --experimental-backends --config ~/.config/picom/picom1.conf &"
           spawnOnce "alacritty"
-          -- spawnOnce "nm-applet &"
+          spawnOnce "nm-applet &"
           -- spawnOnce "volumeicon &"
-          -- spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 --tint 0x292d3e --height 22 &"
+          spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x292d3e --height 22 &"
           -- setWMName "LG3D"
 
 ------------------------------------------------------------------------
@@ -79,8 +63,8 @@ xmobarEscape = concatMap doubleLts
 
 myWorkspaces :: [String]
 myWorkspaces = clickable . (map xmobarEscape)
-               -- $ ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-               $ ["dev", "www", "sys", "doc", "vbox", "chat", "mus", "vid", "gfx"]
+               $ ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+               -- $ ["dev", "www", "sys", "doc", "vbox", "chat", "mus", "vid", "gfx"]
   where
         clickable l = [ "<action=xdotool key super+" ++ show (n) ++ "> " ++ ws ++ " </action>" |
                       (i,ws) <- zip [1..9] l,
@@ -127,8 +111,6 @@ main :: IO ()
 main = do
     -- Launching three instances of xmobar on their monitors.
     xmproc0 <- spawnPipe "xmobar -x 0 /home/jacob/.config/xmobar/xmobarrc0"
---    xmproc1 <- spawnPipe "xmobar -x 1 /home/jacob/.config/xmobar/xmobarrc2"
---    xmproc2 <- spawnPipe "xmobar -x 2 /home/jacob/.config/xmobar/xmobarrc1"
     -- the xmonad, ya know...what the WM is named after!
     xmonad $ ewmh def
         { manageHook = ( isFullscreen --> doFullFloat ) <+> myManageHook <+> manageDocks

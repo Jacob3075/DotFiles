@@ -1,0 +1,10 @@
+
+lib/Custom/MyKeys.hs:102:37: error:
+    • Data constructor not in scope: PrevLayout
+    • Perhaps you meant one of these:
+        variable ‘pureLayout’ (imported from XMonad),
+        variable ‘runLayout’ (imported from XMonad),
+        variable ‘setLayout’ (imported from XMonad)
+    |
+102 |         , ("M-S-<Tab>", sendMessage PrevLayout)                -- Switch to next layout
+    |                                     ^^^^^^^^^^
