@@ -42,7 +42,7 @@ myStartupHook = do
           spawnOnce "picom --experimental-backends --config ~/.config/picom/picom1.conf &"
           spawnOnce "alacritty"
           spawnOnce "nm-applet &"
-          -- spawnOnce "volumeicon &"
+          spawnOnce "volumeicon &"
           spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x292d3e --height 22 &"
           -- setWMName "LG3D"
 
