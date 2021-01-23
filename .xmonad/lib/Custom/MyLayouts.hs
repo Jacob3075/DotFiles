@@ -106,5 +106,4 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
                                  ||| noBorders tabs
                                  ||| threeCol
                                  ||| threeRow
-                                 ||| grid
                                  ||| spirals

@@ -14,7 +14,7 @@ import qualified XMonad.StackSet as W
 
     -- Actions
 import XMonad.Actions.CopyWindow (kill1, killAllOtherCopies)
-import XMonad.Actions.CycleWS (moveTo, shiftToNext, shiftToPrev, shiftTo, WSType(..), nextScreen, prevScreen, nextWS, prevWS)
+import XMonad.Actions.CycleWS (moveTo, shiftToNext, shiftToPrev, shiftTo, WSType(..), nextScreen, prevScreen, nextWS, prevWS, toggleWS)
 import XMonad.Actions.Promote
 import XMonad.Actions.GridSelect
 import XMonad.Actions.RotSlaves (rotSlavesDown, rotAllDown)
@@ -22,6 +22,7 @@ import qualified XMonad.Actions.TreeSelect as TS
 import XMonad.Actions.WindowGo (runOrRaise)
 import XMonad.Actions.WithAll (sinkAll, killAll)
 import qualified XMonad.Actions.Search as S
+import XMonad.Actions.WorkspaceNames
 
     -- Data
 import Data.Maybe (isJust)
@@ -78,11 +79,11 @@ myKeys =
     -- Grid Select (CTRL-g followed by a key)
         , ("C-g g", spawnSelected' myAppGrid)                 -- grid select favorite apps
         , ("C-M1-g", spawnSelected' myAppGrid)                -- grid select favorite apps
-        , ("C-g t", goToSelected $ mygridConfig myColorizer)  -- goto selected window
+        , ("M-g s", goToSelected $ mygridConfig myColorizer)  -- goto selected window
         , ("C-g b", bringSelected $ mygridConfig myColorizer) -- bring selected window
 
     -- Tree Select/
-        -- , ("C-t t", treeselectAction tsDefaultConfig)
+        , ("M-t t", treeselectAction tsDefaultConfig)
 
     -- Windows navigation
         , ("M-m", windows W.focusMaster)     -- Move focus to the master window
@@ -99,10 +100,10 @@ myKeys =
 
         -- Layouts
         , ("M-<Tab>", sendMessage NextLayout)                -- Switch to next layout
-        , ("M-S-<Tab>", sendMessage PrevLayout)                -- Switch to next layout
+        -- , ("M-S-<Tab>", sendMessage PrevLayout)                -- Switch to next layout
         , ("M-C-M1-<Up>", sendMessage Arrange)
         , ("M-C-M1-<Down>", sendMessage DeArrange)
-        , ("M-<Space>", sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts) -- Toggles noborder/full
+        , ("M-<U>", sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts) -- Toggles noborder/full
         , ("M-S-<Space>", sendMessage ToggleStruts)         -- Toggles struts
         , ("M-S-n", sendMessage $ MT.Toggle NOBORDERS)      -- Toggles noborder
         , ("M-<KP_Multiply>", sendMessage (IncMasterN 1))   -- Increase number of clients in master pane
@@ -120,6 +121,9 @@ myKeys =
         , ("M-,", prevScreen)  -- Switch focus to prev monitor
         , ("M-<R>", nextWS)
         , ("M-<L>", prevWS)
+        , ("M-S-<D>", toggleWS)
+        , ("M-C-<L>", swapTo Prev )
+        , ("M-C-<R>", swapTo Next )
         , ("M-M1-<R>", moveTo Next EmptyWS)
         , ("M-d", moveTo Next EmptyWS)
         , ("M-M1-<L>", moveTo Prev EmptyWS)
@@ -130,11 +134,12 @@ myKeys =
         , ("M-C-<Return>", namedScratchpadAction myScratchPads "terminal")
         , ("M-C-c", namedScratchpadAction myScratchPads "mocp")
 
-    --- My Applications (Super+Alt+Key)
+    --- My Applications 
         , ("M-p", spawn "arandr")
         , ("M-e", spawn "thunar")
         , ("M-w", spawn "vivaldi-stable")
         , ("M-S-w",spawn "vivaldi-stable --incognito" )
+        , ("M-n", spawn "notion-snap")
 
     -- Multimedia Keys
         , ("<XF86AudioMute>",   spawn "amixer set Master toggle")  -- Bug prevents it from toggling correctly in 12.04.
@@ -145,7 +150,10 @@ myKeys =
         , ("<XF86Mail>", runOrRaise "geary" (resource =? "thunderbird"))
         , ("<XF86Calculator>", runOrRaise "gcalctool" (resource =? "gcalctool"))
         , ("<XF86Eject>", spawn "toggleeject")
-        , ("<Print>", spawn "scrotd 0")
+        , ("<Print>", spawn "xfce4-screenshooter -fs ~/Pictures/ScreenShots/")
+        , ("<XF86AudioPlay>", spawn "playerctl play-pause")
+        , ("<XF86AudioNext>", spawn "playerctl next")
+        , ("<XF86AudioPrev>", spawn "playerctl previous")
         ]
         -- The following lines are needed for named scratchpads.
           where nonNSP          = WSIs (return (\ws -> W.tag ws /= "nsp"))
