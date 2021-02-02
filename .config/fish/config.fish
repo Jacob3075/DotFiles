@@ -29,14 +29,14 @@ set -g __fish_git_prompt_char_upstream_prefix ''''
 set TERM_EMULATOR (ps -aux | grep (ps -p $fish_pid -o ppid=) | awk 'NR==1{print $11}')
 
 # Neofetch
-# switch "$TERM_EMULATOR"
-# case '*kitty*'
-#         neofetch --backend 'kitty'
-# case '*tmux*' '*login*' '*sshd*' '*konsole*'
-#         neofetch --backend 'ascii' --ascii_distro 'arch_small'
-# case '*'
-#         neofetch --backend 'w3m' --xoffset 34 --yoffset 34 --gap 0
-# end
+ switch "$TERM_EMULATOR"
+ case '*kitty*'
+         neofetch --backend 'kitty'
+ case '*tmux*' '*login*' '*sshd*' '*konsole*'
+         neofetch --backend 'ascii' --ascii_distro 'arch_small'
+ case '*'
+         neofetch --backend 'w3m' --xoffset 34 --yoffset 34 --gap 0
+ end
 
 # Directory abbreviations
 abbr -a -g d 'dirs'
@@ -45,11 +45,6 @@ abbr -a -g h 'cd $HOME'
 # Locale
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
-
-# Exports
-export VISUAL="vim"
-export EDITOR="$VISUAL"
-# export PATH='$PATH:/home/jacob/bin'
 
 # Term
 switch "$TERM_EMULATOR"
@@ -80,8 +75,9 @@ if test -d "$HOME/.local/share/omf/pkg/colorman/"
         source ~/.local/share/omf/pkg/colorman/init.fish
 end
 
-# SOURCE ALIAS
+# SOURCE ALIAS AND EXPORTS
 source ~/.config/aliasrc
+source ~/.config/exports
 
 
 # Make su launch fish

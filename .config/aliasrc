@@ -61,7 +61,6 @@ alias firefox='firefox  < /dev/null &>/dev/null'
 # alias kitematic='please kitematic &>/dev/null &!'
 alias vim='gvim'
 
-alias dotbare="$HOME/Utils/dotbare/dotbare"
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 export DOTBARE_DIR="$HOME/dotfiles"
 export DOTBARE_TREE="$HOME"
@@ -69,4 +68,22 @@ export DOTBARE_TREE="$HOME"
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
+
+# Cleanup orphaned packages
+# alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
+
+# Aliases for software managment
+# pacman or pm
+alias pacman='sudo pacman --color auto'
+alias update='sudo pacman -Syu'
+
+# yay as aur helper - updates everything
+alias pksyua="yay -Syu --noconfirm"
+alias upall="yay -Syu --noconfirm"
+
+# add new fonts
+alias update-fc='sudo fc-cache -fv'
+
+# copy/paste all content of /etc/skel over to home folder - backup of config created - beware
+# alias skel='cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
 
