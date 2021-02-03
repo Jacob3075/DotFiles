@@ -1,3 +1,3 @@
 #!/bin/sh
-mono  /home/jacob/Utils/Mono/ARMSim-201/ARMSim.exe \
-    &> /home/jacob/Utils/Mono/ARMSim-201/ARMSimLogFile.log
+mono  /home/jacob/Utils/ArmSim/ARMSim.exe \
+    &> /home/jacob/Utils/ArmSim/ARMSimLogFile.log

@@ -28,16 +28,6 @@ set -g __fish_git_prompt_char_upstream_prefix ''''
 # Get terminal emulator
 set TERM_EMULATOR (ps -aux | grep (ps -p $fish_pid -o ppid=) | awk 'NR==1{print $11}')
 
-# Neofetch
- switch "$TERM_EMULATOR"
- case '*kitty*'
-         neofetch --backend 'kitty'
- case '*tmux*' '*login*' '*sshd*' '*konsole*'
-         neofetch --backend 'ascii' --ascii_distro 'arch_small'
- case '*'
-         neofetch --backend 'w3m' --xoffset 34 --yoffset 34 --gap 0
- end
-
 # Directory abbreviations
 abbr -a -g d 'dirs'
 abbr -a -g h 'cd $HOME'
