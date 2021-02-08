@@ -20,6 +20,7 @@ alias unexport='unset'
 alias cnc='cd && clear'
 alias please='sudo'
 alias free='free -h'
+alias du='du -h'
 alias ports='sudo lsof -i -P -n | grep LISTEN'
 
 alias ls='lsd --group-dirs first'
@@ -32,10 +33,6 @@ alias la='lsd -A'
 alias lla='lsd -Al'
 alias l='ls'
 
-alias zshrc='vim ~/.zshrc'
-alias zsha='vim ~/.aliasrc'
-alias source-z='source ~/.zshrc'
-
 alias disable-display='xrandr --output LVDS-1 --off'
 
 # alias update='aptf update && aptf upgrade'
@@ -47,13 +44,12 @@ alias c='clear'
 
 alias bat='bat --pager=never'
 alias pdf='evince'
-# alias ecode='io.elementary.code'
 
 alias protonvpn='please protonvpn'
 alias pvpnc='protonvpn c'
 alias pvpnd='protonvpn d'
 
-alias adb='/home/jacob/Tools/platform-tools/adb'
+# alias adb='/home/jacob/Tools/platform-tools/adb'
 
 # alias nautilus='nautilus . </dev/null &>/dev/null &'
 alias firefox='firefox  < /dev/null &>/dev/null'
@@ -62,8 +58,6 @@ alias firefox='firefox  < /dev/null &>/dev/null'
 # alias kitematic='please kitematic &>/dev/null &!'
 
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
-export DOTBARE_DIR="$HOME/dotfiles"
-export DOTBARE_TREE="$HOME"
 
 alias cp="cp -i"
 alias mv='mv -i'
