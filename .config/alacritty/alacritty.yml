@@ -1,9 +1,9 @@
 # Window Customization
 window:
   dimensions:
-    columns: 110
-    lines: 35
-background_opacity: 0.8
+    columns: 90
+    lines: 30
+background_opacity: 0.95
 window.dynamic_title: true
 
 # Font Customization

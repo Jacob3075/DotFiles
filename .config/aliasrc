@@ -30,6 +30,7 @@ alias llt='lsd -l --tree'
 alias lsdd='lsd -d1'
 alias la='lsd -A'
 alias lla='lsd -Al'
+alias l='ls'
 
 alias zshrc='vim ~/.zshrc'
 alias zsha='vim ~/.aliasrc'
@@ -59,7 +60,6 @@ alias firefox='firefox  < /dev/null &>/dev/null'
 # alias clion.='clion . < /dev/null &>/dev/null &'
 # alias idea.='idea . < /dev/null &>/dev/null &'
 # alias kitematic='please kitematic &>/dev/null &!'
-alias vim='gvim'
 
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 export DOTBARE_DIR="$HOME/dotfiles"
