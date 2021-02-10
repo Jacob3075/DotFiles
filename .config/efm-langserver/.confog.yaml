@@ -1,0 +1,13 @@
+root-markers:
+  - .git/
+languages:
+  vim:
+    lint-command: 'vint -'
+    lint-stdin: true
+
+  markdown:
+    lint-command: 'markdownlint -s'
+    lint-stdin: true
+    lint-formats:
+      - '%f: %l: %m'
+

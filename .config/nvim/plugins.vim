@@ -15,7 +15,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
 
-    Plug 'neovim/nvim-lsp' " nvim-lsp
+    Plug 'neovim/nvim-lspconfig' " nvim-lsp
 
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     
@@ -31,6 +31,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'sickill/vim-pasta'
 
     Plug 'ryanoasis/vim-devicons'
+    Plug 'kyazdani42/nvim-web-devicons'
     
     " FZF
     " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -58,14 +59,22 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'Xuyuanp/nerdtree-git-plugin'
 
     " Themes
-    Plug 'morhetz/gruvbox'
+    " Plug 'morhetz/gruvbplox'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    " Plug 'numtostr/gruvbox-material'
+    Plug 'ayu-theme/ayu-vim'
+    Plug 'christianchiarulli/nvcode-color-schemes.vim'
+    Plug 'numtostr/gruvbox-material'
+    Plug 'frazrepo/vim-rainbow'
+    Plug 'ghifarit53/tokyonight-vim'
 
+    "COC
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'Shougo/neco-vim'
 
-    " detect indent style (tabs vs. spaces)
-    "     Plug 'tpope/vim-sleuth'
+    " TreeSitter
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'romgrk/nvim-treesitter-context'
 
     " Startify: Fancy startup screen for vim {{{
     "     Plug 'mhinz/vim-startify'
@@ -73,6 +82,3 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 call plug#end()
 
-source $HOME/.config/nvim/settings/fzf.vim
-source $HOME/.config/nvim/settings/gitgutter.vim
-source $HOME/.config/nvim/settings/telescope.vim

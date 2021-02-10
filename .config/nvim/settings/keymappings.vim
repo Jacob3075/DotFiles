@@ -12,7 +12,7 @@ inoremap jk <Esc>
 inoremap kj <Esc>
 
 " clear highlighted search
-noremap <leader>cs noh<cr>
+noremap <leader>sc :noh<cr>
 
 " inner-line
 xnoremap <silent> il :<c-u>normal! g_v^<cr>
@@ -82,10 +82,6 @@ inoremap kj <Esc>
 " clear highlighted search
 noremap <leader>cs :set hlsearch! hlsearch?<cr>
 
-" inner-line
-xnoremap <silent> il :<c-u>normal! g_v^<cr>
-onoremap <silent> il :<c-u>normal! g_v^<cr>
-
 " toggle cursor line
 nnoremap <leader>l :set cursorline!<cr>
 
@@ -128,3 +124,4 @@ nnoremap <leader>/ :Commentary<CR>
 " Reference: https://vim.fandom.com/wiki/Moving_lines_up_or_down
 nnoremap <C-DOWN> :m .+1<CR>
 nnoremap <C-UP> :m .-2<CR>
+
