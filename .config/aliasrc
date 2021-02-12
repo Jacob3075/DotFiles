@@ -79,4 +79,4 @@ alias update-fc='sudo fc-cache -fv'
 # copy/paste all content of /etc/skel over to home folder - backup of config created - beware
 # alias skel='cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
 
-alis nvimd='GIT_DIR=$HOME/dotfiles/ GIT_WORK_TREE=$HOME nvim'
+alias nvimd='GIT_DIR=$HOME/dotfiles/ GIT_WORK_TREE=$HOME nvim'

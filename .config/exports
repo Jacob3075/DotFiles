@@ -1,4 +1,4 @@
-E/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export DOTBARE_TREE="$HOME"
 export DOTBARE_DIR="$HOME/dotfiles"
-export EDITOR=nvim
+export EDITOR="nvim"
