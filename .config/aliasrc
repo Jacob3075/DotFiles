@@ -1,7 +1,5 @@
-export EDITOR=nvim
-
 alias grep='grep --color'
-alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,node_modules,CVS,build,target} '
 
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
@@ -72,8 +70,8 @@ alias pacman='sudo pacman --color auto'
 alias update='sudo pacman -Syu'
 
 # yay as aur helper - updates everything
-alias pksyua="yay -Syu --noconfirm"
-alias upall="yay -Syu --noconfirm"
+alias pksyua="yay -Syu"
+alias upall="yay -Syu"
 
 # add new fonts
 alias update-fc='sudo fc-cache -fv'
@@ -81,3 +79,4 @@ alias update-fc='sudo fc-cache -fv'
 # copy/paste all content of /etc/skel over to home folder - backup of config created - beware
 # alias skel='cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
 
+alis nvimd='GIT_DIR=$HOME/dotfiles/ GIT_WORK_TREE=$HOME nvim'
