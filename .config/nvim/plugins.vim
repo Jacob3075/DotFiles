@@ -30,12 +30,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " context-aware pasting
     Plug 'sickill/vim-pasta'
 
-    Plug 'ryanoasis/vim-devicons'
     Plug 'kyazdani42/nvim-web-devicons'
-    
-    " FZF
-    " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    " Plug 'junegunn/fzf.vim'
     
     " Telescope
     Plug 'nvim-lua/popup.nvim'
@@ -44,18 +39,15 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Misc
     Plug 'tpope/vim-repeat'
-    Plug 'lambdalisue/fern.vim'
     Plug 'lambdalisue/nerdfont.vim'
-    Plug 'lambdalisue/fern-renderer-nerdfont.vim'
     Plug 'wellle/targets.vim'
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'kyazdani42/nvim-web-devicons'
-
+    Plug 'romgrk/barbar.nvim'
 
     " Git
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
-    Plug 'mhinz/vim-signify'
     Plug 'Xuyuanp/nerdtree-git-plugin'
 
     " Themes

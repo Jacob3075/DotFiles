@@ -6,15 +6,7 @@
     "efm": {
       "command": "efm-langserver",
       "args": [],
-      // custom config path
-      // "args": ["-c", "/path/to/your/config.yaml"],
       "filetypes": ["vim", "markdown"]
-    },
-    "bash": {
-      "command": "bash-language-server",
-      "args": ["start"],
-      "filetypes": ["sh"],
-      "ignoredRootPaths": ["~"]
     },
     "clangd": {
       "command": "clangd",
@@ -30,7 +22,7 @@
     "lua": {
       "command": "lua-lsp",
       "filetypes": ["lua"]
-    },
+    }
 
   }
 }

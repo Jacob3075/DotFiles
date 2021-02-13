@@ -7,4 +7,4 @@ source $HOME/.config/nvim/settings/gitgutter.vim
 source $HOME/.config/nvim/settings/telescope.vim
 source $HOME/.config/nvim/settings/coc-settings.vim
 source $HOME/.config/nvim/settings/NerdTree.vim
-luafile $HOME/.config/nvim/settings/tree-sitter.vim
+luafile $HOME/.config/nvim/settings/tree-sitter.lua
