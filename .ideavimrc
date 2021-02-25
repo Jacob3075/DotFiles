@@ -88,6 +88,8 @@ set idearefactormode=keep
 " Navigation
   nmap <leader>h :action Back<cr>
   nmap <leader>l :action Forward<cr>
+  nmap <Tab> :action NextTab<cr>
+  nmap <S-Tab> :action PreviousTab<cr>
   nmap <leader>L :action RecentLocations<cr>
   nmap <leader>d :action GotoDeclaration<cr>
   nmap <leader>u :action FindUsages<cr>
@@ -104,16 +106,14 @@ set idearefactormode=keep
   nmap <leader>p :action JumpToLastWindow<cr>
   nmap <leader>b :action ShowBookmarks<cr>
 
-
   nmap <leader>gi :action GotoImplementation<cr>
-  nmap <leader>gt : action GotoTest<cr>
-
+  nmap <leader>gt :action GotoTest<cr>
 
 " nmap <leader>a :action Switcher<cr>
   nmap <leader>a :action RecentChangedFiles<cr>
 
 " Refactorings
-  vmap <leader>R :action Refactorings.QuickListPopupAction<cr>
+  nmap <leader>R :action Refactorings.QuickListPopupAction<cr>
   nmap <leader>rr :action RenameElement<cr>
   nmap <leader>rg :action Generate<cr>
   nmap <leader>rI :action OptimizeImports<cr>
@@ -127,7 +127,7 @@ set idearefactormode=keep
   nmap <leader>va :action Annotate<cr>
   nmap <leader>vl :action Vcs.Show.Log<cr>
   nmap <leader>vd :action Compare.LastVersion<cr>
-  " nmap <leader>yr :action Git.ResolveConflicts<cr>                          
+  " nmap <leader>yr :action Git.ResolveConflicts<cr>
 
 " Terminal
   nmap <leader>T :action ActivateTerminalToolWindow<cr>                          
@@ -167,6 +167,8 @@ set idearefactormode=keep
 " Tabs
   nnoremap [b :action PreviousTab<cr>
   nnoremap ]b :action NextTab<cr>
+  nnoremap nb :action NextTab<cr>
+  nnoremap pb :action PreviousTab<cr>
 
 " Search
   nmap <leader>\ :action FindInPath<cr>

@@ -1,0 +1,6 @@
+
+lib/KeyMappings.hs:235:48: error:
+    Variable not in scope: conf :: XConfig l1
+    |
+235 |             | (i, k) <- zip (XMonad.workspaces conf) [xK_1,xK_2,xK_3,xK_4,xK_5,xK_6,xK_7,xK_8,xK_9,xK_0]
+    |                                                ^^^^
