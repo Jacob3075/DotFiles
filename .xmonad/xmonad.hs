@@ -148,9 +148,9 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_x), spawn $ "arcolinux-logout" )
   , ((modMask, xK_Escape), spawn $ "xkill" )
   , ((modMask, xK_Return), spawn $ "alacritty" )
-  , ((modMask, xK_w), spawn $ "vivaldi-stable" )
+  , ((modMask, xK_w), spawn $ "brave" )
   , ((modMask, xK_n), spawn $ "notion-app" )
-  , ((modMask .|. shiftMask, xK_w), spawn $ "vivaldi-stable --incognito" )
+  , ((modMask .|. shiftMask, xK_w), spawn $ "brave --incognito --tor" )
 
   -- SUPER KEYS
 
