@@ -1,43 +1,28 @@
-import System.IO
-import System.Exit
-
 import Variables
 import KeyMappings
 
 import XMonad
 import XMonad.Hooks.SetWMName
-import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.EwmhDesktops
-import XMonad.Hooks.ManageHelpers(doFullFloat, doCenterFloat, isFullscreen, isDialog)
+import XMonad.Hooks.ManageHelpers(doCenterFloat, isDialog)
 import XMonad.Config.Desktop
-import XMonad.Config.Azerty
-import XMonad.Util.Run(spawnPipe)
 import XMonad.Actions.SpawnOn
-import XMonad.Util.EZConfig (additionalKeys, additionalMouseBindings)
-import XMonad.Actions.CycleWS
-import XMonad.Hooks.UrgencyHook
-import qualified Codec.Binary.UTF8.String as UTF8
+import XMonad.Util.EZConfig (additionalKeysP)
 
 import XMonad.Layout.Spacing
 import XMonad.Layout.Gaps
 import XMonad.Layout.ResizableTile
----import XMonad.Layout.NoBorders
+--import XMonad.Layout.NoBorders
 import XMonad.Layout.Fullscreen (fullscreenFull)
 import XMonad.Layout.Cross(simpleCross)
 import XMonad.Layout.Spiral(spiral)
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
-import XMonad.Layout.IndependentScreens
 
-
-import XMonad.Layout.CenteredMaster(centerMaster)
-
-import Graphics.X11.ExtraTypes.XF86
 import qualified XMonad.StackSet as W
 import qualified Data.Map as M
-import Control.Monad (liftM2)
 import qualified DBus as D
 import qualified DBus.Client as D
 
@@ -108,50 +93,6 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     ]
 
-
--- keys config
-
-myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
-  ----------------------------------------------------------------------
-  -- SUPER + FUNCTION KEYS
-
-  [ ((modMask, xK_c), spawn $ "conky-toggle" )
-  , ((modMask, xK_f), sendMessage $ Toggle NBFULL)
-  , ((modMask, xK_q), kill )
-  , ((modMask, xK_r), spawn $ "rofi-theme-selector" )
-  , ((modMask, xK_Escape), spawn $ "xkill" )
-
-  -- CONTROL + ALT KEYS
-
-  -- , ((controlMask .|. mod1Mask , xK_e ), spawn $ "arcolinux-tweak-tool")
-  -- , ((controlMask .|. mod1Mask , xK_k ), spawn $ "arcolinux-logout")
-  -- , ((controlMask .|. mod1Mask , xK_o ), spawn $ "$HOME/.xmonad/scripts/picom-toggle.sh")
-  -- , ((controlMask .|. mod1Mask , xK_p ), spawn $ "pamac-manager")
-  -- , ((controlMask .|. mod1Mask , xK_s ), spawn $ "spotify")
-
-  -- ALT + ... KEYS
-
-  , ((mod1Mask, xK_f), spawn $ "variety -f" )
-  , ((mod1Mask, xK_n), spawn $ "variety -n" )
-  , ((mod1Mask, xK_p), spawn $ "variety -p" )
-  , ((mod1Mask, xK_r), spawn $ "xmonad --restart" )
-  , ((mod1Mask, xK_t), spawn $ "variety -t" )
-  , ((mod1Mask, xK_Up), spawn $ "variety --pause" )
-  , ((mod1Mask, xK_Down), spawn $ "variety --resume" )
-  , ((mod1Mask, xK_Left), spawn $ "variety -p" )
-  , ((mod1Mask, xK_Right), spawn $ "variety -n" )
-
-  --SCREENSHOTS
-
-  , ((0, xK_Print), spawn $ "xfce4-screenshooter --fullscreen")
-  , ((shiftMask, xK_Print), spawn $ "xfce4-screenshooter --window" )
-  , ((controlMask .|. shiftMask , xK_Print ), spawn $ "gnome-screenshot -i")
-
-  --------------------------------------------------------------------
-
-  ]
-
-
 main :: IO ()
 main = do
     dbus <- D.connectSession
@@ -161,16 +102,15 @@ main = do
 
     xmonad . ewmh $
             myBaseConfig {
-                startupHook = myStartupHook
-                , layoutHook = gaps [(U,35), (D,5), (R,5), (L,5)] $ myLayout ||| layoutHook myBaseConfig
-                , manageHook = manageSpawn <+> myManageHook <+> manageHook myBaseConfig
-                , modMask = myModMask
-                , borderWidth = myBorderWidth
-                , handleEventHook    = handleEventHook myBaseConfig <+> fullscreenEventHook
-                , focusFollowsMouse = myFocusFollowsMouse
-                , workspaces = myWorkspaces
-                , focusedBorderColor = focdBord
-                , normalBorderColor = normBord
-                , keys = myKeys
-                , mouseBindings = myMouseBindings
-            }
+                startupHook = myStartupHook,
+                layoutHook = gaps [(U,35), (D,5), (R,5), (L,5)] $ myLayout ||| layoutHook myBaseConfig,
+                manageHook = manageSpawn <+> myManageHook <+> manageHook myBaseConfig,
+                modMask = myModMask,
+                borderWidth = myBorderWidth,
+                handleEventHook = handleEventHook myBaseConfig <+> fullscreenEventHook,
+                focusFollowsMouse = myFocusFollowsMouse,
+                workspaces = myWorkspaces,
+                focusedBorderColor = focdBord,
+                normalBorderColor = normBord,
+                mouseBindings = myMouseBindings
+            } `additionalKeysP` myKeys
