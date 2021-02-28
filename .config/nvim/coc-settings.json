@@ -13,12 +13,12 @@
       "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
       "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
     },
-    "haskell": {
-      "command": "haskell-language-server-wrapper",
-      "args": ["--lsp"],
-      "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
-      "filetypes": ["haskell", "lhaskell"]
-    },
+    /* "haskell": { */
+    /*   "command": "haskell-language-server-wrapper", */
+    /*   "args": ["--lsp"], */
+    /*   "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"], */
+    /*   "filetypes": ["haskell", "lhaskell"] */
+    /* }, */
     "lua": {
       "command": "lua-lsp",
       "filetypes": ["lua"]
