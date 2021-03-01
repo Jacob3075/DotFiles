@@ -72,7 +72,8 @@ myKeys =
         , ("M-S-q", killAll)                         -- Kill all windows on current workspace
 
     -- Floating windows
-        , ("M-f", sendMessage (T.Toggle "floats"))       -- Toggles my 'floats' layout
+        -- , ("M-f", sendMessage (T.Toggle "floats"))       -- Toggles my 'floats' layout
+        , ("M-f", sendMessage $ MT.Toggle NBFULL)
         , ("M-<Delete>", withFocused $ windows . W.sink) -- Push floating window back to tile
         , ("M-S-<Delete>", sinkAll)                      -- Push ALL floating windows to tile
 
@@ -227,7 +228,7 @@ myKeys =
     {-
         -- Other Shortcuts
         --((modMask, xK_c), spawn $ "conky-toggle" )
-        --, ((modMask, xK_f), sendMessage $ Toggle NBFULL)
+        -- , ((modMask, xK_f), sendMessage $ Toggle NBFULL)
         --, ((modMask, xK_q), kill )
         --, ((modMask, xK_r), spawn $ "rofi-theme-selector" )
         --, ((modMask, xK_Escape), spawn $ "xkill" )
