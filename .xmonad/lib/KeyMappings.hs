@@ -64,8 +64,8 @@ myKeys =
     -- Run Prompt
         -- , ("M-S-<Return>", shellPrompt dtXPConfig)   -- Shell Prompt
         , ("M-C-<Return>", spawn $ "dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")
-        , ("M-S-<Return>", spawn "rofi -show drun -theme ~/.config/rofi/slate.rasi -lines 8")   -- Shell Prompt
-        , ("M-s", spawn "rofi -show window -theme ~/.config/rofi/slate.rasi -lines 8")   -- Shell Prompt
+        , ("M-S-<Return>", spawn $ "/home/jacob/.config/rofi/launchers/launcher.sh")   -- Shell Prompt
+        -- , ("M-s", spawn "rofi -show window -theme ~/.config/rofi/slate.rasi -lines 8")   -- Shell Prompt
         
     -- Windows
         , ("M-q", kill1)                           -- Kill the currently focused client
