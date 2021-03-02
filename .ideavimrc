@@ -183,6 +183,8 @@ set idearefactormode=keep
 
 " Building, Running and Debugging
   nmap ,c :action CompileDirty<cr>
+  nmap ,C :action Stop<cr>
+  nmap ,CP :action CloseProject<cr>
   nmap ,r :action Run<cr>
   nmap ,R :action RunAnything<cr>
   nmap ,d :action Debug<cr>
