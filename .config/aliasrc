@@ -3,7 +3,6 @@ alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,node_modules,CVS,build,targe
 
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
-alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
 alias h='history'
@@ -21,6 +20,10 @@ alias free='free -h'
 alias du='du -h'
 alias ports='sudo lsof -i -P -n | grep LISTEN'
 
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
 alias ls='lsd --group-dirs first'
 alias lr='lsd -R'
 alias ll='lsd -l'
@@ -29,31 +32,26 @@ alias llt='lsd -l --tree'
 alias lsdd='lsd -d1'
 alias la='lsd -A'
 alias lla='lsd -Al'
-alias l='ls'
-
-alias disable-display='xrandr --output LVDS-1 --off'
 
 # alias update='aptf update && aptf upgrade'
 # alias clean='please apt autoremove && please apt autoclean'
 # alias aptf='apt-fast'
 
-alias jmp='jump'
-alias c='clear'
-
-alias bat='bat --pager=never'
 alias pdf='evince'
+
+alias c='clear'
+alias l='ls'
+alias b='bat'
+alias j='jump'
+alias v='nvim'
+# alias gvd='GIT_DIR=$HOME/dotfiles/ GIT_WORK_TREE=$HOME gnvim'
+alias vd='GIT_DIR=$HOME/dotfiles/ GIT_WORK_TREE=$HOME nvim'
+
+alias nvimd='GIT_DIR=$HOME/dotfiles/ GIT_WORK_TREE=$HOME nvim'
 
 alias protonvpn='please protonvpn'
 alias pvpnc='protonvpn c'
 alias pvpnd='protonvpn d'
-
-# alias adb='/home/jacob/Tools/platform-tools/adb'
-
-# alias nautilus='nautilus . </dev/null &>/dev/null &'
-alias firefox='firefox  < /dev/null &>/dev/null'
-# alias clion.='clion . < /dev/null &>/dev/null &'
-# alias idea.='idea . < /dev/null &>/dev/null &'
-# alias kitematic='please kitematic &>/dev/null &!'
 
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 
@@ -64,13 +62,11 @@ alias rm='rm -i'
 # Cleanup orphaned packages
 # alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 
-# Aliases for software managment
-# pacman or pm
+# Aliases for software managment pacman or pm
 alias pacman='sudo pacman --color auto'
 alias update='sudo pacman -Syu'
 
 # yay as aur helper - updates everything
-alias pksyua="yay -Syu"
 alias upall="yay -Syu"
 
 # add new fonts
@@ -79,4 +75,3 @@ alias update-fc='sudo fc-cache -fv'
 # copy/paste all content of /etc/skel over to home folder - backup of config created - beware
 # alias skel='cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
 
-alias nvimd='GIT_DIR=$HOME/dotfiles/ GIT_WORK_TREE=$HOME nvim'

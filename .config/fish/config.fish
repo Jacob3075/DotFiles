@@ -45,19 +45,11 @@ case '*'
 end
 
 # User abbreviations
-abbr -a -g h 'history'                                                                                                                                                                                          # Show history
-abbr -a -g upd 'yay -Syu'                                                                                                                                                                                           # Update everything
-abbr -a -g sayonara 'shutdown now'                                                                                                                                      # Epic way to shutdown
-abbr -a -g ar 'echo "awesome.restart()" | awesome-client'                                                       # Reload AwesomeWM
-abbr -a -g shinei 'kill -9'                                                                                                                                                                             # Kill ala DIO
-abbr -a -g kv 'kill -9 (pgrep vlc)'                                                                                                                                                     # Kill zombie vlc
-abbr -a -g priv 'fish --private'                                                                                                                                                                # Fish incognito mode
-abbr -a -g sshon 'sudo systemctl start sshd.service'                                                                            # Start ssh service
-abbr -a -g sshoff 'sudo systemctl stop sshd.service'                                                                            # Stop ssh service
-abbr -a -g untar 'tar -zxvf'                                                                                                                                                                    # Untar
-abbr -a -g ips 'ip link show'                                                                                                                                                                   # Get network interfaces information
-abbr -a -g wloff 'rfkill block wlan'                                                                                                                                                    # Block wlan, killing wifi connection
-abbr -a -g wlon 'rfkill unblock wlan'                                                                                                                                           # Unblock wlan, start wifi connection
+abbr -a -g sayonara 'shutdown now'# Epic way to shutdown
+abbr -a -g shinei 'kill -9'# Kill ala DIO
+abbr -a -g priv 'fish --private'# Fish incognito mode
+abbr -a -g untar 'tar -zxvf'# Untar
+abbr -a -g ips 'ip link show'# Get network interfaces information
 
 # Source plugins
 # Useful plugins: archlinux bang-bang cd colorman sudope vcs
@@ -68,6 +60,7 @@ end
 # SOURCE ALIAS AND EXPORTS
 source ~/.config/aliasrc
 source ~/.config/exports
+source ~/.config/fish/functions.fish
 
 
 # Make su launch fish

@@ -1,4 +1,7 @@
 export PATH="$HOME/.local/bin:$PATH"
 export DOTBARE_TREE="$HOME"
 export DOTBARE_DIR="$HOME/dotfiles"
+
 export EDITOR="nvim"
+export VEDITOR="gnvim"
+export BROWSER="brave"
