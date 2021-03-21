@@ -8,3 +8,4 @@ source $HOME/.config/nvim/settings/telescope.vim
 source $HOME/.config/nvim/settings/coc-settings.vim
 source $HOME/.config/nvim/settings/NerdTree.vim
 luafile $HOME/.config/nvim/settings/tree-sitter.lua
+luafile $HOME/.config/nvim/settings/nvim-colorizer.lua

@@ -105,7 +105,7 @@ set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
   let g:tokyonight_style = "night" " available: night, storm
   let g:tokyonight_enable_italic = 1
   let g:airline_theme = "tokyonight"
-  colorscheme tokyonight
+  colorscheme gruvbox-material
   " hi Normal guibg=NONE ctermbg=NONE " Theme Transparency
 
   let g:rainbow_active = 1

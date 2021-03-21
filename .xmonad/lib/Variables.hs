@@ -70,10 +70,10 @@ fore :: String
 back :: String
 winType :: String
 
-normBord = "#4c566a"
-focdBord = "#5e81ac"
-fore     = "#DEE3E0"
-back     = "#282c34"
+normBord = "#665c54"
+focdBord = "#d5c4a1"
+fore     = "#d5c4a1"
+back     = "#282828"
 winType  = "#c678dd"
 
 -- myNormColor :: String
@@ -94,6 +94,6 @@ myFocusFollowsMouse = False
 
 myBorderWidth = 2
 
-myWorkspaces    = ["\61612","\61899","\61947","\61635","\61502","\61501","\61705","\61564","\62150","\61872"]
+myWorkspaces    = ["\61612","\61899","\61947","\61635","\61502","\61501","\61705","\61564","\62150"]
 --myWorkspaces    = ["1","2","3","4","5","6","7","8","9","10"]
 --myWorkspaces    = ["I","II","III","IV","V","VI","VII","VIII","IX","X"]

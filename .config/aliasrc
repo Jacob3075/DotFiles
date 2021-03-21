@@ -44,7 +44,6 @@ alias l='ls'
 alias b='bat'
 alias j='jump'
 alias v='nvim'
-# alias gvd='GIT_DIR=$HOME/dotfiles/ GIT_WORK_TREE=$HOME gnvim'
 alias vd='GIT_DIR=$HOME/dotfiles/ GIT_WORK_TREE=$HOME nvim'
 
 alias nvimd='GIT_DIR=$HOME/dotfiles/ GIT_WORK_TREE=$HOME nvim'

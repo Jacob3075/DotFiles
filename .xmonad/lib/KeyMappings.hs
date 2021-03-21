@@ -55,7 +55,7 @@ myKeys :: [(String, X ())]
 myKeys =
     -- Xmonad
         [ ("M-S-r", spawn "xmonad --recompile && xmonad --restart")        -- Recompiles and Restarts xmonad
-        , ("M-C-r", spawn "xmonad --recompile")        -- Recompiles and Restarts xmonad
+        , ("M-C-r", spawn "xmonad --restart")        -- Recompiles and Restarts xmonad
         , ("M-C-q", io (exitWith ExitSuccess))                  -- Quits xmonad
 
     -- Open my preferred terminal
@@ -155,7 +155,9 @@ myKeys =
         , ("<XF86Mail>", runOrRaise "geary" (resource =? "thunderbird"))
         , ("<XF86Calculator>", runOrRaise "gcalctool" (resource =? "gcalctool"))
         , ("<XF86Eject>", spawn "toggleeject")
-        , ("<Print>", spawn "xfce4-screenshooter -fs ~/Pictures/ScreenShots/")
+        , ("<Print>", spawn "scrot ~/Pictures/ScreenShots/%m-%d-%T-screenshot.png")
+        , ("S-<Print>", spawn $ "scrot -u ~/Pictures/ScreenShots/%m-%d-%T-screenshot.png")
+        , ("C-<Print>", spawn $ "scrot -s ~/Pictures/ScreenShots/%m-%d-%T-screenshot.png")
         , ("<XF86AudioPlay>", spawn "playerctl play-pause")
         , ("<XF86AudioNext>", spawn "playerctl next")
         , ("<XF86AudioPrev>", spawn "playerctl previous")

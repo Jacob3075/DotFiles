@@ -5,9 +5,12 @@ set number relativenumber
 set hlsearch
 set incsearch
 set showmode
+set showcmd
 set history=100000
 set nu
 set clipboard+=unnamedplus, ideaput, autoselect
+set matchpairs
+set startofline
 
 let mapleader = " "
 
@@ -17,8 +20,11 @@ set multiple-cursors
 set commentary
 set argtextobj
 set easymotion
+set exchange
 set textobj-entire
 set ReplaceWithRegister
+set NERDTree
+set highlightedyank
 
 " Plugin Settings
 let g:argtextobj_pairs="[:],(:),<:>"
@@ -92,10 +98,12 @@ set idearefactormode=keep
   nmap <S-Tab> :action PreviousTab<cr>
   nmap <leader>L :action RecentLocations<cr>
   nmap <leader>d :action GotoDeclaration<cr>
+  nmap <leader>r :action GotoRelated<cr>
   nmap <leader>u :action FindUsages<cr>
   nmap <leader>f :action GotoFile<cr>
   nmap <leader>c :action GotoClass<cr>
   nmap <leader>s :action GotoSymbol<cr>
+  nmap <leader>. <C-^> <cr>
   
   nmap <leader>; :action FileStructurePopup<cr>
   nmap <leader>M :action ActivateStructureToolWindow<cr>
@@ -183,7 +191,7 @@ set idearefactormode=keep
 
 " Building, Running and Debugging
   nmap ,c :action CompileDirty<cr>
-  nmap ,C :action Stop<cr>
+  nmap ,s :action Stop<cr>
   nmap ,CP :action CloseProject<cr>
   nmap ,r :action Run<cr>
   nmap ,R :action RunAnything<cr>
