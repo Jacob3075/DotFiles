@@ -10,3 +10,6 @@ function nd
     end
 end
 
+function open 
+    command xdg-open $argv & disown
+end

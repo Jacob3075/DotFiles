@@ -60,7 +60,7 @@ end
 # SOURCE ALIAS AND EXPORTS
 source ~/.config/aliasrc
 source ~/.config/exports
-source ~/.config/fish/functions.fish
+source ~/.config/fish/functions/functions.fish
 
 
 # Make su launch fish
