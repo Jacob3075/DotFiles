@@ -3,7 +3,7 @@
 dir="/home/jacob/.config/rofi/launchers/"
 # directories=($(ls -d $dir/* ))
 
-directories=(text misc colorful ribbon)
+directories=(misc colorful ribbon)
 
 # echo $directories
 

@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
     use 'onsails/lspkind-nvim'
     use 'kosayoda/nvim-lightbulb'
     use 'mfussenegger/nvim-jdtls'
+    use 'kabouzeid/nvim-lspinstall'
 
     -- Debugging
     use 'mfussenegger/nvim-dap'
@@ -104,7 +105,7 @@ return require('packer').startup(function(use)
     use 'liuchengxu/vim-which-key'
     use 'kevinhwang91/nvim-bqf'
     use 'airblade/vim-rooter'
-    use 'glepnir/dashboard-nvim'
+    -- use 'glepnir/dashboard-nvim'
     use 'metakirby5/codi.vim'
     use 'psliwka/vim-smoothie'
     use 'moll/vim-bbye'
@@ -137,5 +138,5 @@ return require('packer').startup(function(use)
     --     end
     -- }
     -- use 'tpope/vim-sleuth'
-    -- use 'mhinz/vim-startify'
+    use 'mhinz/vim-startify'
 end)
