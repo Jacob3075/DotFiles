@@ -62,6 +62,8 @@ source ~/.config/aliasrc
 source ~/.config/exports
 source ~/.config/fish/functions/functions.fish
 
+# SDKMAN
+set PATH $PATH (find ~/.sdkman/candidates/*/current/bin -maxdepth 0)
 
 # Make su launch fish
 function su
