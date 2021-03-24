@@ -13,3 +13,9 @@ end
 function open 
     command xdg-open $argv & disown
 end
+
+# Make su launch fish
+function su
+   command su --shell=/usr/bin/fish $argv
+end
+
