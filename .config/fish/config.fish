@@ -17,6 +17,7 @@ set PATH $PATH (find ~/.local/share/sdkman/candidates/*/current/bin -maxdepth 0)
 source ~/.config/aliasrc
 source ~/.config/exports
 source ~/.config/fish/functions/functions.fish
+source ~/.config/fish/completions/completions.fish
 
 starship init fish | source
 
