@@ -140,7 +140,7 @@ myKeys =
         , ("M-e", spawn "thunar")
         , ("M-w", spawn myBrowser)
         , ("M-S-w", spawn $ "brave --incognito --tor" )
-        , ("M-n", spawn "notion-app")
+        , ("M-n", spawn "notion-snap")
         , ("M-v", spawn $ "pavucontrol" )
         , ("M-y", spawn $ "polybar-msg cmd toggle" )
         , ("M-x", spawn $ "arcolinux-logout" )

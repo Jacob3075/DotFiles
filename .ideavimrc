@@ -29,8 +29,8 @@ set which-key
 
 " Plugin Settings
 let g:argtextobj_pairs="[:],(:),<:>"
-set notimeout
-let g:WhichKeyDesc_windows_maximize = "<leader>wm maximize"
+" set notimeout
+" let g:WhichKeyDesc_windows_maximize = "<leader>wm maximize"
 
 " Idea Settings
 set ideajoin
@@ -68,13 +68,14 @@ set idearefactormode=keep
 
 " Key bindings for quickly moving between windows
   " h left, l right, k up, j down
-    nmap <leader>h <c-w>h
-    nmap <leader>l <c-w>l
-    nmap <leader>k <c-w>k
-    nmap <leader>j <c-w>j
+  nmap <leader>h <c-w>h
+  nmap <leader>l <c-w>l
+  nmap <leader>k <c-w>k
+  nmap <leader>j <c-w>j
 
 " Closing tabs
-  nmap <leader>q :action CloseContent<cr>
+  nmap <leader>qb :action CloseContent<cr>
+  nmap <leader>qa :action CloseAllEditors<cr>
   nmap <leader>Q :action ReopenClosedTab<cr>
 
 " To navigate between split panes
@@ -117,6 +118,7 @@ set idearefactormode=keep
   nmap <leader>b :action ShowBookmarks<cr>
 
   nmap <leader>gi :action GotoImplementation<cr>
+  nmap <leader>gr :action ShowUsages<cr>
   nmap <leader>gt :action GotoTest<cr>
   nmap <leader>gc :action GotoClass<cr>
 
@@ -138,6 +140,7 @@ set idearefactormode=keep
   nmap <leader>va :action Annotate<cr>
   nmap <leader>vl :action Vcs.Show.Log<cr>
   nmap <leader>vd :action Compare.LastVersion<cr>
+  nmap <leader>vr :action ChangesView.Revert<cr>
   " nmap <leader>yr :action Git.ResolveConflicts<cr>
 
 " Terminal
@@ -161,25 +164,25 @@ set idearefactormode=keep
 
   nnoremap [q :action PreviousOccurence<cr>
   nnoremap ]q :action NextOccurence<cr>
-  nnoremap no :action NextOccurence<cr>
-  nnoremap po :action PreviousOccurence<cr>
+  nnoremap <leader>no :action NextOccurence<cr>
+  nnoremap <leader>po :action PreviousOccurence<cr>
 
   nnoremap [m :action MethodUp<cr>
   nnoremap ]m :action MethodDown<cr>
-  nnoremap nm :action MethodDown<cr>
-  nnoremap pm :action MethodUp<cr>
+  nnoremap <leader>nm :action MethodDown<cr>
+  nnoremap <leader>pm :action MethodUp<cr>
 
   nnoremap [c :action VcsShowPrevChangeMarker<cr>
   nnoremap ]c :action VcsShowNextChangeMarker<cr>
-  nnoremap nc :action VcsShowNextChangeMarker<cr>
-  nnoremap pc :action VcsShowPrevChangeMarker<cr>
+  nnoremap <leader>nc :action VcsShowNextChangeMarker<cr>
+  nnoremap <leader>pc :action VcsShowPrevChangeMarker<cr>
 
 
 " Tabs
   nnoremap [b :action PreviousTab<cr>
   nnoremap ]b :action NextTab<cr>
-  nnoremap nb :action NextTab<cr>
-  nnoremap pb :action PreviousTab<cr>
+  nnoremap <leader>nb :action NextTab<cr>
+  nnoremap <leader>pb :action PreviousTab<cr>
 
 " Search
   nmap <leader>\ :action FindInPath<cr>
