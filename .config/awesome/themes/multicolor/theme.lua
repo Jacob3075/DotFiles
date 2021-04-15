@@ -29,7 +29,7 @@ theme.fg_normal                                 = "#aaaaaa"
 theme.fg_focus                                  = "#ff8c00"
 theme.fg_urgent                                 = "#af1d18"
 theme.fg_minimize                               = "#ffffff"
-theme.border_width                              = dpi(2)
+theme.border_width                              = dpi(1)
 theme.border_normal                             = "#1c2022"
 theme.border_focus                              = "#5e81ac"
 theme.border_marked                             = "#3ca4d8"
@@ -325,10 +325,6 @@ function theme.at_screen_connect(s)
             memory.widget,
             cpuicon,
             cpu.widget,
-            weathericon,
-            theme.weather.widget,
-            tempicon,
-            temp.widget,
             baticon,
             bat.widget,
             clockicon,
@@ -339,7 +335,7 @@ function theme.at_screen_connect(s)
     }
 
     -- Create the bottom wibox
-    s.mybottomwibox = awful.wibar({ position = "bottom", screen = s, border_width = 0, height = dpi(20), bg = theme.bg_normal, fg = theme.fg_normal })
+    s.mybottomwibox = awful.wibar({ position = "bottom", screen = s, border_width = 0, height = dpi(25), bg = theme.bg_normal, fg = theme.fg_normal })
 
     -- Add widgets to the bottom wibox
     s.mybottomwibox:setup {
