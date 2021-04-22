@@ -106,7 +106,7 @@ local separators = lain.util.separators
 -- Textclock
 local clockicon = wibox.widget.imagebox(theme.widget_clock)
 local clock = awful.widget.watch(
-    "date +'%a %d %b %R'", 60,
+    "date +'%a %d %b, %I:%M %p'", 30,
     function(widget, stdout)
         widget:set_markup(" " .. markup.font(theme.font, stdout))
     end
@@ -170,7 +170,7 @@ mpdicon:buttons(my_table.join(
     --[[awful.button({ }, 1, function ()
         awful.spawn.with_shell("mpc prev")
         theme.mpd.update()
-    end),   
+    end),
     awful.button({ }, 2, function ()
         awful.spawn.with_shell("mpc toggle")
         theme.mpd.update()
@@ -387,7 +387,6 @@ function theme.at_screen_connect(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wibox.widget.systray(),
             --[[ using shapes
             pl(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, "#343434"),
             pl(task, "#343434"),
@@ -403,26 +402,27 @@ function theme.at_screen_connect(s)
             -- using separators
             --arrow(theme.bg_normal, "#343434"),
            -- wibox.container.background(wibox.container.margin(wibox.widget { mailicon, mail and mail.widget, layout = wibox.layout.align.horizontal }, dpi(4), dpi(7)), "#343434"),
-            arrow("alpha", "#889FA7"),
+            -- arrow("alpha", "#889FA7"),
             --wibox.container.background(wibox.container.margin(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(6)), "#889FA7"),
-            arrow("#889FA7", "#497B96"),
+            arrow("alpha", "#497B96"),
             wibox.container.background(wibox.container.margin(wibox.widget { volicon, theme.volume.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), "#497B96"),
             arrow("#497B96", "#777E76"),
             wibox.container.background(wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), "#777E76"),
             arrow("#777E76", "#4B696D"),
             wibox.container.background(wibox.container.margin(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(4)), "#4B696D"),
-            arrow("#4B696D", "#4B3B51"),
-            wibox.container.background(wibox.container.margin(wibox.widget { tempicon, temp.widget, layout = wibox.layout.align.horizontal }, dpi(4), dpi(4)), "#4B3B51"),
-            arrow("#4B3B51", "#CB755B"),
-            wibox.container.background(wibox.container.margin(wibox.widget { weathericon, theme.weather.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#CB755B"),
-            arrow("#CB755B", "#8DAA9A"),
+            -- arrow("#4B3B51", "#8DAA9A"),
+            -- wibox.container.background(wibox.container.margin(wibox.widget { tempicon, temp.widget, layout = wibox.layout.align.horizontal }, dpi(4), dpi(4)), "#4B3B51"),
+            -- arrow("#4B3B51", "#CB755B"),
+            -- wibox.container.background(wibox.container.margin(wibox.widget { weathericon, theme.weather.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#CB755B"),
+            arrow("#4B696D", "#8DAA9A"),
             wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#8DAA9A"),
-            arrow("#8DAA9A", "#C0C0A2"),
-            wibox.container.background(wibox.container.margin(wibox.widget { nil, neticon, net.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#C0C0A2"),
-            arrow("#C0C0A2", "#777E76"),
+            arrow("#8DAA9A", "#4B3B51"),
+            wibox.container.background(wibox.container.margin(wibox.widget { nil, neticon, net.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#4B3B51"),
+            arrow("#4B3B51", "#777E76"),
             wibox.container.background(wibox.container.margin(clock, dpi(4), dpi(8)), "#777E76"),
             arrow("#777E76", "alpha"),
             --]]
+            wibox.widget.systray(),
             s.mylayoutbox,
         },
     }
