@@ -15,20 +15,23 @@ set startofline
 let mapleader = " "
 
 " Enable Plugins
-set surround
+set surrond
 set multiple-cursors
 set commentary
 set argtextobj
 set easymotion
+set sneak
 set exchange
-set textobj-entire
+" set textobj-entire
 set ReplaceWithRegister
 set NERDTree
 set highlightedyank
 set which-key
 
 " Plugin Settings
-let g:argtextobj_pairs="[:],(:),<:>"
+let g:EasyMotion_do_mapping=0
+let g:argtextobj_pairs="[:],(:),<:>,{:}"
+set timeout 2000
 " set notimeout
 " let g:WhichKeyDesc_windows_maximize = "<leader>wm maximize"
 
@@ -37,180 +40,162 @@ set ideajoin
 set idearefactormode=keep
 
 " Insert mode shortcut
-  inoremap <C-h> <Left>
-  inoremap <C-j> <Down>
-  inoremap <C-k> <Up>
-  inoremap <C-l> <Right>
-  inoremap <C-a> <Home>
-  inoremap <C-e> <End>
-  inoremap <C-d> <Delete>
+	inoremap <C-h> <Left>
+	inoremap <C-j> <Down>
+	inoremap <C-k> <Up>
+	inoremap <C-l> <Right>
+	inoremap <C-a> <Home>
+	inoremap <C-e> <End>
+	inoremap <C-d> <Delete>
 
 " Quit insert mode
-  inoremap jj <Esc>
-  inoremap jk <Esc>
-  inoremap kk <Esc>
+	inoremap jk <Esc>
 
 " Quit visual mode
-  vnoremap v <Esc>
-  nnoremap <Leader>sc :nohlsearch<CR>
+	vnoremap v <Esc>
+	nnoremap <Leader>sc :nohlsearch<CR>
 
-  " Move to the start and end of the line
-  nnoremap H ^
-  nnoremap L $
+" Move to the start and end of the line
+	nnoremap H ^
+	nnoremap L $
 
 " Use Q for formatting the current paragraph (or visual selection)
-  vmap Q gq
-  nmap Q gqap
+	vmap Q gq
+	nmap Q gqap
 
 " These create newlines like o and O but stay in normal mode
-  nmap zj o<Esc>k
-  nmap zk O<Esc>j
+	nmap zj o<Esc>k
+	nmap zk O<Esc>j
 
 " Key bindings for quickly moving between windows
-  " h left, l right, k up, j down
-  nmap <leader>h <c-w>h
-  nmap <leader>l <c-w>l
-  nmap <leader>k <c-w>k
-  nmap <leader>j <c-w>j
+	" h left, l right, k up, j down
+	nmap <leader>h <c-w>h
+	nmap <leader>l <c-w>l
+	nmap <leader>k <c-w>k
+	nmap <leader>j <c-w>j
 
 " Closing tabs
-  nmap <leader>qb :action CloseContent<cr>
-  nmap <leader>qa :action CloseAllEditors<cr>
-  nmap <leader>Q :action ReopenClosedTab<cr>
+	nmap <leader>qb :action CloseContent<cr>
+	nmap <leader>qa :action CloseAllEditors<cr>
+	nmap <leader>Q :action ReopenClosedTab<cr>
 
 " To navigate between split panes
-  nmap <leader>wn :action NextSplitter<cr>
-  nmap <leader>wp :action PrevSplitter<cr>
+	nmap <leader>wn :action NextSplitter<cr>
+	nmap <leader>wp :action PrevSplitter<cr>
 
 " Splits manipulation
-  nmap <leader>wh :action SplitHorizontally<cr>
-  nmap <leader>wv :action SplitVertically<cr>
-  nmap <leader>wc :action Unsplit<cr>
-  nmap <leader>wC :action UnsplitAll<cr>
-  nmap <leader>wd :action OpenEditorInOppositeTabGroup<cr>
-  " nmap <leader><leader> :action VimFilePrevious<cr>
-  nmap <leader>ww :action JumpToLastWindow<cr>
+	nmap <leader>wh :action SplitHorizontally<cr>
+	nmap <leader>wv :action SplitVertically<cr>
+	nmap <leader>wc :action Unsplit<cr>
+	nmap <leader>wC :action UnsplitAll<cr>
+	nmap <leader>wd :action OpenEditorInOppositeTabGroup<cr>
+	nmap <leader>ww :action JumpToLastWindow<cr>
 
 " Remmaped Search
-  nnoremap / :action Find<CR>
-  nnoremap <Leader>/ /
+	nnoremap / :action Find<CR>
+	nnoremap <Leader>/ /
+
+	nmap <leader><leader> :action RecentFiles<cr>
+	nmap <leader>I :action SelectIn<cr>
+	nmap ,,  :action RecentLocations<cr>
+	" nmap ,,  :action HideAllWindows<cr>
+	nmap ;; :action FileStructurePopup<cr>
 
 " Navigation
-  nmap <leader>h :action Back<cr>
-  nmap <leader>l :action Forward<cr>
-  nmap <Tab> :action NextTab<cr>
-  nmap <S-Tab> :action PreviousTab<cr>
-  nmap <leader>L :action RecentLocations<cr>
-  nmap <leader>d :action GotoDeclaration<cr>
-  nmap <leader>r :action GotoRelated<cr>
-  nmap <leader>u :action FindUsages<cr>
-  nmap <leader>f :action GotoFile<cr>
-  nmap <leader>s :action GotoSymbol<cr>
-  nmap <leader>. <C-^> <cr>
-  
-  nmap <leader>; :action FileStructurePopup<cr>
-  nmap <leader>M :action ActivateStructureToolWindow<cr>
-  nmap <leader>i :action GotoImplementation<cr>
-  nmap <leader>I :action SelectIn<cr>
-  nmap <leader>e :action RecentFiles<cr>
-  nmap <leader>t :action GotoTest<cr>
-  nmap <leader>p :action JumpToLastWindow<cr>
-  nmap <leader>b :action ShowBookmarks<cr>
+	nmap <Tab> :action NextTab<cr>
+	nmap <S-Tab> :action PreviousTab<cr>
+	nmap <leader>. <C-^> <cr>
 
-  nmap <leader>gi :action GotoImplementation<cr>
-  nmap <leader>gr :action ShowUsages<cr>
-  nmap <leader>gt :action GotoTest<cr>
-  nmap <leader>gc :action GotoClass<cr>
+" GoTo
+	nmap <leader>gi :action GotoImplementation<cr>
+	nmap <leader>gd :action GotoDeclaration<cr>
+	nmap <leader>gR :action GotoRelated<cr>
+	nmap <leader>gt :action GotoTest<cr>
 
-" nmap <leader>a :action Switcher<cr>
-  nmap <leader>a :action RecentChangedFiles<cr>
+" Find
+	nmap <leader>ff :action GotoFile<cr>
+	nmap <leader>fs :action GotoSymbol<cr>
+	nmap <leader>fa :action GotoAction<cr>
+	nmap <leader>fc :action GotoClass<cr>
+	nmap <leader>fu :action FindUsages<cr>
+	nmap <leader>fU :action FindUsagesInFile<cr>
+
+" Show
+	nmap <leader>su :action ShowUsages<cr>
+	nmap <leader>sU :action FindUsagesInFile<cr>
+	nmap <leader>sb :action ShowBookmarks<cr>
+	nmap <leader>si :action QuickImplementations<cr>
 
 " Refactorings
-  nmap <leader>R :action Refactorings.QuickListPopupAction<cr>
-  nmap <leader>rr :action RenameElement<cr>
-  nmap <leader>rg :action Generate<cr>
-  nmap <leader>rI :action OptimizeImports<cr>
+	nmap <leader>R :action Refactorings.QuickListPopupAction<cr>
+	nmap <leader>rr :action RenameElement<cr>
+	nmap <leader>rI :action OptimizeImports<cr>
+	nmap <leader>rc :action IntroduceConstant<cr>
+	nmap <leader>rv :action IntroduceVariable<cr>
+	nmap <leader>rf :action IntroduceProperty<cr>
+	nmap <leader>rp :action IntroduceParameter<cr>
+	nmap <leader>rm :action ExtractMethod<cr>
+	nmap <leader>rs :action ChangeSignature<cr>
+
+" Generate
+	nmap <leader>rgg :action Generate<cr>
+	nmap <leader>rgo :action OverrideMethods<cr>
+	nmap <leader>rgi :action ImplementMethods<cr>
 
 " Inspection
-  nmap <leader>ic :action InspectCode<cr>
+	nmap <leader>ic :action InspectCode<cr>
 
 " VCS operations
-  nmap <leader>vc :action Vcs.Show.Local.Changes<cr>                          
-  nmap <leader>vp :action Vcs.QuickListPopupAction<cr>
-  nmap <leader>va :action Annotate<cr>
-  nmap <leader>vl :action Vcs.Show.Log<cr>
-  nmap <leader>vd :action Compare.LastVersion<cr>
-  nmap <leader>vr :action ChangesView.Revert<cr>
-  " nmap <leader>yr :action Git.ResolveConflicts<cr>
-
-" Terminal
-  nmap <leader>T :action ActivateTerminalToolWindow<cr>                          
-
-" External GVim
-  nmap <leader>v :action Tool_External Tools_gvim<cr>
-
-" IdeaVim uses 'a' for alt instead of Vim's 'm'
-  nmap <a-j> 15gj
-  nmap <a-k> 15gk
-
-" Won't work in visual mode (with vmap) for some reason.
-" Use default map of <c-/> for that.
-  nmap <leader>cl :action CommentByLineComment<cr>
-  nmap C-/ :action CommentByLineComment<cr>
+	nmap <leader>vc :action Vcs.Show.Local.Changes<cr>
+	nmap <leader>vP :action Vcs.Push<cr>
+	nmap <leader>vu :action Vcs.UpdateProject<cr>
+	nmap <leader>vp :action Vcs.QuickListPopupAction<cr>
+	nmap <leader>va :action Annotate<cr>
+	nmap <leader>vl :action Vcs.Show.Log<cr>
+	nmap <leader>vd :action Compare.LastVersion<cr>
+	nmap <leader>vr :action ChangesView.Revert<cr>
+	" nmap <leader>yr :action Git.ResolveConflicts<cr>
 
 " unimpaired mappings - from https://github.com/saaguero/ideavimrc/blob/master/.ideavimrc
-  nnoremap [<space> O<esc>j
-  nnoremap ]<space> o<esc>k
+	nnoremap [<space> O<esc>j
+	nnoremap ]<space> o<esc>k
 
-  nnoremap [q :action PreviousOccurence<cr>
-  nnoremap ]q :action NextOccurence<cr>
-  nnoremap <leader>no :action NextOccurence<cr>
-  nnoremap <leader>po :action PreviousOccurence<cr>
+	nnoremap [[ :action Back<cr>
+	nnoremap ]] :action Forward<cr>
 
-  nnoremap [m :action MethodUp<cr>
-  nnoremap ]m :action MethodDown<cr>
-  nnoremap <leader>nm :action MethodDown<cr>
-  nnoremap <leader>pm :action MethodUp<cr>
+	nnoremap [m :action MethodUp<cr>
+	nnoremap ]m :action MethodDown<cr>
 
-  nnoremap [c :action VcsShowPrevChangeMarker<cr>
-  nnoremap ]c :action VcsShowNextChangeMarker<cr>
-  nnoremap <leader>nc :action VcsShowNextChangeMarker<cr>
-  nnoremap <leader>pc :action VcsShowPrevChangeMarker<cr>
+	nnoremap [c :action VcsShowPrevChangeMarker<cr>
+	nnoremap ]c :action VcsShowNextChangeMarker<cr>
 
+" Errors
+	nnoremap [e :action GotoPreviousError<cr>
+	nnoremap ]e :action GotoNextError<cr>
+	nnoremap <leader>ed :action ShowErrorDescription<cr>
 
 " Tabs
-  nnoremap [b :action PreviousTab<cr>
-  nnoremap ]b :action NextTab<cr>
-  nnoremap <leader>nb :action NextTab<cr>
-  nnoremap <leader>pb :action PreviousTab<cr>
+	nnoremap [b :action PreviousTab<cr>
+	nnoremap ]b :action NextTab<cr>
 
 " Search
-  nmap <leader>\ :action FindInPath<cr>
-
-" Moving lines
-  nmap ]e :action MoveLineDown<cr>
-  nmap [e :action MoveLineUp<cr>
+	nnoremap <leader>\ :action FindInPath<cr>
 
 " Moving statements
-  nmap [s :action MoveStatementUp<cr>
-  nmap ]s :action MoveStatementDown<cr>
+	nnoremap [s :action MoveStatementUp<cr>
+	nnoremap ]s :action MoveStatementDown<cr>
 
 " Building, Running and Debugging
-  nmap ,c :action CompileDirty<cr>
-  nmap ,s :action Stop<cr>
-  nmap ,CP :action CloseProject<cr>
-  nmap ,r :action Run<cr>
-  nmap ,R :action RunAnything<cr>
-  nmap ,d :action Debug<cr>
-  nmap ,c :action RunClass<cr>
-  nmap ,dc :action DebugClass<cr>
-  nmap ,t :action RerunTests<cr>                                         
-  nmap ,T :action RerunFailedTests<cr>
- 
-" Errors
-  nmap <leader>ne :action GotoNextError<cr>
-  nmap <leader>pe :action GotoPreviousError<cr>
-  nmap <leader>en :action GotoNextError<cr>
-  nmap <leader>ep :action GotoPreviousError<cr>
-  nmap <leader>ed :action ShowErrorDescription<cr>
+	nnoremap ,s :action Stop<cr>
+	nnoremap ,C :action CloseProject<cr>
+	nnoremap ,r :action Run<cr>
+	nnoremap ,dd :action Debug<cr>
+	nnoremap ,c :action RunClass<cr>
+	nnoremap ,dc :action DebugClass<cr>
+	nnoremap ,t :action ShowRecentTests<cr>
 
+" EasyMotion
+	nmap f <Plug>(easymotion-f)
+	nmap F <Plug>(easymotion-F)
+	nmap t <Plug>(easymotion-t)
+	nmap T <Plug>(easymotion-T)
