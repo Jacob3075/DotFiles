@@ -19,7 +19,7 @@ set surrond
 set multiple-cursors
 set commentary
 set argtextobj
-set easymotion
+" set easymotion
 set sneak
 set exchange
 " set textobj-entire
@@ -29,10 +29,10 @@ set highlightedyank
 set which-key
 
 " Plugin Settings
-let g:EasyMotion_do_mapping=0
+" let g:EasyMotion_do_mapping=0
 let g:argtextobj_pairs="[:],(:),<:>,{:}"
-set timeout 2000
-" set notimeout
+" set timeout 2000
+set notimeout
 " let g:WhichKeyDesc_windows_maximize = "<leader>wm maximize"
 
 " Idea Settings
@@ -191,11 +191,23 @@ set idearefactormode=keep
 	nnoremap ,r :action Run<cr>
 	nnoremap ,dd :action Debug<cr>
 	nnoremap ,c :action RunClass<cr>
-	nnoremap ,dc :action DebugClass<cr>
+	nnoremap ,dc : DebugClass<cr>
 	nnoremap ,t :action ShowRecentTests<cr>
 
 " EasyMotion
-	nmap f <Plug>(easymotion-f)
-	nmap F <Plug>(easymotion-F)
+	" nmap f <Plug>(easymotion-f)
+	" nmap F <Plug>(easymotion-F)
+	" nmap t <Plug>(easymotion-t)
+	" nmap T <Plug>(easymotion-T)
+
+	nmap f :action AceAction<cr>
+	nmap F :action AceAction<cr>
+	nmap <leader>af :action AceAction<cr>
+	nmap <leader>aF :action AceReverseAction<cr>
+	nmap <leader>ad :action AceDeclarationAction <cr>
+	nmap <leader>al :action AceLineStartsAction <cr>
+	nmap <leader>ai :action AceLineIndentsAction <cr>
+	nmap <leader>aL :action AceLineEndsAction <cr>
+	nmap <leader>at :action AceTargetAction <cr>
 	nmap t <Plug>(easymotion-t)
 	nmap T <Plug>(easymotion-T)
