@@ -1,6 +1,6 @@
 export PATH="$HOME/.local/bin:$PATH"
 export DOTBARE_TREE="$HOME"
-export DOTBARE_DIR="$HOME/dotfiles"
+export DOTBARE_DIR="$HOME/DotFiles"
 
 export EDITOR="nvim"
 export VEDITOR="gnvim"
@@ -11,3 +11,5 @@ export LC_ALL="en_US.UTF-8"
 
 export GOPATH=$HOME/.local/go
 export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
+
+export SDKMAN_DIR="/home/jacob/.local/share/sdkman"

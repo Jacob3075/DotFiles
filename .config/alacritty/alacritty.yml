@@ -3,7 +3,7 @@ window:
   dimensions:
     columns: 90
     lines: 30
-background_opacity: 0.85
+    # background_opacity: 0.85
 window.dynamic_title: true
 
 # Font Customization

@@ -101,9 +101,9 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias resetmouse='sudo modprobe -r psmouse && sudo modprobe psmouse'
 
 
-
 clear
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/jacob/.sdkman"
-[[ -s "/home/jacob/.local/share/.sdkman/bin/sdkman-init.sh" ]] && source "/home/jacob/.local/share/.sdkman/bin/sdkman-init.sh"
+
+[[ -s "/home/jacob/.local/share/sdkman/bin/sdkman-init.sh" ]] && source "/home/jacob/.local/share/sdkman/bin/sdkman-init.sh"
+
