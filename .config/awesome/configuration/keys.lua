@@ -231,11 +231,16 @@ awful.keyboard.append_global_keybindings({
                 awful.spawn(terminal)
             end,
             { description = "open a terminal", group = "launcher" }),
-    awful.key({ modkey }, "s",
-            function()
-                awesome.emit_signal("scratch::music")
-            end,
-            { description = "open music", group = "scratchpad" }),
+    --awful.key({ modkey }, "\\",
+    --        function()
+    --            awesome.emit_signal("scratch::term")
+    --        end,
+    --        { description = "open terminal", group = "scratchpad" }),
+    --awful.key({ modkey, shift }, "\\",
+    --        function()
+    --            awesome.emit_signal("scratch::thunar")
+    --        end,
+    --        { description = "open thunar", group = "scratchpad" }),
     awful.key({ modkey }, "p",
             function()
                 awful.spawn("pavucontrol")
@@ -251,13 +256,14 @@ awful.keyboard.append_global_keybindings({
             end, { description = "open incognito browser", group = "launcher" }),
     awful.key({ modkey }, "n",
             function()
-                awful.spawn.with_shell("notion-app")
-            end, { description = "Open Notion", group = "launcher" }),
-    awful.key({ modkey }, "v",
-            function()
                 awful.spawn("neovide")
             end,
             { description = "Open Neovide", group = "launcher" }),
+    awful.key({ modkey, shift }, "n",
+            function()
+                awful.spawn.with_shell("notion-app")
+            end,
+            { description = "Open Notion", group = "launcher" }),
     awful.key({ modkey, shift }, "e",
             function()
                 awful.spawn("emacs")
@@ -298,12 +304,12 @@ awful.keyboard.append_global_keybindings({
             function()
                 awful.layout.inc(1)
             end,
-            { description = "select next", group = "layout" }),
+            { description = "select next layout", group = "layout" }),
     awful.key({ modkey, shift }, "space",
             function()
                 awful.layout.inc(-1)
             end,
-            { description = "select previous", group = "layout" }), -- Set Layout
+            { description = "select previous layout", group = "layout" }), -- Set Layout
     --awful.key({ modkey, ctrl }, "w",
     --        function()
     --            awful.layout.set(awful.layout.suit.max)

@@ -77,11 +77,18 @@ local battery_pill = wibox.widget {
     battery_bar,
     {
         {
-            { battery_icon, top = dpi(1), widget = wibox.container.margin },
+            {
+                battery_icon,
+                top = dpi(1),
+                widget = wibox.container.margin
+            },
             helpers.horizontal_pad(10),
-            { battery_text, top = dpi(1), widget = wibox.container.margin },
+            {
+                battery_text,
+                top = dpi(1),
+                widget = wibox.container.margin
+            },
             layout = wibox.layout.fixed.horizontal
-
         },
         halign = true,
         widget = wibox.container.place
@@ -230,8 +237,8 @@ mysystray:set_base_size(beautiful.systray_icon_size)
 
 local mysystray_container = {
     mysystray,
-    left = dpi(8),
-    right = dpi(8),
+    left = dpi(10),
+    right = dpi(10),
     widget = wibox.container.margin
 }
 
@@ -507,7 +514,6 @@ screen.connect_signal("request::desktop_decoration",
                             right = dpi(5),
                             widget = wibox.container.margin
                         },
-
                         {
                             {
                                 date_pill,

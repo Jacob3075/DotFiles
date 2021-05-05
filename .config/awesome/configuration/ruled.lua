@@ -14,7 +14,7 @@ ruled.client.connect_signal("request::rules", function()
             size_hints_honor = false,
             screen = awful.screen.preferred,
             placement = awful.placement.centered + awful.placement.no_overlap +
-                awful.placement.no_offscreen
+                    awful.placement.no_offscreen
         }
     }
 
@@ -30,20 +30,20 @@ ruled.client.connect_signal("request::rules", function()
     ruled.client.append_rule {
         id = "floating",
         rule_any = {
-            class = {"Arandr", "Blueman-manager", "Sxiv", "fzfmenu"},
+            class = { "Arandr", "Blueman-manager", "Sxiv", "fzfmenu" },
             role = {
                 "pop-up" -- e.g. Google Chrome's (detached) Developer Tools.
             },
-            name = {"Friends List", "Steam - News"},
-            instance = {"spad", "discord", "music"}
+            name = { "Friends List", "Steam - News" },
+            instance = { "spad", "discord", "music" }
         },
-        properties = {floating = true, placement = awful.placement.centered}
+        properties = { floating = true, placement = awful.placement.centered }
     }
 
     -- KeyBoard
     ruled.client.append_rule {
         id = "keyboard",
-        rule = {class = "Onboard", instance = "onboard"},
+        rule = { class = "Onboard", instance = "onboard" },
         properties = {
             floating = true,
             focusable = false,
@@ -55,11 +55,11 @@ ruled.client.connect_signal("request::rules", function()
     -- Borders
     ruled.client.append_rule {
         id = "borders",
-        rule_any = {type = {"normal", "dialog"}},
+        rule_any = { type = { "normal", "dialog" } },
         except_any = {
-            role = {"Popup"},
-            type = {"splash"},
-            name = {"^discord.com is sharing your screen.$"}
+            role = { "Popup" },
+            type = { "splash" },
+            name = { "^discord.com is sharing your screen.$" }
         },
         properties = {
             border_width = beautiful.border_width,
@@ -71,35 +71,42 @@ ruled.client.connect_signal("request::rules", function()
     ruled.client.append_rule {
         id = "center_placement",
         rule_any = {
-            type = {"dialog"},
+            type = { "dialog" },
             class = {
                 "Steam", "discord", "music", "markdown_input", "scratchpad"
             },
-            instance = {"music", "markdown_input", "scratchpad"},
-            role = {"GtkFileChooserDialog", "conversation"}
+            instance = { "music", "markdown_input", "scratchpad" },
+            role = { "GtkFileChooserDialog", "conversation" }
         },
-        properties = {placement = awful.placement.center}
+        properties = { placement = awful.placement.center }
     }
 
     -- Titlebar rules
     ruled.client.append_rule {
         id = "titlebars",
-        rule_any = {type = {"normal", "dialog"}},
+        rule_any = { type = { "normal", "dialog" } },
         except_any = {
-            class = {"Steam", "zoom", "jetbrains-studio"},
-            type = {"splash"},
-            instance = {"onboard"},
-            name = {"^discord.com is sharing your screen.$"}
+            class = { "Steam", "zoom", "jetbrains-studio" },
+            type = { "splash" },
+            instance = { "onboard" },
+            name = { "^discord.com is sharing your screen.$" }
         },
-        properties = {titlebars_enabled = true}
+        properties = { titlebars_enabled = true }
     }
 end)
 
 ruled.client.append_rules {
     {
-        rule = {instance = 'sun-awt-X11-XFramePeer', class = 'jetbrains-studio'},
-        properties = {titlebars_enabled = false, floating = false}
-    }, {
+        rule = {
+            instance = 'sun-awt-X11-XFramePeer',
+            class = 'jetbrains-studio'
+        },
+        properties = {
+            titlebars_enabled = false,
+            floating = false
+        }
+    },
+    {
         rule = {
             instance = 'sun-awt-X11-XWindowPeer',
             class = 'jetbrains-studio',
@@ -111,7 +118,8 @@ ruled.client.append_rules {
             floating = true,
             focus = true
         }
-    }, {
+    },
+    {
         rule = {
             instance = 'sun-awt-X11-XFramePeer',
             class = 'jetbrains-studio',
@@ -123,7 +131,8 @@ ruled.client.append_rules {
             focus = true,
             placement = awful.placement.centered
         }
-    }, {
+    },
+    {
         rule = {
             instance = 'sun-awt-X11-XFramePeer',
             class = 'jetbrains-studio',
@@ -135,7 +144,8 @@ ruled.client.append_rules {
             focus = true,
             placement = awful.placement.centered
         }
-    }, {
+    },
+    {
         rule = {
             instance = 'sun-awt-X11-XWindowPeer',
             class = 'jetbrains-studio',

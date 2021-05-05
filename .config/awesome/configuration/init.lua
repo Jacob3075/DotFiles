@@ -18,7 +18,7 @@ browserIncognito = "brave --incognito"
 filemanager = "thunar"
 discord = "discord"
 launcher = "rofi -show drun"
-music = terminal .. ' start --class music ncmpcpp'
+music = "spotify"
 
 -- Global Vars
 screen_width = awful.screen.focused().geometry.width

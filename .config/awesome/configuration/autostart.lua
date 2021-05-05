@@ -24,6 +24,7 @@ autostart_apps = {
     "picom --experimental-backends",
     --"megasync",
     "variety",
+    "autorandr -c",
 }
 -- LuaFormatter on
 
