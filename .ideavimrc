@@ -11,33 +11,32 @@ set nu
 set clipboard+=unnamedplus, ideaput, autoselect
 set matchpairs
 set startofline
+" set timeout 2000
+set notimeout
 
 let mapleader = " "
 
 " Enable Plugins
-set surrond
-set multiple-cursors
-set commentary
-set argtextobj
-" set easymotion
-set sneak
-set exchange
-" set textobj-entire
-set ReplaceWithRegister
-set NERDTree
-set highlightedyank
-set which-key
+	set surrond
+	set multiple-cursors
+	set commentary
+	set argtextobj
+	" set easymotion
+	" set sneak
+	set exchange
+	set textobj-entire
+	set ReplaceWithRegister
+	set NERDTree
+	set highlightedyank
+	set which-key
 
 " Plugin Settings
-" let g:EasyMotion_do_mapping=0
-let g:argtextobj_pairs="[:],(:),<:>,{:}"
-" set timeout 2000
-set notimeout
-" let g:WhichKeyDesc_windows_maximize = "<leader>wm maximize"
+	" let g:EasyMotion_do_mapping=0
+	let g:argtextobj_pairs="[:],(:),<:>,{:}"
 
 " Idea Settings
-set ideajoin
-set idearefactormode=keep
+	set ideajoin
+	set idearefactormode=keep
 
 " Insert mode shortcut
 	inoremap <C-h> <Left>
@@ -99,12 +98,25 @@ set idearefactormode=keep
 	nmap <leader>I :action SelectIn<cr>
 	nmap ,,  :action RecentLocations<cr>
 	" nmap ,,  :action HideAllWindows<cr>
-	nmap ;; :action FileStructurePopup<cr>
+	nmap \\ :action FileStructurePopup<cr>
 
 " Navigation
 	nmap <Tab> :action NextTab<cr>
 	nmap <S-Tab> :action PreviousTab<cr>
 	nmap <leader>. <C-^> <cr>
+
+" AceJump
+	nnoremap f :action AceAction<cr>
+	nnoremap F :action AceReverseAction<cr>
+	nmap <leader>af :action AceAction<cr>
+	nmap <leader>aF :action AceReverseAction<cr>
+	nmap <leader>ad :action AceDeclarationAction <cr>
+	nmap <leader>al :action AceLineStartsAction <cr>
+	nmap <leader>ai :action AceLineIndentsAction <cr>
+	nmap <leader>aL :action AceLineEndsAction <cr>
+	nmap <leader>at :action AceTargetAction <cr>
+	" nmap t <Plug>(easymotion-t)
+	" nmap T <Plug>(easymotion-T)
 
 " GoTo
 	nmap <leader>gi :action GotoImplementation<cr>
@@ -200,14 +212,3 @@ set idearefactormode=keep
 	" nmap t <Plug>(easymotion-t)
 	" nmap T <Plug>(easymotion-T)
 
-	nmap f :action AceAction<cr>
-	nmap F :action AceAction<cr>
-	nmap <leader>af :action AceAction<cr>
-	nmap <leader>aF :action AceReverseAction<cr>
-	nmap <leader>ad :action AceDeclarationAction <cr>
-	nmap <leader>al :action AceLineStartsAction <cr>
-	nmap <leader>ai :action AceLineIndentsAction <cr>
-	nmap <leader>aL :action AceLineEndsAction <cr>
-	nmap <leader>at :action AceTargetAction <cr>
-	nmap t <Plug>(easymotion-t)
-	nmap T <Plug>(easymotion-T)
