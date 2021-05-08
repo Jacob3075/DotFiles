@@ -24,14 +24,16 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias ls='lsd --group-dirs first'
-alias lr='lsd -R'
-alias ll='lsd -l'
-alias lt='lsd --tree'
-alias llt='lsd -l --tree'
-alias lsdd='lsd -d1'
-alias la='lsd -A'
-alias lla='lsd -Al'
+alias ls='exa -F --icons --group-directories-first'
+alias lr='exa -RF --icons --group-directories-first'
+alias ll='exa -lF --icons --group-directories-first'
+alias lt='exa -TF --icons --group-directories-first'
+alias ld='exa -DF --icons '
+alias la='exa -aF --icons --group-directories-first'
+alias ldt='exa -DFT --icons '
+alias llt='exa -lFT --icons --group-directories-first'
+alias lla='exa -alF --icons --group-directories-first'
+alias llat='exa -alFT --icons --group-directories-first'
 
 # alias update='aptf update && aptf upgrade'
 # alias clean='please apt autoremove && please apt autoclean'
@@ -44,9 +46,9 @@ alias l='ls'
 alias b='bat'
 alias j='jump'
 alias v='nvim'
-alias vd='GIT_DIR=$HOME/dotfiles/ GIT_WORK_TREE=$HOME nvim'
 
-alias nvimd='GIT_DIR=$HOME/dotfiles/ GIT_WORK_TREE=$HOME nvim'
+alias vd='GIT_DIR=$HOME/dotfiles/ GIT_WORK_TREE=$HOME nvim'
+alias nd='GIT_DIR=$HOME/dotfiles/ GIT_WORK_TREE=$HOME nvim'
 
 alias protonvpn='please protonvpn'
 alias pvpnc='protonvpn c'
@@ -57,6 +59,8 @@ alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
+
+alias yay='paru'
 
 # Cleanup orphaned packages
 # alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
