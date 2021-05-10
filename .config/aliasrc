@@ -44,7 +44,6 @@ alias pdf='evince'
 alias c='clear'
 alias l='ls'
 alias b='bat'
-alias j='jump'
 alias v='nvim'
 
 alias vd='GIT_DIR=$HOME/dotfiles/ GIT_WORK_TREE=$HOME nvim'

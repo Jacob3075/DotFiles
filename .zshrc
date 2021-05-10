@@ -28,26 +28,24 @@ COMPLETION_WAITING_DOTS="true"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo)
-
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+ZSH_CUSTOM=/home/jacob/.config/zsh
 
 clear
+
+autoload -U compinit && compinit -u
 
 source "/home/jacob/.config/aliasrc"
 source "/home/jacob/.config/exports"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+source "/home/jacob/.config/zsh/zinit/bin/zinit.zsh"
 
+source /home/jacob/.local/share/autojump/share/autojump/autojump.zsh
+
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
+zinit light rupa/z
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 [[ -s "/home/jacob/.local/share/sdkman/bin/sdkman-init.sh" ]] && source "/home/jacob/.local/share/sdkman/bin/sdkman-init.sh"
 
 eval "$(starship init zsh)"

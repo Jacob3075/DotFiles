@@ -175,6 +175,9 @@ let mapleader = " "
 	nnoremap [[ :action Back<cr>
 	nnoremap ]] :action Forward<cr>
 
+	" nnoremap [{ :action EditorCodeBlockStart<cr>
+	" nnoremap ]} :action EditorCodeBlockEnd<cr>
+
 	nnoremap [m :action MethodUp<cr>
 	nnoremap ]m :action MethodDown<cr>
 
@@ -211,4 +214,3 @@ let mapleader = " "
 	" nmap F <Plug>(easymotion-F)
 	" nmap t <Plug>(easymotion-t)
 	" nmap T <Plug>(easymotion-T)
-
