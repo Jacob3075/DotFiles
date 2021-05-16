@@ -74,9 +74,10 @@ let mapleader = " "
 	nmap <leader>j <c-w>j
 
 " Closing tabs
-	nmap <leader>qb :action CloseContent<cr>
-	nmap <leader>qa :action CloseAllEditors<cr>
-	nmap <leader>Q :action ReopenClosedTab<cr>
+	nmap <leader>cb :action CloseContent<cr>
+	nmap <leader>ca :action CloseAllEditors<cr>
+	nmap <leader>co :action CloseAllEditorsButActive<cr>
+	nmap <leader>C :action ReopenClosedTab<cr>
 
 " To navigate between split panes
 	nmap <leader>wn :action NextSplitter<cr>

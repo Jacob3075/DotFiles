@@ -41,6 +41,12 @@ alias llat='exa -alFT --icons --group-directories-first'
 
 alias pdf='evince'
 
+alias db='dotbare'
+alias dbaf='dotbare fadd -f'
+alias dbad='dotbare fadd -d'
+alias dbc='dotbare commit -m'
+alias dbp='dotbare push'
+
 alias c='clear'
 alias l='ls'
 alias b='bat'

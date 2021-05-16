@@ -34,7 +34,7 @@ ruled.client.connect_signal("request::rules", function()
             role = {
                 "pop-up" -- e.g. Google Chrome's (detached) Developer Tools.
             },
-            name = { "Friends List", "Steam - News" },
+            name = { "Friends List", "Steam - News", "JetpackDesktopWindow" },
             instance = { "spad", "discord", "music" }
         },
         properties = { floating = true, placement = awful.placement.centered }
@@ -108,15 +108,11 @@ ruled.client.append_rules {
     },
     {
         rule = {
-            instance = 'sun-awt-X11-XWindowPeer',
-            class = 'jetbrains-studio',
-            type = 'dialog'
+            class = 'JetpackDesktopWindow',
         },
         properties = {
-            titlebars_enabled = false,
-            border_width = 0,
+            titlebars_enabled = true,
             floating = true,
-            focus = true
         }
     },
     {

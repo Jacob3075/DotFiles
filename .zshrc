@@ -55,3 +55,4 @@ zinit light rupa/z
 [[ -s "/home/jacob/.local/share/sdkman/bin/sdkman-init.sh" ]] && source "/home/jacob/.local/share/sdkman/bin/sdkman-init.sh"
 
 eval "$(starship init zsh)"
+
