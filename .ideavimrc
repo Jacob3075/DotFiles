@@ -50,6 +50,10 @@ let mapleader = " "
 " Quit insert mode
 	inoremap jk <Esc>
 
+" Movement Keys
+    nnoremap <C-w> :action EditorNextWord<cr>
+    nnoremap <C-b> :action EditorPreviousWord<cr>
+
 " Quit visual mode
 	vnoremap v <Esc>
 	nnoremap <Leader>sc :nohlsearch<CR>
@@ -61,7 +65,7 @@ let mapleader = " "
 " Use Q for formatting the current paragraph (or visual selection)
 	vmap Q gq
 	nmap Q gqap
-
+	
 " These create newlines like o and O but stay in normal mode
 	nmap zj o<Esc>k
 	nmap zk O<Esc>j
@@ -97,6 +101,7 @@ let mapleader = " "
 
 	nmap <leader><leader> :action RecentFiles<cr>
 	nmap <leader>I :action SelectIn<cr>
+	map <leader>S :action SurroundWith<cr>
 	nmap ,,  :action RecentLocations<cr>
 	" nmap ,,  :action HideAllWindows<cr>
 	nmap \\ :action FileStructurePopup<cr>
@@ -108,7 +113,6 @@ let mapleader = " "
 
 " AceJump
 	nnoremap f :action AceAction<cr>
-	nnoremap F :action AceReverseAction<cr>
 	nmap <leader>af :action AceAction<cr>
 	nmap <leader>aF :action AceReverseAction<cr>
 	nmap <leader>ad :action AceDeclarationAction <cr>
@@ -140,15 +144,15 @@ let mapleader = " "
 	nmap <leader>si :action QuickImplementations<cr>
 
 " Refactorings
-	nmap <leader>R :action Refactorings.QuickListPopupAction<cr>
-	nmap <leader>rr :action RenameElement<cr>
-	nmap <leader>rI :action OptimizeImports<cr>
-	nmap <leader>rc :action IntroduceConstant<cr>
-	nmap <leader>rv :action IntroduceVariable<cr>
-	nmap <leader>rf :action IntroduceProperty<cr>
-	nmap <leader>rp :action IntroduceParameter<cr>
-	nmap <leader>rm :action ExtractMethod<cr>
-	nmap <leader>rs :action ChangeSignature<cr>
+	map <leader>R :action Refactorings.QuickListPopupAction<cr>
+	map <leader>rr :action RenameElement<cr>
+	map <leader>rI :action OptimizeImports<cr>
+	map <leader>rc :action IntroduceConstant<cr>
+	map <leader>rv :action IntroduceVariable<cr>
+	map <leader>rf :action IntroduceProperty<cr>
+	map <leader>rp :action IntroduceParameter<cr>
+	map <leader>rm :action ExtractMethod<cr>
+	map <leader>rs :action ChangeSignature<cr>
 
 " Generate
 	nmap <leader>rgg :action Generate<cr>
