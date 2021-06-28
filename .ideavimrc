@@ -1,4 +1,4 @@
-set ignorecase
+se ignorecase
 set smartcase
 set scrolloff=10 " 10 lines above/below cursor when scrolling
 set number relativenumber
@@ -17,7 +17,7 @@ set notimeout
 let mapleader = " "
 
 " Enable Plugins
-	set surrond
+	set surround
 	set multiple-cursors
 	set commentary
 	set argtextobj
@@ -29,6 +29,7 @@ let mapleader = " "
 	set NERDTree
 	set highlightedyank
 	set which-key
+	set vim-paragraph-motion
 
 " Plugin Settings
 	" let g:EasyMotion_do_mapping=0
@@ -143,9 +144,17 @@ let mapleader = " "
 	nmap <leader>sb :action ShowBookmarks<cr>
 	nmap <leader>si :action QuickImplementations<cr>
 
+" String Manipulation
+    nnoremap <leader>sc :action StringManipulation.Group.SwitchCase<cr>
+    vnoremap <leader>sc :action StringManipulation.Group.SwitchCase<cr>
+    nnoremap <leader>sm :action StringManipulation.Group.Main<cr>
+    vnoremap <leader>sm :action StringManipulation.Group.Main<cr>
+
+
 " Refactorings
 	map <leader>R :action Refactorings.QuickListPopupAction<cr>
 	map <leader>rr :action RenameElement<cr>
+	map <leader>rR :action Replace<cr>
 	map <leader>rI :action OptimizeImports<cr>
 	map <leader>rc :action IntroduceConstant<cr>
 	map <leader>rv :action IntroduceVariable<cr>
@@ -209,6 +218,7 @@ let mapleader = " "
 	nnoremap ,s :action Stop<cr>
 	nnoremap ,C :action CloseProject<cr>
 	nnoremap ,r :action Run<cr>
+	nnoremap ,b :action BuildMenu<cr>
 	nnoremap ,dd :action Debug<cr>
 	nnoremap ,c :action RunClass<cr>
 	nnoremap ,dc : DebugClass<cr>
