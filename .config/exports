@@ -15,7 +15,7 @@ export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 
 export SDKMAN_DIR="/home/jacob/.local/share/sdkman"
 
-declare -A ZINIT
+# declare -A ZINIT
 
-ZINIT[BIN_DIR]="/home/jacob/.config/zsh/zinit/bin"
-ZINIT[HOME_DIR]="/home/jacob/.config/zsh/zinit"
+# ZINIT[BIN_DIR]="/home/jacob/.config/zsh/zinit/bin"
+# ZINIT[HOME_DIR]="/home/jacob/.config/zsh/zinit"
