@@ -10,14 +10,14 @@ source ~/.config/fish/globals.fish
 source ~/.config/fish/abbreviations.fish
 source ~/.config/fish/omf.fish
 
-# SDKMAN
-set PATH $PATH (find ~/.local/share/sdkman/candidates/*/current/bin -maxdepth 0) # omf install sdk
-
 # SOURCE ALIAS AND EXPORTS
 source ~/.config/aliasrc
 source ~/.config/exports
 source ~/.config/fish/functions/functions.fish
 source ~/.config/fish/completions/completions.fish
+
+# SDKMAN
+set PATH $PATH (find ~/.local/share/sdkman/candidates/*/current/bin -maxdepth 0) # omf install sdk
 
 starship init fish | source
 

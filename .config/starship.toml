@@ -36,7 +36,7 @@ diverged = "⇕⇡${ahead_count} ⇣${behind_count} "
 behind = "[⇣${count}]{orange} "
 
 [jobs]
-threshold = 0
+number_threshold = 0
 
 [memory_usage]
 disabled = true

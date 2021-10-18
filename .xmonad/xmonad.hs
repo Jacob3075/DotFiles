@@ -12,6 +12,7 @@ import XMonad.Layout.Gaps
 import XMonad.Layout.Spiral(spiral)
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.MultiToggle.Instances
+import XMonad.Layout.NoBorders
 import qualified XMonad.Layout.MultiToggle as MT (Toggle(..))
 
 import Graphics.X11.ExtraTypes.XF86
@@ -52,9 +53,11 @@ myBaseConfig = desktopConfig
 myManageHook = composeAll . concat $
     [ [isDialog --> doCenterFloat]
     , [className =? c --> doCenterFloat | c <- myCFloats]
+    , [className =? c --> hasBorder False | c <- myNoBorders]
     , [title =? t --> doFloat | t <- myTFloats]
     , [resource =? r --> doFloat | r <- myRFloats]
     , [resource =? i --> doIgnore | i <- myIgnores]
+
     -- , [(className =? x <||> title =? x <||> resource =? x) --> doShiftAndGo "\61612" | x <- my1Shifts]
     -- , [(className =? x <||> title =? x <||> resource =? x) --> doShiftAndGo "\61899" | x <- my2Shifts]
     -- , [(className =? x <||> title =? x <||> resource =? x) --> doShiftAndGo "\61947" | x <- my3Shifts]
@@ -68,10 +71,12 @@ myManageHook = composeAll . concat $
     ]
     where
     -- doShiftAndGo = doF . liftM2 (.) W.greedyView W.shift
-    myCFloats = ["Arandr", "Arcolinux-calamares-tool.py", "Arcolinux-tweak-tool.py", "Arcolinux-welcome-app.py", "Galculator", "feh", "mpv", "Xfce4-terminal", "megasync"]
+    myCFloats = ["Arandr", "Arcolinux-calamares-tool.py", "Arcolinux-tweak-tool.py", "Arcolinux-welcome-app.py", "Galculator", "feh", "mpv", "Xfce4-terminal", "megasync", "File-roller", "Protonvpn", "launcher.exe"]
     myTFloats = ["Downloads", "Save As..."]
     myRFloats = []
     myIgnores = ["desktop_window"]
+    -- TODO
+    myNoBorders = ["Ulauncher"]
     -- my1Shifts = ["Chromium", "Vivaldi-stable", "Firefox"]
     -- my2Shifts = []
     -- my3Shifts = ["Inkscape"]
@@ -121,6 +126,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   [ ((modMask, xK_e), spawn $ "thunar" )
   , ((modMask, xK_w), spawn $ "firefox" )
+  , ((modMask .|. shiftMask, xK_w), spawn $ "firefox -private-window" )
   , ((modMask, xK_q), kill )
   , ((modMask, xK_v), spawn $ "pavucontrol" )
   , ((modMask, xK_y), spawn $ "polybar-msg cmd toggle" )
@@ -134,7 +140,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- SUPER KEYS
 
-  , ((modMask .|. shiftMask , xK_Return ), spawn $ "/home/jacob/.config/rofi/launchers/launcher.sh")
+  --, ((modMask .|. shiftMask , xK_Return ), spawn $ "/home/jacob/.config/rofi/launchers/launcher.sh")
   , ((modMask .|. shiftMask , xK_r ), spawn $ "xmonad --recompile && xmonad --restart")
   , ((modMask .|. shiftMask , xK_q ), kill)
   -- , ((modMask .|. shiftMask , xK_x ), io (exitWith ExitSuccess))

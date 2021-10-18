@@ -17,7 +17,7 @@ set notimeout
 let mapleader = " "
 
 " Enable Plugins
-	set surround
+	" set surround
 	set multiple-cursors
 	set commentary
 	set argtextobj
