@@ -105,7 +105,7 @@ let mapleader = " "
 	map <leader>S :action SurroundWith<cr>
 	nmap ,,  :action RecentLocations<cr>
 	" nmap ,,  :action HideAllWindows<cr>
-	nmap \\ :action FileStructurePopup<cr>
+	nmap \\\\ :action FileStructurePopup<cr>
 
 " Navigation
 	nmap <Tab> :action NextTab<cr>
@@ -144,12 +144,16 @@ let mapleader = " "
 	nmap <leader>sb :action ShowBookmarks<cr>
 	nmap <leader>si :action QuickImplementations<cr>
 
-" String Manipulation
-    nnoremap <leader>sc :action StringManipulation.Group.SwitchCase<cr>
-    vnoremap <leader>sc :action StringManipulation.Group.SwitchCase<cr>
-    nnoremap <leader>sm :action StringManipulation.Group.Main<cr>
-    vnoremap <leader>sm :action StringManipulation.Group.Main<cr>
+" Bookmarks 
+    nnoremap <leader>bt :action ToggleBookmarkWithMnemonic<cr>
+    nnoremap <leader>bT :action ToggleBookmark<cr>
+    nnoremap <leader>bd :action EditBookmark<cr:
 
+" String Manipulation
+    nnoremap <leader>;sc :action StringManipulation.Group.SwitchCase<cr>
+    vnoremap <leader>;sc :action StringManipulation.Group.SwitchCase<cr>
+    nnoremap <leader>;sm :action StringManipulation.Group.Main<cr>
+    vnoremap <leader>;sm :action StringManipulation.Group.Main<cr>
 
 " Refactorings
 	map <leader>R :action Refactorings.QuickListPopupAction<cr>
@@ -164,18 +168,18 @@ let mapleader = " "
 	map <leader>rs :action ChangeSignature<cr>
 
 " Generate
-	nmap <leader>rgg :action Generate<cr>
-	nmap <leader>rgo :action OverrideMethods<cr>
-	nmap <leader>rgi :action ImplementMethods<cr>
+	nmap <leader>;gg :action Generate<cr>
+	nmap <leader>;go :action OverrideMethods<cr>
+	nmap <leader>;gi :action ImplementMethods<cr>
 
 " Inspection
 	nmap <leader>ic :action InspectCode<cr>
 
 " VCS operations
 	nmap <leader>vc :action Vcs.Show.Local.Changes<cr>
-	nmap <leader>vP :action Vcs.Push<cr>
+	nmap <leader>vp :action Vcs.Push<cr>
 	nmap <leader>vu :action Vcs.UpdateProject<cr>
-	nmap <leader>vp :action Vcs.QuickListPopupAction<cr>
+	nmap <leader>vm :action Vcs.QuickListPopupAction<cr>
 	nmap <leader>va :action Annotate<cr>
 	nmap <leader>vl :action Vcs.Show.Log<cr>
 	nmap <leader>vd :action Compare.LastVersion<cr>
