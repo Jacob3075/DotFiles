@@ -328,7 +328,7 @@ globalkeys = gears.table.join(
     -- Demnu
     awful.key({  modkey, "Shift"  },            "Return",
         function ()
-            awful.util.spawn("ulauncher")
+            awful.util.spawn("dmenu_run")
         end,
         {description = "Ulauncher", group = "makc"}),
 
@@ -346,7 +346,7 @@ clientkeys = gears.table.join(
         {description = "toggle fullscreen", group = "client"}),
     awful.key({ modkey, }, "q",      function (c) c:kill()                         end,
               {description = "close", group = "makc"}),
-    awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
+    awful.key({ modkey, "Shift" }, "f",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),

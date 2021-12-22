@@ -17,7 +17,7 @@ set notimeout
 let mapleader = " "
 
 " Enable Plugins
-	" set surround
+	set surround
 	set multiple-cursors
 	set commentary
 	set argtextobj
@@ -96,7 +96,7 @@ let mapleader = " "
 	nmap <leader>wd :action OpenEditorInOppositeTabGroup<cr>
 	nmap <leader>ww :action JumpToLastWindow<cr>
 
-" Remmaped Search
+" Remapped Search
 	nnoremap / :action Find<CR>
 	nnoremap <Leader>/ /
 
@@ -144,9 +144,9 @@ let mapleader = " "
 	nmap <leader>sb :action ShowBookmarks<cr>
 	nmap <leader>si :action QuickImplementations<cr>
 
-" Bookmarks 
-    nnoremap <leader>bt :action ToggleBookmarkWithMnemonic<cr>
-    nnoremap <leader>bT :action ToggleBookmark<cr>
+" Bookmarks
+    nnoremap <leader>bT :action ToggleBookmarkWithMnemonic<cr>
+    nnoremap <leader>bt :action ToggleBookmark<cr>
     nnoremap <leader>bd :action EditBookmark<cr:
 
 " String Manipulation
@@ -186,6 +186,17 @@ let mapleader = " "
 	nmap <leader>vr :action ChangesView.Revert<cr>
 	" nmap <leader>yr :action Git.ResolveConflicts<cr>
 
+" Flutter
+    nnoremap <leader>Fw :action Flutter.ExtractWidget<cr>
+    nnoremap <leader>FW :action Flutter.ExtractWidgetToFile<cr>
+    nnoremap <leader>Fn :action Flutter.NewWidget<cr>
+    nnoremap <leader>Fg :action flutter.pub.get<cr>
+    nnoremap <leader>Fbb :action cn.neday.excavator.action.generation.BuildAction<cr>
+    nnoremap <leader>FbB :action cn.neday.excavator.action.generation.RebuildAction<cr>
+    nnoremap <leader>Fbw :action cn.neday.excavator.action.generation.WatchAction<cr>
+    nnoremap <leader>Fbc :action cn.neday.excavator.action.generation.CleanAction<cr>
+    nnoremap <leader>Fbk :action cn.neday.excavator.action.kill.FlutterKillAction<cr>
+
 " unimpaired mappings - from https://github.com/saaguero/ideavimrc/blob/master/.ideavimrc
 	nnoremap [<space> O<esc>j
 	nnoremap ]<space> o<esc>k
@@ -210,6 +221,10 @@ let mapleader = " "
 " Tabs
 	nnoremap [b :action PreviousTab<cr>
 	nnoremap ]b :action NextTab<cr>
+
+" Tabs
+	nnoremap [B :action GotoPreviousBookmark<cr>
+	nnoremap ]B :action GotoNextBookmark<cr>
 
 " Search
 	nnoremap <leader>\ :action FindInPath<cr>
