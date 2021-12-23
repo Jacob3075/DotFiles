@@ -1,40 +1,21 @@
-vim.o.swapfile = true
-vim.o.dir = '/tmp'
-vim.o.smartcase = true
-vim.o.laststatus = 2
-vim.o.hlsearch = true
-vim.o.incsearch = true
-vim.o.ignorecase = true
-vim.o.scrolloff = 8
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.smarttab = true
-vim.o.smartindent = true
-vim.o.incsearch = true
-vim.o.showcmd = true
-vim.o.showmode = true
-vim.o.clipboard = "unnamedplus"
-vim.o.completeopt = "menu,menuone,preview,noselect,noinsert"
-vim.o.mouse = "a"
-vim.o.termguicolors = true
-vim.o.ruler = true
-vim.o.wildmenu = true
+-- Auto Commands
+vim.cmd [[
+    autocmd! BufWritePost $MYVIMRC nested source $MYVIMRC
 
-vim.wo.number = true
-vim.wo.relativenumber = true
-vim.wo.numberwidth = 4
+    function! MyHighlights() abort
+"	highlight Normal     cterm=NONE ctermbg=17              gui=NONE guibg=#000000
+    endfunction
 
-vim.bo.shiftwidth = 4
+    augroup MyColors
+	autocmd!
+	autocmd ColorScheme * call MyHighlights()
+    augroup END
+]]
 
-vim.cmd("set matchpairs+=<:>")
 
---vim.o.background = "dark"
-
-vim.g.mapleader = ' '
-
-vim.cmd [[source ./auto_commands.vim]]
-vim.cmd [[colorscheme gruvbox]]
-
+require"jacob.options"
 require"jacob.plugins"
 require"jacob.keymaps"
+
+vim.cmd [[colorscheme gruvbox]]
 
