@@ -27,6 +27,7 @@ return require("packer").startup(function(use)
   use "andymass/vim-matchup" 
 
   use "morhetz/gruvbox"
+  use "LunarVim/Colorschemes"
 
   use "norcalli/nvim-colorizer.lua"
 
