@@ -2,7 +2,7 @@ local map = vim.api.nvim_set_keymap
 options = { noremap = true }
 
 map('n', '<leader><esc>', ':nohlsearch<CR>', options)
-map('n', '<leader>e', ':Explore<CR>', options)
+map('n', '<leader>e', ':NERDTreeToggle<CR>', options)
 map('n', '<Tab>', ':bnext<CR>', options)
 map('n', '<S-Tab>', ':bprev<CR>', options)
 map('n', '<leader><Esc>', ':nohlsearch<CR>', options)

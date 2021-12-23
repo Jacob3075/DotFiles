@@ -17,6 +17,8 @@ vim.o.clipboard = "unnamedplus"
 vim.o.completeopt = "menu,menuone,preview,noselect,noinsert"
 vim.o.mouse = "a"
 vim.o.termguicolors = true
+vim.o.ruler = true
+vim.o.wildmenu = true
 
 vim.wo.number = true
 vim.wo.relativenumber = true
@@ -32,6 +34,7 @@ vim.g.mapleader = ' '
 
 vim.cmd [[source ./auto_commands.vim]]
 vim.cmd [[colorscheme gruvbox]]
-require"jacob.keymaps"
+
 require"jacob.plugins"
+require"jacob.keymaps"
 
