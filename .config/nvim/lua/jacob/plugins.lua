@@ -1,80 +1,71 @@
-vim.cmd [[packadd packer.nvim]]
+local fn = vim.fn
 
-return require('packer').startup(function()
-  use { 'wbthomason/packer.nvim' }
+-- Automatically install packer
+local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+if fn.empty(fn.glob(install_path)) > 0 then
+  PACKER_BOOTSTRAP = fn.system {
+    "git",
+    "clone",
+    "--depth",
+    "1",
+    "https://github.com/wbthomason/packer.nvim",
+    install_path,
+  }
+  print "Installing packer close and reopen Neovim..."
+  vim.cmd [[packadd packer.nvim]]
+end
 
-  use { 'andymass/vim-matchup' }
+-- Use a protected call so we don't error out on first use
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+  return
+end
 
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+return require("packer").startup(function(use)
+  use "wbthomason/packer.nvim"
 
-  use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  use "andymass/vim-matchup" 
 
-  use { "morhetz/gruvbox" }
+  use "morhetz/gruvbox"
 
+  use "norcalli/nvim-colorizer.lua"
+
+  use "preservim/nerdtree"
+
+  -- TODO
+  use "ahmedkhalf/project.nvim"
+
+  use "folke/which-key.nvim"
+
+  use "blackCauldron7/surround.nvim"
+
+  -- TODO
+  use "p00f/nvim-ts-rainbow"
+ 
   use {
-    "blackCauldron7/surround.nvim",
-    config = function()
-      require"surround".setup { mappings_style = "surround" }
-    end
+    "nvim-treesitter/nvim-treesitter", 
+    run = ":TSUpdate" 
   }
 
   use { 
-    'norcalli/nvim-colorizer.lua',
-    config = function ()
-      require 'colorizer'.setup {
-        '*';
-	'vim';
-      }
-    end
+    "lewis6991/gitsigns.nvim", 
+    requires = "nvim-lua/plenary.nvim"  
   }
 
-  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+  use {
+    "akinsho/bufferline.nvim",
+    requires = "kyazdani42/nvim-web-devicons"
+  }
 
   use { 
-    'nvim-lualine/lualine.nvim', 
-    requires = {'kyazdani42/nvim-web-devicons', opt = true},
-    config = function()
-      local custom_gruvbox = require'lualine.themes.gruvbox'
-      -- Change the background of lualine_c section for normal mode
-      custom_gruvbox.normal.c.bg = '#112233' -- rgb colors are supported
-      require 'lualine' .setup {
-        options = { theme  = custom_gruvbox },
-      }
-    end
+    "nvim-lualine/lualine.nvim", 
+    requires = "kyazdani42/nvim-web-devicons" 
   }
 
-  use { 'preservim/nerdtree' }
-
-  use {
-    "ahmedkhalf/project.nvim",
-    config = function()
-      require("project_nvim").setup {
-	
-      }
-    end
-  }
-
-  use {
-    "p00f/nvim-ts-rainbow",
-    config = function()
-      require("nvim-treesitter.configs").setup {
-        rainbow = {
-          enable = true,
-          extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-          max_file_lines = nil, -- Do not enable for files with more than n lines, int
-       }
-     }
-    end
-  }
-  use {
-    "folke/which-key.nvim",
-    config = function()
-      require("which-key").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
-  }
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if PACKER_BOOTSTRAP then
+    require("packer").sync()
+  end
 end)
 
