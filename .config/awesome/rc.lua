@@ -328,7 +328,7 @@ globalkeys = gears.table.join(
     -- Demnu
     awful.key({  modkey, "Shift"  },            "Return",
         function ()
-            awful.util.spawn("dmenu_run")
+            awful.util.spawn("ulauncher")
         end,
         {description = "Ulauncher", group = "makc"}),
 

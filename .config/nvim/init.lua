@@ -12,10 +12,11 @@ vim.cmd [[
     augroup END
 ]]
 
-
 require"jacob.options"
 require"jacob.plugins"
 require"jacob.keymaps"
-
-vim.cmd [[colorscheme gruvbox]]
+require"jacob.colorscheme"
+require"jacob.cmp"
+require"jacob.telescope"
+-- require"jacob.lsp"
 

@@ -28,6 +28,10 @@ map("n", "<C-Down>", ":resize -2<CR>", options)
 map("n", "<C-Left>", ":vertical resize -2<CR>", options)
 map("n", "<C-Right>", ":vertical resize +2<CR>", options)
 
+-- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+map("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files()<cr>", options)
+map("n", "<c-t>", "<cmd>Telescope live_grep<cr>", options)
+
 map('i', 'jk', '<esc>', options)
 map('i', 'kj', '<esc>', options)
 map('i', 'jj', '<esc>', options)
