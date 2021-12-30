@@ -19,5 +19,6 @@ require"jacob.colorscheme"
 require"jacob.cmp"
 require"jacob.telescope"
 require"jacob.which-key"
+require"jacob.treesitter"
 -- require"jacob.lsp"
 

@@ -32,6 +32,7 @@ return require("packer").startup(function(use)
 
   use "norcalli/nvim-colorizer.lua"
 
+  -- TODO: REPLACE WITH nvimtree 
   use "preservim/nerdtree"
 
   use "folke/which-key.nvim"
@@ -42,6 +43,11 @@ return require("packer").startup(function(use)
   use "ahmedkhalf/project.nvim"
 
   -- TODO
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
   use "p00f/nvim-ts-rainbow"
 
   -- cmp plugins
@@ -62,11 +68,6 @@ return require("packer").startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use 'nvim-telescope/telescope-media-files.nvim'
-
-  use {
-    "nvim-treesitter/nvim-treesitter", 
-    run = ":TSUpdate" 
-  }
 
   use { 
     "lewis6991/gitsigns.nvim", 
