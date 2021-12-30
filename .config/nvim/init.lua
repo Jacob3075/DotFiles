@@ -18,5 +18,6 @@ require"jacob.keymaps"
 require"jacob.colorscheme"
 require"jacob.cmp"
 require"jacob.telescope"
+require"jacob.which-key"
 -- require"jacob.lsp"
 
