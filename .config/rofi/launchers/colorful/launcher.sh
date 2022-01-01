@@ -46,6 +46,6 @@ EOF
 
 # comment these lines to disable random style
 themes=($(ls -p --hide="launcher.sh" --hide="colors.rasi" $dir))
-theme="${themes[$(( $RANDOM % 11 ))]}"
+theme="${themes[$(( $RANDOM % 12 ))]}"
 
-rofi -show drun -modi drun,window -theme $dir/"$theme"
+rofi -no-lazy-grab -show drun -modi drun -theme $dir/"$theme"

@@ -17,8 +17,6 @@ dir="$HOME/.config/rofi/launchers/misc"
 
 # comment these lines to disable random style
 themes=($(ls -p --hide="launcher.sh" $dir))
-theme="${themes[$(( $RANDOM % 9 ))]}"
+theme="${themes[$(( $RANDOM % 16 ))]}"
 
-echo "$theme"
-
-rofi -show drun -modi drun,window -theme $dir/"$theme"
+rofi -no-lazy-grab -show drun -modi drun -theme $dir/"$theme"
