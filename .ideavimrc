@@ -48,8 +48,14 @@ let mapleader = " "
 	inoremap <C-e> <End>
 	inoremap <C-d> <Delete>
 
+    nnoremap <CR><CR> :action ShowIntentionActions<CR>
+    noremap <Space>= :action ReformatCode<CR>
+
 " Quit insert mode
 	inoremap jk <Esc>
+	inoremap jj <Esc>
+	inoremap kj <Esc>
+	inoremap kk <Esc>
 
 " Movement Keys
     nnoremap <C-w> :action EditorNextWord<cr>
@@ -85,8 +91,10 @@ let mapleader = " "
 	nmap <leader>C :action ReopenClosedTab<cr>
 
 " To navigate between split panes
-	nmap <leader>wn :action NextSplitter<cr>
-	nmap <leader>wp :action PrevSplitter<cr>
+	nnoremap <leader>wn :action NextSplitter<cr>
+	nnoremap <leader>wp :action PrevSplitter<cr>
+	nnoremap <C-h> :action PrevSplitter<cr>
+	nnoremap <C-l> :action NextSplitter<cr>
 
 " Splits manipulation
 	nmap <leader>wh :action SplitHorizontally<cr>
@@ -95,6 +103,8 @@ let mapleader = " "
 	nmap <leader>wC :action UnsplitAll<cr>
 	nmap <leader>wd :action OpenEditorInOppositeTabGroup<cr>
 	nmap <leader>ww :action JumpToLastWindow<cr>
+	nnoremap <C-S-h> :action StretchSplitToLeft<cr>
+	nnoremap <C-S-l> :action StretchSplitToRight<cr>
 
 " Remapped Search
 	nnoremap / :action Find<CR>
@@ -139,10 +149,11 @@ let mapleader = " "
 	nmap <leader>fU :action FindUsagesInFile<cr>
 
 " Show
-	nmap <leader>su :action ShowUsages<cr>
-	nmap <leader>sU :action FindUsagesInFile<cr>
-	nmap <leader>sb :action ShowBookmarks<cr>
-	nmap <leader>si :action QuickImplementations<cr>
+	nnoremap <leader>su :action ShowUsages<cr>
+	nnoremap <leader>sU :action FindUsagesInFile<cr>
+	nnoremap <leader>sb :action ShowBookmarks<cr>
+	nnoremap <leader>si :action QuickImplementations<cr>
+	noremap <Space>sm :action ShowPopupMenu<CR>
 
 " Bookmarks
     nnoremap <leader>bT :action ToggleBookmarkWithMnemonic<cr>
@@ -154,6 +165,7 @@ let mapleader = " "
     vnoremap <leader>;sc :action StringManipulation.Group.SwitchCase<cr>
     nnoremap <leader>;sm :action StringManipulation.Group.Main<cr>
     vnoremap <leader>;sm :action StringManipulation.Group.Main<cr>
+    nnoremap <leader>;sC :action StringManipulation.ToCamelCase<cr>
 
 " Refactorings
 	map <leader>R :action Refactorings.QuickListPopupAction<cr>
@@ -183,7 +195,7 @@ let mapleader = " "
 	nmap <leader>va :action Annotate<cr>
 	nmap <leader>vl :action Vcs.Show.Log<cr>
 	nmap <leader>vd :action Compare.LastVersion<cr>
-	nmap <leader>vr :action ChangesView.Revert<cr>
+	nmap <leader>vr :action Vcs.RollbackChangedLines<cr>
 	" nmap <leader>yr :action Git.ResolveConflicts<cr>
 
 " Flutter
@@ -248,3 +260,25 @@ let mapleader = " "
 	" nmap F <Plug>(easymotion-F)
 	" nmap t <Plug>(easymotion-t)
 	" nmap T <Plug>(easymotion-T)
+
+sethandler <S-Tab> a:vim
+sethandler <C-A>   a:vim
+sethandler <C-B>   a:vim
+sethandler <C-C>   a:vim
+sethandler <C-D>   a:vim
+sethandler <C-E>   a:vim
+sethandler <C-H>   a:vim
+sethandler <C-S-H> a:vim
+sethandler <C-J>   a:vim
+sethandler <C-K>   a:vim
+sethandler <C-L>   a:vim
+sethandler <C-S-L> a:vim
+sethandler <C-M>   a:vim
+sethandler <C-N>   a:vim
+sethandler <C-O>   a:vim
+sethandler <C-P>   a:vim
+sethandler <C-Q>   a:ide
+sethandler <C-R>   a:vim
+sethandler <C-V>   a:vim
+sethandler <C-W>   a:vim
+sethandler <C-X>   a:vim

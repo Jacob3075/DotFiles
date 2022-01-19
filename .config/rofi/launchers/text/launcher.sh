@@ -20,7 +20,7 @@ color="${styles[$(( $RANDOM % 10 ))]}"
 sed -i -e "s/@import .*/@import \"$color\"/g" $dir/styles/colors.rasi
 
 # comment these lines to disable random style
-themes=($(ls -p --hide="launcher.sh" --hide="styles" $dir))
+themes=($(/bin/ls -p --hide="*.sh" --hide="*.py" --hide="styles" $dir))
 theme="${themes[$(( $RANDOM % 7 ))]}"
 
 rofi -no-lazy-grab -show drun \
