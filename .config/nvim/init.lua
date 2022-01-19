@@ -1,24 +1,21 @@
--- Auto Commands
-vim.cmd [[
-    autocmd! BufWritePost $MYVIMRC nested source $MYVIMRC
-
-    function! MyHighlights() abort
-"	highlight Normal     cterm=NONE ctermbg=17              gui=NONE guibg=#000000
-    endfunction
-
-    augroup MyColors
-	autocmd!
-	autocmd ColorScheme * call MyHighlights()
-    augroup END
-]]
-
-require"jacob.options"
-require"jacob.plugins"
-require"jacob.keymaps"
-require"jacob.colorscheme"
-require"jacob.cmp"
-require"jacob.telescope"
-require"jacob.which-key"
-require"jacob.treesitter"
--- require"jacob.lsp"
-
+require "jacob.options"
+require "jacob.keymaps"
+require "jacob.plugins"
+require "jacob.colorscheme"
+require "jacob.cmp"
+require "jacob.lsp"
+require "jacob.telescope"
+require "jacob.treesitter"
+require "jacob.autopairs"
+require "jacob.comment"
+require "jacob.gitsigns"
+require "jacob.nvim-tree"
+require "jacob.bufferline"
+require "jacob.lualine"
+require "jacob.toggleterm"
+require "jacob.project"
+require "jacob.impatient"
+require "jacob.indentline"
+require "jacob.alpha"
+require "jacob.whichkey"
+require "jacob.autocommands"
