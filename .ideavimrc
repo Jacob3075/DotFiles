@@ -49,7 +49,7 @@ let mapleader = " "
 	inoremap <C-d> <Delete>
 
     nnoremap <CR><CR> :action ShowIntentionActions<CR>
-    noremap <Space>= :action ReformatCode<CR>
+    noremap <leader>= :action ReformatCode<CR>
 
 " Quit insert mode
 	inoremap jk <Esc>
@@ -60,14 +60,18 @@ let mapleader = " "
 " Movement Keys
     nnoremap <C-w> :action EditorNextWord<cr>
     nnoremap <C-b> :action EditorPreviousWord<cr>
+    vnoremap <C-w> :action EditorNextWordWithSelection<cr>
+    vnoremap <C-b> :action EditorPreviousWordWithSelection<cr>
 
 " Quit visual mode
 	vnoremap v <Esc>
-	nnoremap <Leader>sc :nohlsearch<CR>
+	nnoremap <leader><Esc> :nohlsearch<CR>
 
 " Move to the start and end of the line
 	nnoremap H ^
 	nnoremap L $
+	vnoremap H ^
+	vnoremap L $
 
 " Use Q for formatting the current paragraph (or visual selection)
 	vmap Q gq
@@ -85,10 +89,11 @@ let mapleader = " "
 	nmap <leader>j <c-w>j
 
 " Closing tabs
-	nmap <leader>cb :action CloseContent<cr>
-	nmap <leader>ca :action CloseAllEditors<cr>
-	nmap <leader>co :action CloseAllEditorsButActive<cr>
-	nmap <leader>C :action ReopenClosedTab<cr>
+	nnoremap <leader>cb :action CloseContent<cr>
+	nnoremap <leader>ca :action CloseAllEditors<cr>
+	nnoremap <leader>co :action CloseAllEditorsButActive<cr>
+	nnoremap <leader>cp :action CloseProject<cr>
+	nnoremap <leader>C :action ReopenClosedTab<cr>
 
 " To navigate between split panes
 	nnoremap <leader>wn :action NextSplitter<cr>
@@ -108,7 +113,7 @@ let mapleader = " "
 
 " Remapped Search
 	nnoremap / :action Find<CR>
-	nnoremap <Leader>/ /
+	nnoremap <leader>/ /
 
 	nmap <leader><leader> :action RecentFiles<cr>
 	nmap <leader>I :action SelectIn<cr>
@@ -168,21 +173,32 @@ let mapleader = " "
     nnoremap <leader>;sC :action StringManipulation.ToCamelCase<cr>
 
 " Refactorings
-	map <leader>R :action Refactorings.QuickListPopupAction<cr>
-	map <leader>rr :action RenameElement<cr>
-	map <leader>rR :action Replace<cr>
-	map <leader>rI :action OptimizeImports<cr>
-	map <leader>rc :action IntroduceConstant<cr>
-	map <leader>rv :action IntroduceVariable<cr>
-	map <leader>rf :action IntroduceProperty<cr>
-	map <leader>rp :action IntroduceParameter<cr>
-	map <leader>rm :action ExtractMethod<cr>
-	map <leader>rs :action ChangeSignature<cr>
+	nnoremap <leader>R :action Refactorings.QuickListPopupAction<cr>
+	nnoremap <leader>rr :action RenameElement<cr>
+	nnoremap <leader>rR :action Replace<cr>
+	nnoremap <leader>rI :action OptimizeImports<cr>
+	nnoremap <leader>rc :action IntroduceConstant<cr>
+	nnoremap <leader>rv :action IntroduceVariable<cr>
+	nnoremap <leader>rf :action IntroduceProperty<cr>
+	nnoremap <leader>rp :action IntroduceParameter<cr>
+	nnoremap <leader>rm :action ExtractMethod<cr>
+	nnoremap <leader>rs :action ChangeSignature<cr>
+	nnoremap <leader>rw :action Flutter.ExtractWidgetToFile<cr>
+
+	vnoremap <leader>R :action Refactorings.QuickListPopupAction<cr>
+	vnoremap <leader>rr :action RenameElement<cr>
+	vnoremap <leader>rR :action Replace<cr>
+	vnoremap <leader>rc :action IntroduceConstant<cr>
+	vnoremap <leader>rv :action IntroduceVariable<cr>
+	vnoremap <leader>rf :action IntroduceProperty<cr>
+	vnoremap <leader>rp :action IntroduceParameter<cr>
+	vnoremap <leader>rm :action ExtractMethod<cr>
+	vnoremap <leader>rw :action Flutter.ExtractWidgetToFile<cr>
 
 " Generate
-	nmap <leader>;gg :action Generate<cr>
-	nmap <leader>;go :action OverrideMethods<cr>
-	nmap <leader>;gi :action ImplementMethods<cr>
+	nmap <leader>ggg :action Generate<cr>
+	nmap <leader>ggo :action OverrideMethods<cr>
+	nmap <leader>ggi :action ImplementMethods<cr>
 
 " Inspection
 	nmap <leader>ic :action InspectCode<cr>
@@ -238,6 +254,10 @@ let mapleader = " "
 	nnoremap [B :action GotoPreviousBookmark<cr>
 	nnoremap ]B :action GotoNextBookmark<cr>
 
+" Occurrence
+    nnoremap [w #:nohlsearch<cr>
+    nnoremap ]w *:nohlsearch<cr>
+
 " Search
 	nnoremap <leader>\ :action FindInPath<cr>
 
@@ -247,13 +267,16 @@ let mapleader = " "
 
 " Building, Running and Debugging
 	nnoremap ,s :action Stop<cr>
-	nnoremap ,C :action CloseProject<cr>
 	nnoremap ,r :action Run<cr>
 	nnoremap ,b :action BuildMenu<cr>
 	nnoremap ,dd :action Debug<cr>
 	nnoremap ,c :action RunClass<cr>
 	nnoremap ,dc : DebugClass<cr>
 	nnoremap ,t :action ShowRecentTests<cr>
+
+" AMII
+    nnoremap <leader>;ad :action amii.discreet-mode<cr>
+    nnoremap <leader>;am :action AMIIActions<cr>
 
 " EasyMotion
 	" nmap f <Plug>(easymotion-f)

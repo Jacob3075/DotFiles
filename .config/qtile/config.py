@@ -57,6 +57,8 @@ keys = [
         "/home/jacob/.config/rofi/launchers/launcher.sh"), desc="Launch Rofi"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "w", lazy.spawn("firefox"), desc="Launch Firefox"),
+    Key([mod, "shift"], "w", lazy.spawn(
+        "firefox --private-window"), desc="Launch Firefox"),
     Key([mod], "e", lazy.spawn("thunar"), desc="Launch Thunar"),
     Key([mod], "v", lazy.spawn(
         "/home/jacob/.config/rofi/launchers/rofi-pulse.py"), desc="Launch Thunar"),
@@ -100,7 +102,8 @@ for i in groups:
     ])
 
 layouts = [
-    layout.Columns(border_focus_stack=['#d75f5f', '#8f3d3d'], border_width=1, margin=6),
+    layout.Columns(border_focus_stack=[
+                   '#d75f5f', '#8f3d3d'], border_width=1, margin=6),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
