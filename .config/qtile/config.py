@@ -164,7 +164,8 @@ def init_bar():
                 text='',
                 background=COLORS["black"],
                 foreground=COLORS["cyan"],
-                padding=-8,
+                font="Ubuntu Mono",
+                padding=-1,
                 fontsize=50
             ),
             widget.Systray(background=COLORS["cyan"]),
@@ -172,7 +173,8 @@ def init_bar():
                 text='',
                 background=COLORS["cyan"],
                 foreground=COLORS["magenta"],
-                padding=-8,
+                font="Ubuntu Mono",
+                padding=0,
                 fontsize=50
             ),
             widget.CapsNumLockIndicator(background=COLORS["magenta"]),
@@ -180,7 +182,8 @@ def init_bar():
                 text='',
                 background=COLORS["magenta"],
                 foreground=COLORS["red"],
-                padding=-8,
+                font="Ubuntu Mono",
+                padding=0,
                 fontsize=50
             ),
             widget.PulseVolume(background=COLORS["red"], fmt="VOL: {}"),
@@ -188,7 +191,8 @@ def init_bar():
                 text='',
                 background=COLORS["red"],
                 foreground=COLORS["yellow"],
-                padding=-8,
+                font="Ubuntu Mono",
+                padding=0,
                 fontsize=50
             ),
             widget.Clock(
@@ -199,7 +203,8 @@ def init_bar():
                 text='',
                 background=COLORS["yellow"],
                 foreground=COLORS["blue"],
-                padding=-8,
+                font="Ubuntu Mono",
+                padding=0,
                 fontsize=50
             ),
             widget.Battery(
