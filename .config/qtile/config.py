@@ -11,7 +11,7 @@ HOME = os.path.expanduser("~")
 SCRIPTS_DIR = f"{HOME}/.config/shell/scripts"
 
 COLORS = {
-    "black": "#161925",
+    "black": "#000000",
     "red": "#e06c75",
     "green": "#98c379",
     "yellow": "#e5c07b",
@@ -22,6 +22,7 @@ COLORS = {
     "white": "#ffffff",
 }
 POWERLINE_SYMBOL = "\ue0be"
+
 
 @hook.subscribe.startup_once
 def autostart():
@@ -156,64 +157,58 @@ def init_bar():
                 this_current_screen_border=COLORS["blue"],
                 padding=5,
             ),
+            widget.WindowName(),
+            widget.Prompt(),
             widget.Spacer(),
-            widget.Systray(),
             widget.TextBox(
-                text=POWERLINE_SYMBOL,
-                foreground=COLORS["red"],
+                text='',
                 background=COLORS["black"],
-                fontsize=25,
+                foreground=COLORS["cyan"],
+                padding=-8,
+                fontsize=50
             ),
-            widget.Volume(background=COLORS["red"], fmt="VOL: {}"),
+            widget.Systray(background=COLORS["cyan"]),
             widget.TextBox(
-                text=POWERLINE_SYMBOL,
-                foreground=COLORS["green"],
+                text='',
+                background=COLORS["cyan"],
+                foreground=COLORS["magenta"],
+                padding=-8,
+                fontsize=50
+            ),
+            widget.CapsNumLockIndicator(background=COLORS["magenta"]),
+            widget.TextBox(
+                text='',
+                background=COLORS["magenta"],
+                foreground=COLORS["red"],
+                padding=-8,
+                fontsize=50
+            ),
+            widget.PulseVolume(background=COLORS["red"], fmt="VOL: {}"),
+            widget.TextBox(
+                text='',
                 background=COLORS["red"],
-                fontsize=25,
-            ),
-            widget.Backlight(
-                backlight_name="intel_backlight",
-                brightness_file="actual_brightness",
-                fmt="BLT: {}",
-                background=COLORS["green"],
-            ),
-            widget.TextBox(
-                text=POWERLINE_SYMBOL,
                 foreground=COLORS["yellow"],
-                background=COLORS["green"],
-                fontsize=25,
+                padding=-8,
+                fontsize=50
             ),
             widget.Clock(
                 background=COLORS["yellow"],
-                format="%A, %B %d - %H:%M ",
+                format="%a, %b %d - %I:%M %p",
             ),
             widget.TextBox(
-                text=POWERLINE_SYMBOL,
-                fontsize=25,
-                foreground=COLORS["blue"],
+                text='',
                 background=COLORS["yellow"],
+                foreground=COLORS["blue"],
+                padding=-8,
+                fontsize=50
             ),
-            widget.Battery(background=COLORS["blue"]),
-            widget.TextBox(
-                text=POWERLINE_SYMBOL,
-                fontsize=25,
-                foreground=COLORS["magenta"],
+            widget.Battery(
                 background=COLORS["blue"],
-            ),
-            widget.GenPollText(
-                fmt="DND: {}",
-                func=lambda: "ON"
-                if "true"
-                in subprocess.check_output(["dunstctl", "is-paused"]).decode("utf-8")
-                else "OFF",
-                mouse_callbacks={
-                    "Button1": lambda: subprocess.run(
-                        ["dunstctl", "set-paused", "toggle"]
-                    )
-                },
-                background=COLORS["magenta"],
-                padding=5,
-                update_interval=1,
+                update_interval=30,
+                format="{char} {percent:2.0%}",
+                discharge_char=" ",
+                charge_char=" ",
+                low_foreground=COLORS["red"],
             ),
         ],
         opacity=0.9,
