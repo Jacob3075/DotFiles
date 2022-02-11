@@ -26,3 +26,6 @@ export SDKMAN_DIR="/home/jacob/.local/share/sdkman"
 
 # ZINIT[BIN_DIR]="/home/jacob/.config/zsh/zinit/bin"
 # ZINIT[HOME_DIR]="/home/jacob/.config/zsh/zinit"
+
+export RUSTUP_HOME="$HOME/.local/share/rustup"
+export CARGO_HOME="$HOME/.local/share/cargo"
