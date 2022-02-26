@@ -1,0 +1,8 @@
+[Default Applications]
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
+x-scheme-handler/msteams=teams.desktop
+
+[Added Associations]
+application/pdf=org.gnome.Evince.desktop;mupdf.desktop;org.pwmt.zathura.desktop;
+image/svg+xml=firefox.desktop;feh.desktop;
+text/plain=nvim.desktop;
