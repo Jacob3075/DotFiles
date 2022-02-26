@@ -7,7 +7,7 @@ directories=(misc colorful ribbon)
 
 # echo $directories
 
-directory="${directories[$(( $RANDOM % 4 ))]}"
+directory="${directories[$(( $RANDOM % 3 ))]}"
 
 echo "${directory}" 
 

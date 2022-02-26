@@ -190,18 +190,6 @@ def init_bar():
             widget.TextBox(
                 text='',
                 background=COLORS["red"],
-                foreground=COLORS["yellow"],
-                font="Ubuntu Mono",
-                padding=0,
-                fontsize=50
-            ),
-            widget.Clock(
-                background=COLORS["yellow"],
-                format="%a, %b %d - %I:%M %p",
-            ),
-            widget.TextBox(
-                text='',
-                background=COLORS["yellow"],
                 foreground=COLORS["blue"],
                 font="Ubuntu Mono",
                 padding=0,
@@ -214,6 +202,18 @@ def init_bar():
                 discharge_char=" ",
                 charge_char=" ",
                 low_foreground=COLORS["red"],
+            ),
+            widget.TextBox(
+                text='',
+                background=COLORS["blue"],
+                foreground=COLORS["yellow"],
+                font="Ubuntu Mono",
+                padding=0,
+                fontsize=50
+            ),
+            widget.Clock(
+                background=COLORS["yellow"],
+                format="%a, %b %d - %I:%M %p",
             ),
         ],
         opacity=0.9,

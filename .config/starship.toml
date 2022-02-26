@@ -1,4 +1,4 @@
-add_newline = true
+add_newline = false
 
 [line_break]
 disabled = false
@@ -9,18 +9,24 @@ disabled = false
 # [│](bold green)$directory$rust$package
 # [└─>](bold green) """
 
+# A minimal left prompt
+# format = """$character"""
+
+# move the rest of the prompt to the right
+right_format = """PES2UG19CS902"""
+
 [package]
-disabled = true
+disabled = false
 
 [directory]
-truncation_length = 2
+truncation_length = 3
 truncation_symbol = "…/"
 truncate_to_repo = false
 
 [cmd_duration]
 show_notifications = true
 min_time_to_notify = 3000
-min_time = 1000
+min_time = 500
 
 [git_commit]
 commit_hash_length = 5
@@ -36,10 +42,10 @@ diverged = "⇕⇡${ahead_count} ⇣${behind_count} "
 behind = "[⇣${count}]{orange} "
 
 [jobs]
-number_threshold = 0
+number_threshold = 1
 
 [memory_usage]
-disabled = true
+disabled = false
 format= " $symbol [${ram}( | ${swap})]($style) "
 threshold = 70
 symbol = ""
