@@ -11,8 +11,8 @@ set nu
 set clipboard+=unnamedplus, ideaput, autoselect
 set matchpairs
 set startofline
-" set timeout 2000
-set notimeout
+set timeout 500
+" set notimeout
 
 let mapleader = " "
 
@@ -161,39 +161,31 @@ let mapleader = " "
 	noremap <Space>sm :action ShowPopupMenu<CR>
 
 " Bookmarks
-    nnoremap <leader>bT :action ToggleBookmarkWithMnemonic<cr>
-    nnoremap <leader>bt :action ToggleBookmark<cr>
-    nnoremap <leader>bd :action EditBookmark<cr:
+    nnoremap <leader>mT :action ToggleBookmarkWithMnemonic<cr>
+    nnoremap <leader>mt :action ToggleBookmark<cr>
+    nnoremap <leader>me :action EditBookmark<cr>
+    nnoremap <leader>mg :action Bookmarks.Goto<cr>
 
-" String Manipulation
-    nnoremap <leader>;sc :action StringManipulation.Group.SwitchCase<cr>
-    vnoremap <leader>;sc :action StringManipulation.Group.SwitchCase<cr>
-    nnoremap <leader>;sm :action StringManipulation.Group.Main<cr>
-    vnoremap <leader>;sm :action StringManipulation.Group.Main<cr>
-    nnoremap <leader>;sC :action StringManipulation.ToCamelCase<cr>
+" Breakpoint
+    nnoremap <leader>bb :action ToggleLineBreakpoint<cr>
+    nnoremap <leader>bt :action ToggleBreakpointEnabled<cr>
+    nnoremap <leader>be :action EditBreakpoint<cr>
+    nnoremap <leader>ba :action BreakpointActionsGroup<cr>
+    nnoremap <leader>bv :action ViewBreakpoints<cr>
 
 " Refactorings
-	nnoremap <leader>R :action Refactorings.QuickListPopupAction<cr>
-	nnoremap <leader>rr :action RenameElement<cr>
-	nnoremap <leader>rR :action Replace<cr>
-	nnoremap <leader>rI :action OptimizeImports<cr>
-	nnoremap <leader>rc :action IntroduceConstant<cr>
-	nnoremap <leader>rv :action IntroduceVariable<cr>
-	nnoremap <leader>rf :action IntroduceProperty<cr>
-	nnoremap <leader>rp :action IntroduceParameter<cr>
-	nnoremap <leader>rm :action ExtractMethod<cr>
-	nnoremap <leader>rs :action ChangeSignature<cr>
-	nnoremap <leader>rw :action Flutter.ExtractWidgetToFile<cr>
-
-	vnoremap <leader>R :action Refactorings.QuickListPopupAction<cr>
-	vnoremap <leader>rr :action RenameElement<cr>
-	vnoremap <leader>rR :action Replace<cr>
-	vnoremap <leader>rc :action IntroduceConstant<cr>
-	vnoremap <leader>rv :action IntroduceVariable<cr>
-	vnoremap <leader>rf :action IntroduceProperty<cr>
-	vnoremap <leader>rp :action IntroduceParameter<cr>
-	vnoremap <leader>rm :action ExtractMethod<cr>
-	vnoremap <leader>rw :action Flutter.ExtractWidgetToFile<cr>
+	noremap <leader>R :action Refactorings.QuickListPopupAction<cr>
+	noremap <leader>rr :action RenameElement<cr>
+	noremap <leader>rR :action Replace<cr>
+	noremap <leader>rI :action OptimizeImports<cr>
+	noremap <leader>rc :action IntroduceConstant<cr>
+	noremap <leader>rv :action IntroduceVariable<cr>
+	noremap <leader>rf :action IntroduceProperty<cr>
+	noremap <leader>rp :action IntroduceParameter<cr>
+	noremap <leader>rm :action ExtractMethod<cr>
+	noremap <leader>rs :action ChangeSignature<cr>
+	noremap <leader>rw :action Flutter.ExtractWidgetToFile<cr>
+	noremap <leader>ri :action Inline<cr>
 
 " Generate
 	nmap <leader>ggg :action Generate<cr>
@@ -277,6 +269,15 @@ let mapleader = " "
 " AMII
     nnoremap <leader>;ad :action amii.discreet-mode<cr>
     nnoremap <leader>;am :action AMIIActions<cr>
+
+" String Manipulation
+    noremap <leader>;sc :action StringManipulation.Group.SwitchCase<cr>
+    noremap <leader>;sm :action StringManipulation.Group.Main<cr>
+    noremap <leader>;sC :action StringManipulation.ToCamelCase<cr>
+
+" Local History
+    nnoremap <leader>;hs :action LocalHistory.ShowHistory<cr>
+    vnoremap <leader>;hs :action LocalHistory.ShowSelectionHistory<cr>
 
 " EasyMotion
 	" nmap f <Plug>(easymotion-f)

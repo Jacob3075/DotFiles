@@ -6,8 +6,8 @@
 #   copyq (only way that I could get an image from the clipboard)
 set -e
 
-copyq read image/png 0 > /tmp/image.png
+clip=`xclip -o -selection clipboard`
 
-tesseract /tmp/image.png /tmp/output
+tesseract $clip /tmp/output
 
-copyq copy "$(cat /tmp/output.txt)" && notify-send "OCR Complete"
+echo -n "$(cat /tmp/output.txt)" | xclip -selection c && notify-send "OCR Complete"
