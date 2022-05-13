@@ -123,9 +123,11 @@ let mapleader = " "
 	nmap \\\\ :action FileStructurePopup<cr>
 
 " Navigation
-	nmap <Tab> :action NextTab<cr>
-	nmap <S-Tab> :action PreviousTab<cr>
-	nmap <leader>. <C-^> <cr>
+	nnoremap <Tab> :action NextTab<cr>
+	nnoremap <S-Tab> :action PreviousTab<cr>
+	nnoremap <C-Tab> :tabm +1<cr>
+	nnoremap <C-S-Tab> :tabm -1<cr>
+	nnoremap <leader>. <C-^><cr>
 
 " AceJump
 	nnoremap f :action AceAction<cr>
@@ -180,7 +182,8 @@ let mapleader = " "
 	noremap <leader>rI :action OptimizeImports<cr>
 	noremap <leader>rc :action IntroduceConstant<cr>
 	noremap <leader>rv :action IntroduceVariable<cr>
-	noremap <leader>rf :action IntroduceProperty<cr>
+	noremap <leader>rf :action IntroduceField<cr>
+	noremap <leader>rF :action IntroduceProperty<cr>
 	noremap <leader>rp :action IntroduceParameter<cr>
 	noremap <leader>rm :action ExtractMethod<cr>
 	noremap <leader>rs :action ChangeSignature<cr>
