@@ -227,6 +227,10 @@ let mapleader = " "
 	nnoremap [[ :action Back<cr>
 	nnoremap ]] :action Forward<cr>
 
+    " https://youtrack.jetbrains.com/issue/VIM-2225/IdeaVim-in-Rider-action-Back-behaves-incorrectly#focus=Comments-27-4829085.0-0
+	" nnoremap [[ <Action>(Back)
+	" nnoremap ]] <Action>(Forward)
+
 	" nnoremap [{ :action EditorCodeBlockStart<cr>
 	" nnoremap ]} :action EditorCodeBlockEnd<cr>
 

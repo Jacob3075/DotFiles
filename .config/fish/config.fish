@@ -8,7 +8,6 @@ end
 
 source ~/.config/fish/globals.fish
 source ~/.config/fish/abbreviations.fish
-source ~/.config/fish/omf.fish
 
 # SOURCE ALIAS AND EXPORTS
 source ~/.config/aliasrc
