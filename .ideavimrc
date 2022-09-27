@@ -76,7 +76,7 @@ let mapleader = " "
 " Use Q for formatting the current paragraph (or visual selection)
 	vmap Q gq
 	nmap Q gqap
-	
+
 " These create newlines like o and O but stay in normal mode
 	nmap zj o<Esc>k
 	nmap zk O<Esc>j
@@ -121,6 +121,8 @@ let mapleader = " "
 	nmap ,,  :action RecentLocations<cr>
 	" nmap ,,  :action HideAllWindows<cr>
 	nmap \\\\ :action FileStructurePopup<cr>
+	nmap '' :action tasks.and.contexts<cr>
+	nmap `` :action tasks.goto<cr>
 
 " Navigation
 	nnoremap <Tab> :action NextTab<cr>
@@ -186,6 +188,7 @@ let mapleader = " "
 	noremap <leader>rF :action IntroduceProperty<cr>
 	noremap <leader>rp :action IntroduceParameter<cr>
 	noremap <leader>rm :action ExtractMethod<cr>
+	noremap <leader>rM :action ExtractFunction<cr>
 	noremap <leader>rs :action ChangeSignature<cr>
 	noremap <leader>rw :action Flutter.ExtractWidgetToFile<cr>
 	noremap <leader>ri :action Inline<cr>
@@ -206,7 +209,7 @@ let mapleader = " "
 	nmap <leader>va :action Annotate<cr>
 	nmap <leader>vl :action Vcs.Show.Log<cr>
 	nmap <leader>vd :action Compare.LastVersion<cr>
-	nmap <leader>vr :action Vcs.RollbackChangedLines<cr>
+	noremap <leader>vr :action Vcs.RollbackChangedLines<cr>
 	" nmap <leader>yr :action Git.ResolveConflicts<cr>
 
 " Flutter
@@ -224,12 +227,12 @@ let mapleader = " "
 	nnoremap [<space> O<esc>j
 	nnoremap ]<space> o<esc>k
 
-	nnoremap [[ :action Back<cr>
-	nnoremap ]] :action Forward<cr>
+	" nnoremap [[ :action Back<cr>
+	" nnoremap ]] :action Forward<cr>
 
     " https://youtrack.jetbrains.com/issue/VIM-2225/IdeaVim-in-Rider-action-Back-behaves-incorrectly#focus=Comments-27-4829085.0-0
-	" nnoremap [[ <Action>(Back)
-	" nnoremap ]] <Action>(Forward)
+	nmap [[ <Action>(Back)
+	nmap ]] <Action>(Forward)
 
 	" nnoremap [{ :action EditorCodeBlockStart<cr>
 	" nnoremap ]} :action EditorCodeBlockEnd<cr>
@@ -291,6 +294,8 @@ let mapleader = " "
 	" nmap F <Plug>(easymotion-F)
 	" nmap t <Plug>(easymotion-t)
 	" nmap T <Plug>(easymotion-T)
+
+nnoremap <leader>0 :action HideAllWindows<cr>
 
 sethandler <S-Tab> a:vim
 sethandler <C-A>   a:vim
