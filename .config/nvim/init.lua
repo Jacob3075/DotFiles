@@ -1,7 +1,7 @@
 -- IMPORTS
-require('vars')
+require('sets')
 require('opts')
-require('keys')
 require('plugins')
+require('keymaps')
 require('autocmd')
 require('lsp')

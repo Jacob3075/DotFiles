@@ -1,5 +1,5 @@
 local lsp_buf = vim.lsp.buf
-local telescope_exts = require 'telescope.extensions'
+local telescope_exts = require 'telescope'.extensions
 local builtins = require 'telescope.builtin'
 
 local function map(m, k, v)
@@ -32,8 +32,10 @@ map('i', '<C-l>', '<Right>')
 
 map('n', '<Tab>', ':bnext<CR>')
 map('n', '<S-Tab>', ':bprev<CR>')
+map('n', '<leader>cb', ':bdelete<CR>')
 
--- TODO: Jump list, tag list
+map('n', '[[', '<C-o>')
+map('n', ']]', '<C-i>')
 
 map('n', 'gD', lsp_buf.declaration)
 map('n', 'gd', lsp_buf.definition)
@@ -51,6 +53,10 @@ map('n', '<leader>=', lsp_buf.formatting)
 -- print(vim.inspect(lsp_buf.list_workspace_folders()))
 -- end)
 
+map('n', "]e", vim.diagnostic.goto_next)
+map('n', "[e", vim.diagnostic.goto_prev)
+map('n', "<leader>ed", function() vim.diagnostic.open_float(0, { scope = "line", }) end)
+
 -- Nvim Tree
 map('n', '<A-1>', ':NvimTreeToggle<CR>')
 map('n', '<A-!>', ':NvimTreeFindFileToggle<CR>')
@@ -63,7 +69,17 @@ map('n', '<leader>fg', builtins.live_grep)
 map('n', '<leader>fmk', builtins.marks)
 map('n', '<leader>fmp', builtins.man_pages)
 map('n', '<leader>fq', builtins.quickfix)
+map('n', '<leader>[', builtins.jumplist)
+map('n', '<leader>]', builtins.tagstack)
 
-map('n', '<leader>fp',  telescope_exts.project.project )
-map('n', '<leader>fy',  telescope_exts.neoclip.default )
-map('n', '<leader>fe',  telescope_exts.file_browser.file_browser)
+map('n', '<leader>fp', telescope_exts.project.project)
+map('n', '<leader>fy', telescope_exts.neoclip.default)
+map('n', '<leader>fe', telescope_exts.file_browser.file_browser)
+
+local comment = require 'Comment.api'
+-- https://stackoverflow.com/a/9051932/13181948, <C-/> -> <C-_>
+map('n', '<C-_>', comment.toggle_current_linewise)
+map('v', '<C-_>', comment.toggle_current_linewise)
+-- TODO
+-- map('n', '<leader><C-_>', comment.toggle_current_blockwise)
+-- map('nv, '<leader><C-_>', comment.toggle_current_blockwise)
