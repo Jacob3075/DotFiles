@@ -120,9 +120,12 @@ let mapleader = " "
 	map <leader>S :action SurroundWith<cr>
 	nmap ,,  :action RecentLocations<cr>
 	" nmap ,,  :action HideAllWindows<cr>
-	nmap \\\\ :action FileStructurePopup<cr>
+	nmap \\\\ :action FindInPath<cr>
 	nmap '' :action tasks.and.contexts<cr>
 	nmap `` :action tasks.goto<cr>
+
+" Search
+	nnoremap <leader>\ :action FileStructurePopup<cr>
 
 " Navigation
 	nnoremap <Tab> :action NextTab<cr>
@@ -133,36 +136,39 @@ let mapleader = " "
 
 " AceJump
 	nnoremap f :action AceAction<cr>
-	nmap <leader>af :action AceAction<cr>
-	nmap <leader>aF :action AceReverseAction<cr>
-	nmap <leader>ad :action AceDeclarationAction <cr>
-	nmap <leader>al :action AceLineStartsAction <cr>
-	nmap <leader>ai :action AceLineIndentsAction <cr>
-	nmap <leader>aL :action AceLineEndsAction <cr>
-	nmap <leader>at :action AceTargetAction <cr>
+	nnoremap <leader>af :action AceAction<cr>
+	nnoremap <leader>aF :action AceReverseAction<cr>
+	nnoremap <leader>ad :action AceDeclarationAction <cr>
+	nnoremap <leader>al :action AceLineStartsAction <cr>
+	nnoremap <leader>ai :action AceLineIndentsAction <cr>
+	nnoremap <leader>aL :action AceLineEndsAction <cr>
+	nnoremap <leader>at :action AceTargetAction <cr>
 	" nmap t <Plug>(easymotion-t)
 	" nmap T <Plug>(easymotion-T)
 
 " GoTo
-	nmap <leader>gi :action GotoImplementation<cr>
-	nmap <leader>gd :action GotoDeclaration<cr>
-	nmap <leader>gR :action GotoRelated<cr>
-	nmap <leader>gt :action GotoTest<cr>
+	nnoremap gi :action GotoImplementation<cr>
+	nnoremap gd :action GotoDeclaration<cr>
+	nnoremap gR :action GotoRelated<cr>
+	nnoremap gt :action GotoTest<cr>
+	nnoremap gf :action GotoFile<cr>
 
 " Find
-	nmap <leader>ff :action GotoFile<cr>
-	nmap <leader>fs :action GotoSymbol<cr>
-	nmap <leader>fa :action GotoAction<cr>
-	nmap <leader>fc :action GotoClass<cr>
-	nmap <leader>fu :action FindUsages<cr>
-	nmap <leader>fU :action FindUsagesInFile<cr>
+	nnoremap <leader>ff :action GotoFile<cr>
+	nnoremap <leader>fs :action GotoSymbol<cr>
+	nnoremap <leader>fa :action GotoAction<cr>
+	nnoremap <leader>fc :action GotoClass<cr>
+	nnoremap <leader>fu :action FindUsages<cr>
+	nnoremap <leader>fU :action FindUsagesInFile<cr>
 
 " Show
 	nnoremap <leader>su :action ShowUsages<cr>
 	nnoremap <leader>sU :action FindUsagesInFile<cr>
 	nnoremap <leader>sb :action ShowBookmarks<cr>
 	nnoremap <leader>si :action QuickImplementations<cr>
-	noremap <Space>sm :action ShowPopupMenu<CR>
+	noremap <leader>sm :action ShowPopupMenu<CR>
+    nnoremap <leader>sh :action LocalHistory.ShowHistory<cr>
+    vnoremap <leader>sh :action LocalHistory.ShowSelectionHistory<cr>
 
 " Bookmarks
     nnoremap <leader>mT :action ToggleBookmarkWithMnemonic<cr>
@@ -171,11 +177,11 @@ let mapleader = " "
     nnoremap <leader>mg :action Bookmarks.Goto<cr>
 
 " Breakpoint
-    nnoremap <leader>bb :action ToggleLineBreakpoint<cr>
-    nnoremap <leader>bt :action ToggleBreakpointEnabled<cr>
-    nnoremap <leader>be :action EditBreakpoint<cr>
-    nnoremap <leader>ba :action BreakpointActionsGroup<cr>
-    nnoremap <leader>bv :action ViewBreakpoints<cr>
+    nnoremap <leader>dbb :action ToggleLineBreakpoint<cr>
+    nnoremap <leader>dbt :action ToggleBreakpointEnabled<cr>
+    nnoremap <leader>dbe :action EditBreakpoint<cr>
+    nnoremap <leader>dba :action BreakpointActionsGroup<cr>
+    nnoremap <leader>dbv :action ViewBreakpoints<cr>
 
 " Refactorings
 	noremap <leader>R :action Refactorings.QuickListPopupAction<cr>
@@ -194,21 +200,23 @@ let mapleader = " "
 	noremap <leader>ri :action Inline<cr>
 
 " Generate
-	nmap <leader>ggg :action Generate<cr>
-	nmap <leader>ggo :action OverrideMethods<cr>
-	nmap <leader>ggi :action ImplementMethods<cr>
+	nmap <leader>gg :action Generate<cr>
+	nmap <leader>go :action OverrideMethods<cr>
+	nmap <leader>gi :action ImplementMethods<cr>
 
 " Inspection
 	nmap <leader>ic :action InspectCode<cr>
 
 " VCS operations
-	nmap <leader>vc :action Vcs.Show.Local.Changes<cr>
-	nmap <leader>vp :action Vcs.Push<cr>
-	nmap <leader>vu :action Vcs.UpdateProject<cr>
-	nmap <leader>vm :action Vcs.QuickListPopupAction<cr>
-	nmap <leader>va :action Annotate<cr>
-	nmap <leader>vl :action Vcs.Show.Log<cr>
-	nmap <leader>vd :action Compare.LastVersion<cr>
+	nnoremap <leader>vc :action Vcs.Show.Local.Changes<cr>
+	nnoremap <leader>vp :action Vcs.Push<cr>
+	nnoremap <leader>vP :action Vcs.Push.Force<cr>
+	nnoremap <leader>vu :action Vcs.UpdateProject<cr>
+	nnoremap <leader>vm :action Vcs.QuickListPopupAction<cr>
+	nnoremap <leader>va :action Annotate<cr>
+	nnoremap <leader>vl :action Vcs.Show.Log<cr>
+	nnoremap <leader>vd :action VcsShowCurrentChangeMarker<cr>
+	nnoremap <leader>vD :action Compare.LastVersion<cr>
 	noremap <leader>vr :action Vcs.RollbackChangedLines<cr>
 	" nmap <leader>yr :action Git.ResolveConflicts<cr>
 
@@ -223,9 +231,10 @@ let mapleader = " "
     nnoremap <leader>Fbc :action cn.neday.excavator.action.generation.CleanAction<cr>
     nnoremap <leader>Fbk :action cn.neday.excavator.action.kill.FlutterKillAction<cr>
 
-" unimpaired mappings - from https://github.com/saaguero/ideavimrc/blob/master/.ideavimrc
-	nnoremap [<space> O<esc>j
-	nnoremap ]<space> o<esc>k
+
+" Multi-cursor
+    nnoremap <A-j> :action EditorCloneCaretBelow<cr>
+    nnoremap <A-k> :action EditorCloneCaretAbove<cr>
 
 	" nnoremap [[ :action Back<cr>
 	" nnoremap ]] :action Forward<cr>
@@ -252,16 +261,13 @@ let mapleader = " "
 	nnoremap [b :action PreviousTab<cr>
 	nnoremap ]b :action NextTab<cr>
 
-" Tabs
+" Bookmarks
 	nnoremap [B :action GotoPreviousBookmark<cr>
 	nnoremap ]B :action GotoNextBookmark<cr>
 
 " Occurrence
     nnoremap [w #:nohlsearch<cr>
     nnoremap ]w *:nohlsearch<cr>
-
-" Search
-	nnoremap <leader>\ :action FindInPath<cr>
 
 " Moving statements
 	nnoremap [s :action MoveStatementUp<cr>
@@ -284,10 +290,6 @@ let mapleader = " "
     noremap <leader>;sc :action StringManipulation.Group.SwitchCase<cr>
     noremap <leader>;sm :action StringManipulation.Group.Main<cr>
     noremap <leader>;sC :action StringManipulation.ToCamelCase<cr>
-
-" Local History
-    nnoremap <leader>;hs :action LocalHistory.ShowHistory<cr>
-    vnoremap <leader>;hs :action LocalHistory.ShowSelectionHistory<cr>
 
 " EasyMotion
 	" nmap f <Plug>(easymotion-f)
