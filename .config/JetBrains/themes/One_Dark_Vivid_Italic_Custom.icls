@@ -1,10 +1,10 @@
 <scheme name="One Dark Vivid Italic Custom" version="142" parent_scheme="Darcula">
   <option name="FONT_SCALE" value="1.0" />
   <metaInfo>
-    <property name="created">2022-09-27T12:41:55</property>
+    <property name="created">2022-10-07T13:57:17</property>
     <property name="ide">AndroidStudio</property>
-    <property name="ideVersion">2021.3.1.16</property>
-    <property name="modified">2022-09-27T12:42:18</property>
+    <property name="ideVersion">2022.2.1.2</property>
+    <property name="modified">2022-10-07T13:57:38</property>
     <property name="originalScheme">One Dark Vivid Italic Custom</property>
   </metaInfo>
   <option name="CONSOLE_FONT_NAME" value="JetBrains Mono" />
@@ -603,12 +603,6 @@
         <option name="FOREGROUND" value="d19a66" />
       </value>
     </option>
-    <option name="DEFAULT_DOC_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="5c6370" />
-        <option name="FONT_TYPE" value="2" />
-      </value>
-    </option>
     <option name="DEFAULT_DOC_COMMENT_TAG">
       <value>
         <option name="FOREGROUND" value="d55fde" />
@@ -1102,13 +1096,13 @@
     </option>
     <option name="INLAY_DEFAULT">
       <value>
-        <option name="FOREGROUND" value="bbbbbb" />
-        <option name="BACKGROUND" value="414855" />
+        <option name="FOREGROUND" value="868686" />
+        <option name="BACKGROUND" value="373b44" />
       </value>
     </option>
     <option name="INLINE_PARAMETER_HINT">
       <value>
-        <option name="FOREGROUND" value="bbbbbb" />
+        <option name="FOREGROUND" value="868686" />
         <option name="BACKGROUND" value="414855" />
       </value>
     </option>
@@ -1300,7 +1294,6 @@
     <option name="KOTLIN_SUSPEND_FUNCTION_CALL">
       <value>
         <option name="FOREGROUND" value="61afef" />
-        <option name="EFFECT_COLOR" value="386f9a" />
         <option name="EFFECT_TYPE" value="5" />
       </value>
     </option>
