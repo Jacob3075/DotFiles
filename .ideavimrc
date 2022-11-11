@@ -57,7 +57,7 @@ let mapleader = " "
     nnoremap <C-w> [w
     nnoremap <C-b> ]b
     vnoremap <C-w> [w
-    vnoremap <C-b> [b
+    vnoremap <C-b> [bl
 
 " Move to the start and end of the line
 	nnoremap H ^
@@ -86,7 +86,7 @@ let mapleader = " "
 " Miscellaneous
 	nnoremap <leader><leader> :action RecentFiles<cr>
 	nnoremap <leader>I :action SelectIn<cr>
-    nnoremap <leader>ii :action ExpressionTypeInfo<CR>
+    noremap <leader>ii :action ExpressionTypeInfo<CR>
 	nnoremap <leader>ic :action InspectCode<cr>
 	noremap <leader>S :action SurroundWith<cr>
 	nnoremap ,,  :action RecentLocations<cr>
@@ -217,6 +217,7 @@ let mapleader = " "
 
 " Registers
     vnoremap p "_dP
+    vnoremap P "_dP
 
 " Multi-cursor
     nnoremap <A-j> :action EditorCloneCaretBelow<CR>
