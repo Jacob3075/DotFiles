@@ -18,5 +18,5 @@ source ~/.config/fish/completions/completions.fish
 # SDKMAN
 set PATH $PATH (find ~/.local/share/sdkman/candidates/*/current/bin -maxdepth 0) # omf install sdk
 
-starship init fish | source
+# starship init fish | source
 
