@@ -1,28 +1,43 @@
 {
   "layer": "top",
-    "modules-left": ["custom/launcher","cpu","memory","custom/media","tray"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["custom/updates","custom/wallpaper","backlight","pulseaudio","clock", "battery"],
+    "modules-left": [ "custom/launcher", "wlr/workspaces" ],
+    "modules-center": ["clock"],
+    "modules-right": ["tray","custom/wallpaper","cpu","memory","network","backlight","pulseaudio","battery"],
 
     "pulseaudio": {
       "tooltip": false,
       "scroll-step": 5,
       "format": "{icon} {volume}%",
-      "format-muted": "{icon} {volume}%",
-      "on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "format-muted": "",
+      "format-bluetooth": "",
+      "on-click-right":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-click":"pavucontrol",
+      "icon": "",
       "format-icons": {
-        "default": ["", "", ""]
-      }
+        "default": ["墳"]
+      },
     },
-
-    "hyprland/window": {
-      "format": "👉 {}",
-      "separate-outputs": true
+    "wlr/workspaces": {
+      "on-click": "activate",
+      "format": "{icon}",
+      "format-icons": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "default": "?"
+      }
     },
     "network": {
       "tooltip": false,
       "format-wifi": "  {essid}",
-      "format-ethernet": ""
+      "format-ethernet": "",
+      "format-disconnted": "睊"
     },
     "backlight": {
       "tooltip": false,
@@ -48,7 +63,7 @@
       "spacing": 10
     },
     "clock": {
-      "format": "{: %I:%M %p   %d/%m/%Y}"
+      "format": "{:  %I:%M %p |  %d/%m/%Y}"
     },
     "cpu": {
       "interval": 15,
@@ -58,7 +73,7 @@
     "memory": {
       "interval": 30,
       "format": " {}%",
-      "max-length": 10
+      "max-length": 10,
     },
     "custom/media": {
       "interval": 30,
