@@ -2,14 +2,14 @@
   "layer": "top",
     "modules-left": [ "custom/launcher", "wlr/workspaces" ],
     "modules-center": ["clock"],
-    "modules-right": ["tray","custom/wallpaper","cpu","memory","network","backlight","pulseaudio","battery","custom/power"],
+    "modules-right": ["tray","cpu","memory","network","backlight","pulseaudio","battery","custom/power"],
 
     "pulseaudio": {
       "tooltip": false,
       "scroll-step": 5,
       "format": "{icon} {volume}%",
       "format-muted": "",
-      "format-bluetooth": "",
+      "format-bluetooth": " {volume}%",
       "on-click-right":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
       "on-click":"pavucontrol",
       "icon": "",
@@ -76,7 +76,7 @@
     },
     "custom/launcher":{
       "format": " ",
-      "on-click": "rofi -show drun",
+      "on-click": "~/.config/rofi/launchers/launcher.sh",
       "on-click-right": "killall rofi"
     },
     "custom/power":{
@@ -85,6 +85,6 @@
     },
     "custom/wallpaper":{
       "format":" ",
-      "on-click": "bash ~/.config/system_scripts/pkill_bc"
+      "on-click": "echo TODO"
     }
 }
