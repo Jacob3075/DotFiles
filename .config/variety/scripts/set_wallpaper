@@ -291,4 +291,13 @@ fi
 
 # =====================================================================================
 
+# Hyprland
+if [[ $XDG_CURRENT_DESKTOP == "Hyprland" ]]; then
+  MONITOR=$(hyprctl monitors | awk '{print $2}' | head -n 1)
+  hyprctl hyprpaper preload "$WP"
+  hyprctl hyprpaper wallpaper "$MONITOR,$WP"
+  hyprctl hyprpaper unload all
+
+fi
+
 exit 0
