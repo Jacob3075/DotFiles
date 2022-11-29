@@ -1,32 +1,27 @@
-add_newline = false
+add_newline = true
+right_format = "$cmd_duration"
 
 [line_break]
 disabled = false
 
-# Use custom format
-# format = """
-# [┌───────────────────>](bold green)
-# [│](bold green)$directory$rust$package
-# [└─>](bold green) """
-
-# A minimal left prompt
-# format = """$character"""
-
-# move the rest of the prompt to the right
-right_format = """PES2UG19CS902"""
+# Prompt symbols 
+[character]
+success_symbol = "[🞈](#a6e3a1 bold)"
+error_symbol = "[🞈](#f38ba8)"
+vicmd_symbol = "[🞈](#f9e2af)"
 
 [package]
 disabled = false
-
+ 
 [directory]
 truncation_length = 3
 truncation_symbol = "…/"
 truncate_to_repo = false
+format = "[]($style)[(bg:#89b4fa fg:#49628a)$path](bg:#89b4fa fg:#49628a)[ ]($style)"
+style = "bg:#191724 fg:#89b4fa"
 
 [cmd_duration]
-show_notifications = true
-min_time_to_notify = 3000
-min_time = 500
+min_time = 1000
 
 [git_commit]
 commit_hash_length = 5
