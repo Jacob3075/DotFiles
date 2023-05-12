@@ -1,10 +1,10 @@
-<scheme name="One Dark Vivid Italic" version="142" parent_scheme="Darcula">
+<scheme name="One Dark Vivid Italic Custom" version="142" parent_scheme="Darcula">
   <metaInfo>
-    <property name="created">2022-11-03T12:26:16</property>
-    <property name="ide">AndroidStudio</property>
-    <property name="ideVersion">2022.2.1.7</property>
-    <property name="modified">2022-11-03T12:26:42</property>
-    <property name="originalScheme">_@user_One Dark Vivid Italic</property>
+    <property name="created">2023-05-12T12:27:39</property>
+    <property name="ide">idea</property>
+    <property name="ideVersion">2023.1.1.0.0</property>
+    <property name="modified">2023-05-12T12:27:55</property>
+    <property name="originalScheme">One Dark Vivid Italic Custom</property>
   </metaInfo>
   <colors>
     <option name="ADDED_LINES_COLOR" value="89ca78" />
@@ -16,7 +16,7 @@
     <option name="BookmarkMnemonicIcon.borderColor" value="568af2" />
     <option name="BookmarkMnemonicIcon.foreground" value="a0a7b4" />
     <option name="CARET_COLOR" value="528bff" />
-    <option name="CARET_ROW_COLOR" value="2c313c" />
+    <option name="CARET_ROW_COLOR" value="292d34" />
     <option name="CONSOLE_BACKGROUND_KEY" value="" />
     <option name="DELETED_LINES_COLOR" value="ef596f" />
     <option name="DIAGRAM_ANNOTATION_EDGE" value="e5c07b" />
@@ -67,6 +67,20 @@
     <option name="WHITESPACES_MODIFIED_LINES_COLOR" value="5c6370" />
   </colors>
   <attributes>
+    <option name="ABSTRACT_CLASS_NAME_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="e5c07b" />
+        <option name="FONT_TYPE" value="2" />
+      </value>
+    </option>
+    <option name="ABSTRACT_METHOD_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="61afef" />
+        <option name="FONT_TYPE" value="1" />
+        <option name="EFFECT_COLOR" value="3f729c" />
+        <option name="EFFECT_TYPE" value="5" />
+      </value>
+    </option>
     <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="d19a66" />
@@ -625,11 +639,15 @@
     <option name="DEFAULT_FUNCTION_DECLARATION">
       <value>
         <option name="FOREGROUND" value="61afef" />
+        <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="DEFAULT_GLOBAL_VARIABLE">
       <value>
         <option name="FOREGROUND" value="ef596f" />
+        <option name="FONT_TYPE" value="3" />
+        <option name="EFFECT_COLOR" value="883541" />
+        <option name="EFFECT_TYPE" value="4" />
       </value>
     </option>
     <option name="DEFAULT_IDENTIFIER">
@@ -645,6 +663,8 @@
     <option name="DEFAULT_INTERFACE_NAME">
       <value>
         <option name="FOREGROUND" value="e5c07b" />
+        <option name="EFFECT_COLOR" value="9a8152" />
+        <option name="EFFECT_TYPE" value="5" />
       </value>
     </option>
     <option name="DEFAULT_INVALID_STRING_ESCAPE">
@@ -687,7 +707,13 @@
         <option name="FOREGROUND" value="d19a66" />
       </value>
     </option>
-    <option name="DEFAULT_REASSIGNED_LOCAL_VARIABLE" baseAttributes="DEFAULT_LOCAL_VARIABLE" />
+    <option name="DEFAULT_REASSIGNED_LOCAL_VARIABLE">
+      <value>
+        <option name="FOREGROUND" value="bbbbbb" />
+        <option name="EFFECT_COLOR" value="7e7e7e" />
+        <option name="EFFECT_TYPE" value="1" />
+      </value>
+    </option>
     <option name="DEFAULT_REASSIGNED_PARAMETER">
       <value>
         <option name="FOREGROUND" value="d19a66" />
@@ -699,11 +725,15 @@
     <option name="DEFAULT_STATIC_FIELD">
       <value>
         <option name="FOREGROUND" value="ef596f" />
+        <option name="EFFECT_COLOR" value="883541" />
+        <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="DEFAULT_STATIC_METHOD">
       <value>
         <option name="FOREGROUND" value="61afef" />
+        <option name="EFFECT_COLOR" value="3f719c" />
+        <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="DEFAULT_STRING">
@@ -723,7 +753,7 @@
     </option>
     <option name="DELETED_TEXT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="692424" />
+        <option name="BACKGROUND" value="353940" />
       </value>
     </option>
     <option name="DEPRECATED_ATTRIBUTES">
@@ -820,8 +850,17 @@
         <option name="FOREGROUND" value="89ca78" />
       </value>
     </option>
+    <option name="ENUM_NAME_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="e5c07b" />
+        <option name="EFFECT_COLOR" value="9a8152" />
+        <option name="EFFECT_TYPE" value="1" />
+      </value>
+    </option>
     <option name="ERRORS_ATTRIBUTES">
       <value>
+        <option name="FOREGROUND" value="f44747" />
+        <option name="FONT_TYPE" value="3" />
         <option name="EFFECT_COLOR" value="f44747" />
         <option name="ERROR_STRIPE_COLOR" value="f44747" />
         <option name="EFFECT_TYPE" value="2" />
@@ -1063,8 +1102,8 @@
     <option name="IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
         <option name="BACKGROUND" value="353940" />
+        <option name="EFFECT_COLOR" value="a84baf" />
         <option name="ERROR_STRIPE_COLOR" value="4d78cc" />
-        <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES">
@@ -1081,6 +1120,14 @@
         <option name="EFFECT_COLOR" value="e5c07b" />
         <option name="ERROR_STRIPE_COLOR" value="e5c07b" />
         <option name="EFFECT_TYPE" value="2" />
+      </value>
+    </option>
+    <option name="INHERITED_METHOD_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="61afef" />
+        <option name="FONT_TYPE" value="1" />
+        <option name="EFFECT_COLOR" value="3f729c" />
+        <option name="EFFECT_TYPE" value="5" />
       </value>
     </option>
     <option name="INI.SECTION">
@@ -1101,19 +1148,19 @@
     </option>
     <option name="INLINE_PARAMETER_HINT">
       <value>
-        <option name="FOREGROUND" value="bbbbbb" />
+        <option name="FOREGROUND" value="9c9c9c" />
         <option name="BACKGROUND" value="414855" />
       </value>
     </option>
     <option name="INLINE_PARAMETER_HINT_CURRENT">
       <value>
-        <option name="FOREGROUND" value="bbbbbb" />
+        <option name="FOREGROUND" value="9c9c9c" />
         <option name="BACKGROUND" value="48709b" />
       </value>
     </option>
     <option name="INLINE_PARAMETER_HINT_HIGHLIGHTED">
       <value>
-        <option name="FOREGROUND" value="bbbbbb" />
+        <option name="FOREGROUND" value="9c9c9c" />
         <option name="BACKGROUND" value="5c6370" />
       </value>
     </option>
@@ -1226,6 +1273,12 @@
         <option name="FOREGROUND" value="d19a66" />
       </value>
     </option>
+    <option name="KOTLIN_CONSTRUCTOR">
+      <value>
+        <option name="FOREGROUND" value="61afef" />
+        <option name="FONT_TYPE" value="3" />
+      </value>
+    </option>
     <option name="KOTLIN_DYNAMIC_FUNCTION_CALL">
       <value>
         <option name="FOREGROUND" value="61afef" />
@@ -1249,9 +1302,7 @@
         <option name="FOREGROUND" value="d19a66" />
       </value>
     </option>
-    <option name="KOTLIN_LABEL">
-      <value />
-    </option>
+    <option name="KOTLIN_LABEL" baseAttributes="DEFAULT_LABEL" />
     <option name="KOTLIN_MUTABLE_VARIABLE">
       <value>
         <option name="FONT_TYPE" value="2" />
@@ -1270,13 +1321,25 @@
     </option>
     <option name="KOTLIN_PACKAGE_FUNCTION_CALL" baseAttributes="DEFAULT_STATIC_METHOD" />
     <option name="KOTLIN_SMART_CAST_RECEIVER">
-      <value />
+      <value>
+        <option name="BACKGROUND" value="1a3b2d" />
+      </value>
     </option>
     <option name="KOTLIN_SMART_CAST_VALUE">
       <value />
     </option>
     <option name="KOTLIN_SMART_CONSTANT">
-      <value />
+      <value>
+        <option name="BACKGROUND" value="1a3b2d" />
+      </value>
+    </option>
+    <option name="KOTLIN_SUSPEND_FUNCTION_CALL">
+      <value>
+        <option name="FOREGROUND" value="61afef" />
+        <option name="FONT_TYPE" value="2" />
+        <option name="EFFECT_COLOR" value="3f719c" />
+        <option name="EFFECT_TYPE" value="5" />
+      </value>
     </option>
     <option name="KOTLIN_TRAIT">
       <value>
@@ -1301,11 +1364,21 @@
     <option name="KOTLIN_VARIABLE_AS_FUNCTION">
       <value>
         <option name="FOREGROUND" value="61afef" />
+        <option name="FONT_TYPE" value="2" />
       </value>
     </option>
     <option name="KOTLIN_VARIABLE_AS_FUNCTION_LIKE">
       <value>
         <option name="FOREGROUND" value="61afef" />
+        <option name="FONT_TYPE" value="2" />
+      </value>
+    </option>
+    <option name="KOTLIN_WRAPPED_INTO_REF">
+      <value>
+        <option name="FOREGROUND" value="e5c07b" />
+        <option name="FONT_TYPE" value="2" />
+        <option name="EFFECT_COLOR" value="7e7e7e" />
+        <option name="EFFECT_TYPE" value="5" />
       </value>
     </option>
     <option name="LABEL">
@@ -2040,13 +2113,13 @@
         <option name="FOREGROUND" value="2bbac5" />
       </value>
     </option>
-    <option name="SASS_COMMENT" baseAttributes="" />
+    <option name="SASS_COMMENT" baseAttributes="CSS.COMMENT" />
     <option name="SASS_MIXIN">
       <value>
         <option name="FOREGROUND" value="d19a66" />
       </value>
     </option>
-    <option name="SASS_VARIABLE" baseAttributes="" />
+    <option name="SASS_VARIABLE" baseAttributes="DEFAULT_INSTANCE_FIELD" />
     <option name="SEARCH_RESULT_ATTRIBUTES">
       <value>
         <option name="BACKGROUND" value="42557b" />
@@ -2115,12 +2188,13 @@
         <option name="FOREGROUND" value="d19a66" />
       </value>
     </option>
-    <option name="STATIC_METHOD_ATTRIBUTES" baseAttributes="DEFAULT_STATIC_METHOD" />
-    <option name="STATIC_METHOD_IMPORTED_ATTRIBUTES">
+    <option name="STATIC_FINAL_FIELD_IMPORTED_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="61afef" />
+        <option name="FOREGROUND" value="d19a66" />
+        <option name="FONT_TYPE" value="2" />
       </value>
     </option>
+    <option name="STATIC_METHOD_ATTRIBUTES" baseAttributes="DEFAULT_STATIC_METHOD" />
     <option name="STYLUS_VARIABLE">
       <value />
     </option>
@@ -2160,7 +2234,7 @@
     <option name="TEXT">
       <value>
         <option name="FOREGROUND" value="bbbbbb" />
-        <option name="BACKGROUND" value="282c34" />
+        <option name="BACKGROUND" value="181a1f" />
       </value>
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
@@ -2250,8 +2324,8 @@
     <option name="WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
         <option name="BACKGROUND" value="353940" />
+        <option name="EFFECT_COLOR" value="a84baf" />
         <option name="ERROR_STRIPE_COLOR" value="4d78cc" />
-        <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="WRITE_SEARCH_RESULT_ATTRIBUTES">
@@ -2262,6 +2336,8 @@
     </option>
     <option name="WRONG_REFERENCES_ATTRIBUTES">
       <value>
+        <option name="FOREGROUND" value="f44747" />
+        <option name="FONT_TYPE" value="3" />
         <option name="EFFECT_COLOR" value="f44747" />
         <option name="ERROR_STRIPE_COLOR" value="f44747" />
         <option name="EFFECT_TYPE" value="2" />
@@ -2305,7 +2381,7 @@
         <option name="FOREGROUND" value="89ca78" />
       </value>
     </option>
-    <option name="XPATH.XPATH_VARIABLE" baseAttributes="" />
+    <option name="XPATH.XPATH_VARIABLE" baseAttributes="DEFAULT_LOCAL_VARIABLE" />
     <option name="YAML_ANCHOR">
       <value>
         <option name="FOREGROUND" value="e5c07b" />
