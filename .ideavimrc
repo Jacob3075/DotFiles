@@ -89,7 +89,7 @@ let mapleader = " "
     noremap <leader>ii :action ExpressionTypeInfo<CR>
 	nnoremap <leader>ic :action InspectCode<cr>
 	noremap <leader>S :action SurroundWith<cr>
-	nnoremap ,,  :action RecentLocations<cr>
+	nnoremap \|\|  :action RecentLocations<cr>
 	nnoremap \\\\ :action FindInPath<cr>
 	nnoremap '' :action tasks.and.contexts<cr>
 	nnoremap `` :action tasks.goto<cr>
@@ -116,7 +116,8 @@ let mapleader = " "
 	nnoremap <leader>wv :action SplitVertically<cr>
 	nnoremap <leader>wc :action Unsplit<cr>
 	nnoremap <leader>wC :action UnsplitAll<cr>
-	nnoremap <leader>wd :action OpenEditorInOppositeTabGroup<cr>
+	nnoremap <leader>wo :action OpenEditorIn0ppositeTabGroup<cr>
+    nnoremap <leader>wn :action EditSourceInNewWindow<cr>
 	nnoremap <leader>ww :action JumpToLastWindow<cr>
 	nnoremap <C-S-h> :action StretchSplitToLeft<cr>
 	nnoremap <C-S-l> :action StretchSplitToRight<cr>
@@ -152,6 +153,13 @@ let mapleader = " "
 	nnoremap <leader>fu :action FindUsages<cr>
 	nnoremap <leader>fU :action FindUsagesInFile<cr>
 
+" Creating new elements
+    nnoremap <leader>nc :action NewClass<cr>
+    nnoremap <leader>nf :action NewFile<cr>
+    nnoremap <leader>nn :action NewElement<cr>
+    nnoremap <leader>nd :action NewDir<cr>
+    nnoremap <leader>nD :action ShowBlankDiffWindow<cr>
+
 " Show
 	nnoremap <leader>su :action ShowUsages<cr>
 	nnoremap <leader>sU :action FindUsagesInFile<cr>
@@ -160,13 +168,16 @@ let mapleader = " "
 	noremap <leader>sm :action ShowPopupMenu<CR>
     nnoremap <leader>sh :action LocalHistory.ShowHistory<cr>
     vnoremap <leader>sh :action LocalHistory.ShowSelectionHistory<cr>
+    vnoremap <leader>st :action TypeHierarchy<cr>
+    vnoremap <leader>sH :action Vcs.ShowTabbedFileHistory<cr>
 
 " GoTo
 	nnoremap gi :action GotoImplementation<cr>
 	nnoremap gd :action GotoDeclaration<cr>
-	nnoremap gR :action GotoRelated<cr>
+	nnoremap gr :action GotoRelated<cr>
 	nnoremap gt :action GotoTest<cr>
 	nnoremap gf :action GotoFile<cr>
+	nnoremap gs :action GotoSuperMethod<cr>
 
 " Generate
 	nnoremap <leader>gg :action Generate<cr>
@@ -189,6 +200,7 @@ let mapleader = " "
 " Refactorings
 	noremap <leader>rr :action Refactorings.QuickListPopupAction<cr>
 	noremap <leader>rn :action RenameElement<cr>
+	noremap <leader>rN :action RenameFile<cr>
 	noremap <leader>rR :action Replace<cr>
 	noremap <leader>rI :action OptimizeImports<cr>
 	noremap <leader>rc :action IntroduceConstant<cr>
@@ -214,6 +226,17 @@ let mapleader = " "
 	nnoremap <leader>vd :action VcsShowCurrentChangeMarker<cr>
 	nnoremap <leader>vD :action Compare.LastVersion<cr>
 	noremap <leader>vr :action Vcs.RollbackChangedLines<cr>
+
+" Flutter
+    nnoremap <leader>Fw :action Flutter.ExtractWidget<cr>
+    nnoremap <leader>FW :action Flutter.ExtractWidgetToFile<cr>
+    nnoremap <leader>Fn :action Flutter.NewWidget<cr>
+    nnoremap <leader>Fg :action flutter.pub.get<cr>
+    nnoremap <leader>Fbb :action cn.neday.excavator.action.generation.BuildAction<cr>
+    nnoremap <leader>FbB :action cn.neday.excavator.action.generation.RebuildAction<cr>
+    nnoremap <leader>Fbw :action cn.neday.excavator.action.generation.WatchAction<cr>
+    nnoremap <leader>Fbc :action cn.neday.excavator.action.generation.CleanAction<cr>
+    nnoremap <leader>Fbk :action cn.neday.excavator.action.kill.FlutterKillAction<cr>
 
 " Registers
     vnoremap p "_dP
@@ -241,13 +264,9 @@ let mapleader = " "
 	nnoremap ]e :action GotoNextError<cr>
 	nnoremap <leader>ed :action ShowErrorDescription<cr>
 
-" Tabs
-	nnoremap [b :action PreviousTab<cr>
-	nnoremap ]b :action NextTab<cr>
-
 " Bookmarks
-	nnoremap [B :action GotoPreviousBookmark<cr>
-	nnoremap ]B :action GotoNextBookmark<cr>
+	nnoremap [b :action GotoPreviousBookmark<cr>
+	nnoremap ]b :action GotoNextBookmark<cr>
 
 " Occurrence
     nnoremap [w #:nohlsearch<cr>
@@ -258,6 +277,7 @@ let mapleader = " "
 	nnoremap ]s :action MoveStatementDown<cr>
 
 " Building, Running and Debugging
+    nnoremap ,, :action RunConfiguration<cr>
 	nnoremap ,s :action Stop<cr>
 	nnoremap ,r :action Run<cr>
 	nnoremap ,b :action BuildMenu<cr>
@@ -274,6 +294,16 @@ let mapleader = " "
     noremap ;sc :action StringManipulation.Group.SwitchCase<cr>
     noremap ;sm :action StringManipulation.Group.Main<cr>
     noremap ;sC :action StringManipulation.ToCamelCase<cr>
+
+" Harpoon
+    nnoremap ;hh :action ca.alexgirard.harpoonIJ.mainGroup<cr>
+    nnoremap ;hs :action ShowHarpoon<cr>
+    nnoremap ;ha :action AddToHarpoon<cr>
+    nnoremap ;hq :action GotoHarpoon5<cr>
+    nnoremap ;hw :action GotoHarpoon4<cr>
+    nnoremap ;he :action GotoHarpoon3<cr>
+    nnoremap ;hr :action GotoHarpoon2<cr>
+    nnoremap ;ht :action GotoHarpoon1<cr>
 
 sethandler <S-Tab> a:vim
 sethandler <C-A>   a:vim
@@ -298,14 +328,3 @@ sethandler <C-R>   a:vim
 sethandler <C-V>   a:vim
 sethandler <C-W>   a:vim
 sethandler <C-X>   a:vim
-
-" Flutter
-    nnoremap <leader>Fw :action Flutter.ExtractWidget<cr>
-    nnoremap <leader>FW :action Flutter.ExtractWidgetToFile<cr>
-    nnoremap <leader>Fn :action Flutter.NewWidget<cr>
-    nnoremap <leader>Fg :action flutter.pub.get<cr>
-    nnoremap <leader>Fbb :action cn.neday.excavator.action.generation.BuildAction<cr>
-    nnoremap <leader>FbB :action cn.neday.excavator.action.generation.RebuildAction<cr>
-    nnoremap <leader>Fbw :action cn.neday.excavator.action.generation.WatchAction<cr>
-    nnoremap <leader>Fbc :action cn.neday.excavator.action.generation.CleanAction<cr>
-    nnoremap <leader>Fbk :action cn.neday.excavator.action.kill.FlutterKillAction<cr>
