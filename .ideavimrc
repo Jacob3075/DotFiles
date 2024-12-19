@@ -94,6 +94,11 @@ let mapleader = " "
 	nnoremap '' :action tasks.and.contexts<cr>
 	nnoremap `` :action tasks.goto<cr>
 	vnoremap v <Esc>
+	nnoremap <leader>-= :set rnu!<cr>
+	nnoremap <leader>` :action PinActiveTabToggle<cr>
+	nnoremap <leader>~ :action RecentProjectListGroup<cr>
+	nnoremap <leader>_ :action OpenProjectWindow<cr>
+
     nnoremap <CR><CR> :action ShowIntentionActions<CR>
     noremap <leader>= :action ReformatCode<CR>
     nnoremap <leader>0 :action HideAllWindows<cr>
@@ -116,8 +121,8 @@ let mapleader = " "
 	nnoremap <leader>wv :action SplitVertically<cr>
 	nnoremap <leader>wc :action Unsplit<cr>
 	nnoremap <leader>wC :action UnsplitAll<cr>
-	nnoremap <leader>wo :action OpenEditorIn0ppositeTabGroup<cr>
-    nnoremap <leader>wn :action EditSourceInNewWindow<cr>
+	nnoremap <leader>wo :action OpenEditorInOppositeTabGroup<cr>
+        nnoremap <leader>wn :action EditSourceInNewWindow<cr>
 	nnoremap <leader>ww :action JumpToLastWindow<cr>
 	nnoremap <C-S-h> :action StretchSplitToLeft<cr>
 	nnoremap <C-S-l> :action StretchSplitToRight<cr>
@@ -166,10 +171,10 @@ let mapleader = " "
 	nnoremap <leader>sb :action ShowBookmarks<cr>
 	nnoremap <leader>si :action QuickImplementations<cr>
 	noremap <leader>sm :action ShowPopupMenu<CR>
-    nnoremap <leader>sh :action LocalHistory.ShowHistory<cr>
-    vnoremap <leader>sh :action LocalHistory.ShowSelectionHistory<cr>
-    vnoremap <leader>st :action TypeHierarchy<cr>
-    vnoremap <leader>sH :action Vcs.ShowTabbedFileHistory<cr>
+    	nnoremap <leader>sh :action LocalHistory.ShowHistory<cr>
+ 	vnoremap <leader>sh :action LocalHistory.ShowSelectionHistory<cr>
+ 	vnoremap <leader>st :action TypeHierarchy<cr>
+ 	vnoremap <leader>sH :action Vcs.ShowTabbedFileHistory<cr>
 
 " GoTo
 	nnoremap gi :action GotoImplementation<cr>
@@ -185,8 +190,8 @@ let mapleader = " "
 	nnoremap <leader>gi :action ImplementMethods<cr>
 
 " Bookmarks
-    nnoremap <leader>bT :action ToggleBookmarkWithMnemonic<cr>
-    nnoremap <leader>bt :action ToggleBookmark<cr>
+    nnoremap <leader>bt :action ToggleBookmarkWithMnemonic<cr>
+    nnoremap <leader>bb :action ToggleBookmark<cr>
     nnoremap <leader>be :action EditBookmark<cr>
     nnoremap <leader>bg :action Bookmarks.Goto<cr>
 
@@ -227,17 +232,6 @@ let mapleader = " "
 	nnoremap <leader>vD :action Compare.LastVersion<cr>
 	noremap <leader>vr :action Vcs.RollbackChangedLines<cr>
 
-" Flutter
-    nnoremap <leader>Fw :action Flutter.ExtractWidget<cr>
-    nnoremap <leader>FW :action Flutter.ExtractWidgetToFile<cr>
-    nnoremap <leader>Fn :action Flutter.NewWidget<cr>
-    nnoremap <leader>Fg :action flutter.pub.get<cr>
-    nnoremap <leader>Fbb :action cn.neday.excavator.action.generation.BuildAction<cr>
-    nnoremap <leader>FbB :action cn.neday.excavator.action.generation.RebuildAction<cr>
-    nnoremap <leader>Fbw :action cn.neday.excavator.action.generation.WatchAction<cr>
-    nnoremap <leader>Fbc :action cn.neday.excavator.action.generation.CleanAction<cr>
-    nnoremap <leader>Fbk :action cn.neday.excavator.action.kill.FlutterKillAction<cr>
-
 " Registers
     vnoremap p "_dP
     vnoremap P "_dP
@@ -277,7 +271,7 @@ let mapleader = " "
 	nnoremap ]s :action MoveStatementDown<cr>
 
 " Building, Running and Debugging
-    nnoremap ,, :action RunConfiguration<cr>
+	nnoremap ,, :action RunConfiguration<cr>
 	nnoremap ,s :action Stop<cr>
 	nnoremap ,r :action Run<cr>
 	nnoremap ,b :action BuildMenu<cr>
@@ -295,15 +289,19 @@ let mapleader = " "
     noremap ;sm :action StringManipulation.Group.Main<cr>
     noremap ;sC :action StringManipulation.ToCamelCase<cr>
 
+" GoldenRation
+	nnoremap ;gt :action actions.GoldenRationToggleAction<cr>
+	nnoremap ;ga :action actions.GoldenRationApplyAction<cr>
+
 " Harpoon
     nnoremap ;hh :action ca.alexgirard.harpoonIJ.mainGroup<cr>
     nnoremap ;hs :action ShowHarpoon<cr>
     nnoremap ;ha :action AddToHarpoon<cr>
-    nnoremap ;hq :action GotoHarpoon5<cr>
-    nnoremap ;hw :action GotoHarpoon4<cr>
-    nnoremap ;he :action GotoHarpoon3<cr>
-    nnoremap ;hr :action GotoHarpoon2<cr>
-    nnoremap ;ht :action GotoHarpoon1<cr>
+    nnoremap ;;a :action GotoHarpoon5<cr>
+    nnoremap ;;s :action GotoHarpoon4<cr>
+    nnoremap ;;d :action GotoHarpoon3<cr>
+    nnoremap ;;f :action GotoHarpoon2<cr>
+    nnoremap ;;g :action GotoHarpoon1<cr>
 
 sethandler <S-Tab> a:vim
 sethandler <C-A>   a:vim
